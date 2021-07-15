@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Img/Demon/demon.svg" type="Texture" id=1]
+[ext_resource path="res://Assets/Img/Demon/demon_letters _object.svg" type="Texture" id=2]
+[ext_resource path="res://Src/Laugh/Demon/DemonClean.cs" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 502.235
+
+[node name="Demon" type="KinematicBody2D"]
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 3 )
+
+[node name="Body" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+
+[node name="TextAnimated" type="AnimatedSprite" parent="."]
+position = Vector2( 0.471954, -1.7818 )
+frames = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2( 55.5742, -37.3383 )
+
+[node name="Position2D" type="Position2D" parent="Node2D"]
+position = Vector2( 13.8025, -0.0265713 )
+__meta__ = {
+"_gizmo_extents_": 4.0
+}
+
+[node name="Sprite" type="Sprite" parent="Node2D/Position2D"]
+scale = Vector2( 0.0145592, 0.0193324 )
+texture = ExtResource( 4 )
+
+[node name="FireDelay" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="FireDelay" to="." method="_on_Timer_timeout"]
