@@ -25,6 +25,7 @@ namespace Laugh.Shoots
 			Movement = Movement.Normalized() * Speed;
 			Position += Movement;
 		}
+		
 
 
 
