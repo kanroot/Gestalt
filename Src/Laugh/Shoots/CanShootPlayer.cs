@@ -5,7 +5,7 @@ namespace Laugh.Shoots
 	public class CanShootPlayer : CanShootBase
 	{
 		private bool mouserOverPlayer;
-		
+
 		public override void _Ready()
 		{
 			base._Ready();
@@ -23,17 +23,17 @@ namespace Laugh.Shoots
 		{
 			mouserOverPlayer = true;
 		}
+
 		private void OnMousePlayerExit()
 		{
 			mouserOverPlayer = false;
 			Canfire = true;
 		}
-		
+
 		private void GetInputFire()
 		{
 			if (!Input.IsActionPressed("Fire") || mouserOverPlayer) return;
 			CreateBullet();
-			
 		}
 
 		protected override void OnEndTime()

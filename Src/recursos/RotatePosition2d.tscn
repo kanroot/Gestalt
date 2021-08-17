@@ -8,5 +8,5 @@
 position = Vector2( 120, 0 )
 
 [node name="Sprite" type="Sprite" parent="Position2D"]
-scale = Vector2( 0.2, 0.2 )
+scale = Vector2( 0.108205, 0.108205 )
 texture = ExtResource( 1 )

@@ -5,19 +5,20 @@ namespace Laugh.Shoots
 {
 	public class ShootCircle : Area2D
 	{
+		//tiempo de vida
+		[Child] private readonly Timer bulletFree = new Timer();
+		[Export] private int damageBase = 10;
+		[Export] private int lifetime = 1;
+
+		private Vector2 mousePosition;
+
 		//propia
 		//spawn
 		private Vector2 movement;
-		private Vector2 mousePosition;
-
-		//tiempo de vida
-		[Child] private Timer bulletFree = new Timer();
-		[Export] private int lifetime = 1;
 		[Export] private int speed = 15;
 
 		//daño, el daño sera el daño base del disparo por algun multiplicador, para ello la propiedad damagetotal
 		[Export] public int damageTotal { get; set; }
-		[Export] private int damageBase = 10;
 
 
 		public override void _Ready()

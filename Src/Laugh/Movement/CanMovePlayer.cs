@@ -8,7 +8,7 @@ namespace Laugh.Movement
 		{
 			entity.MoveAndSlide(GetInputMovement());
 		}
-		
+
 		private Vector2 GetInputMovement()
 		{
 			var directionPlayerVector = new Vector2();

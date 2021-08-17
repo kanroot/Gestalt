@@ -6,9 +6,11 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 282.625
 
-[node name="Area2D" type="Area2D"]
-scale = Vector2( 0.02, 0.02 )
+[node name="ShootEnemy" type="Area2D"]
+scale = Vector2( 0.0204089, 0.02 )
+gravity = 0.0
 script = ExtResource( 2 )
+SpeedBullet = 1500
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -17,6 +19,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="BulletFree" type="Timer" parent="."]
+wait_time = 100.0
 autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_Shoot_body_entered"]

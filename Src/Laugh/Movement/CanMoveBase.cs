@@ -4,12 +4,11 @@ namespace Laugh.Movement
 {
 	public abstract class CanMoveBase : Node
 	{
-		[Export]
-		private NodePath entityPath;
+		protected KinematicBody2D entity;
+
+		[Export] private NodePath entityPath;
 
 		[Export] protected int Speed = 200;
-		
-		protected KinematicBody2D entity;
 		protected abstract void Movement(float delta);
 
 		public override void _Ready()
@@ -24,7 +23,7 @@ namespace Laugh.Movement
 
 		public void SpeedChange(float multiplier)
 		{
-			Speed = (int) (Speed * multiplier);
+			Speed = (int)(Speed * multiplier);
 		}
 	}
 }
