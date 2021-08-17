@@ -2,7 +2,7 @@ using Godot;
 
 namespace Laugh.Shoots
 {
-	public abstract class CanShootBase1 : Node
+	public abstract class CanShootBase : Node
 	{
 		//CUERPO
 		protected KinematicBody2D Entity;

@@ -3,7 +3,7 @@ using Godot;
 
 namespace Laugh.Shoots
 {
-	public abstract class CanShootEnemy : CanShootBase1
+	public abstract class CanShootEnemy : CanShootBase
 	{
 		//cantidad de nodos con los cuales dispara, sea uno o más
 		protected readonly List<Node2D> ListPosition2d = new List<Node2D>();

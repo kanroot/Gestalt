@@ -2,7 +2,7 @@ using Godot;
 
 namespace Laugh.Shoots
 {
-	public class CanShootPj : CanShootBase1
+	public class CanShootPj : CanShootBase
 	{
 		private Node2D rotate;
 		[Export] private NodePath rotatePath;
