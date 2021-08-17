@@ -9,8 +9,8 @@ namespace Laugh.Shoots
 		public override void _Ready()
 		{
 			base._Ready();
-			entity.Connect("mouse_entered", this, nameof(OnMousePlayer));
-			entity.Connect("mouse_exited", this, nameof(OnMousePlayerExit));
+			Entity.Connect("mouse_entered", this, nameof(OnMousePlayer));
+			Entity.Connect("mouse_exited", this, nameof(OnMousePlayerExit));
 		}
 
 		protected override void Aim()

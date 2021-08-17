@@ -6,17 +6,11 @@ namespace Laugh.Shoots
 	public class CanShootBoss : Node
 	{
 		private const float Circle = 360;
-
 		[Export] private PackedScene bulletBoss;
-
 		[Export] private int countDivisionCircle = 3;
-
 		private KinematicBody2D entity;
-
 		private readonly List<Node2D> listPosition2d = new List<Node2D>();
-
 		[Export] private PackedScene rotatePosition2d;
-
 		private Timer timerCanShoot;
 
 		//tiempo de lanzamiento de cada vala

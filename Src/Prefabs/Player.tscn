@@ -4,7 +4,7 @@
 [ext_resource path="res://Src/Laugh/Movement/CanMovePlayer.cs" type="Script" id=2]
 [ext_resource path="res://Src/Prefabs/EntidadBase.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Src/recursos/PlayerLineOutside.tres" type="SpriteFrames" id=4]
-[ext_resource path="res://Src/Laugh/Shoots/CanShootPlayer.cs" type="Script" id=5]
+[ext_resource path="res://Src/Laugh/Shoots/CanShootPj.cs" type="Script" id=5]
 [ext_resource path="res://Src/Prefabs/ShootCircle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Src/recursos/RotatePosition2d.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Src/recursos/Player.tres" type="SpriteFrames" id=8]
@@ -28,10 +28,10 @@ entityPath = NodePath("..")
 
 [node name="Shoots" parent="." index="6"]
 script = ExtResource( 5 )
-bulletPath = NodePath("../Rotate/Position2D")
-bulletScene = ExtResource( 6 )
+BulletScene = ExtResource( 6 )
+TimerPath = NodePath("../TimerCanShoot")
 rotatePath = NodePath("../Rotate")
-timerPath = NodePath("../TimerCanShoot")
+bulletPath = NodePath("../Rotate/Position2D")
 
 [node name="Rotate" parent="." index="7" instance=ExtResource( 7 )]
 
