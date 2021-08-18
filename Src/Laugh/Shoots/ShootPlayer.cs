@@ -7,7 +7,7 @@ namespace Laugh.Shoots
 		private Vector2 Movement { get; set; }
 		private Vector2 MousePosition { get; set; }
 
-		
+
 		public override void _Ready()
 		{
 			GetTree().Root.AddChild(BulletFree);
@@ -21,7 +21,5 @@ namespace Laugh.Shoots
 			Movement = Movement.Normalized() * SpeedBullet;
 			Position += Movement;
 		}
-
-		
 	}
 }

@@ -5,8 +5,9 @@ namespace Laugh.Shoots
 	public class Shoot : Area2D
 	{
 		protected Timer BulletFree { get; set; } = new Timer();
-		
+
 		[Export] protected int SpeedBullet;
+
 		//daño, el daño sera el daño base del disparo por algun multiplicador, para ello la propiedad damagetotal
 		protected int DamageTotal { get; set; }
 
@@ -24,7 +25,7 @@ namespace Laugh.Shoots
 			BulletFree.QueueFree();
 			QueueFree();
 		}
-		
+
 		//aumentador de la velocidad de los disparos 
 		private void SpeedUp(float multiplier)
 		{

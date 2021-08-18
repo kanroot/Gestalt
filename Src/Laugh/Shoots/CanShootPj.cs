@@ -30,7 +30,7 @@ namespace Laugh.Shoots
 			rotate.LookAt(rotate.GetGlobalMousePosition());
 			GetInputFire();
 		}
-		
+
 		protected override void CreateBullet()
 		{
 			if (!Canfire) return;
@@ -40,6 +40,7 @@ namespace Laugh.Shoots
 			Canfire = false;
 			TimerCanShoot.Start();
 		}
+
 		private void OnMousePlayer()
 		{
 			mouserOverPlayer = true;

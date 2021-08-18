@@ -24,7 +24,7 @@ autostart = true
 [node name="Movement" parent="." index="4"]
 script = ExtResource( 4 )
 entityPath = NodePath("..")
-Speed = 0
+Speed = 10
 
 [node name="Shoots" parent="." index="5"]
 script = ExtResource( 5 )
@@ -32,6 +32,7 @@ BulletScene = ExtResource( 7 )
 TimerPath = NodePath("../TimerCanShoot")
 RotatePosition2d = ExtResource( 6 )
 countDivisionCircle = 10
+degreesRotate = 1
 
 [node name="TextRotated" type="Node" parent="." index="6"]
 script = ExtResource( 8 )
