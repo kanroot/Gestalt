@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Src/Scenes/BackgroundParallax.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Src/Prefabs/EntidadBase.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Src/Laugh/BaseClass/MovementDemon.cs" type="Script" id=3]
+[ext_resource path="res://Src/Prefabs/Demon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Src/Scenes/RoomOne.tscn" type="PackedScene" id=6]
 
 [node name="Main" type="Node2D"]
@@ -11,9 +10,5 @@
 
 [node name="TileMap" parent="." instance=ExtResource( 6 )]
 
-[node name="EntidadBase" parent="." instance=ExtResource( 2 )]
-position = Vector2( 812.749, 549.241 )
-
-[node name="Node" type="Node" parent="EntidadBase"]
-script = ExtResource( 3 )
-Speed = 0
+[node name="Demon" parent="." instance=ExtResource( 2 )]
+position = Vector2( 436, 404 )

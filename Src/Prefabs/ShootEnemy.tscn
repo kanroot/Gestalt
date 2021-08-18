@@ -10,7 +10,7 @@ radius = 282.625
 scale = Vector2( 0.0204089, 0.02 )
 gravity = 0.0
 script = ExtResource( 2 )
-SpeedBullet = 15
+SpeedBullet = 1500
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

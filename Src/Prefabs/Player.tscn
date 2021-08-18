@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Img/Laught/LaughtMan_letters.svg" type="Texture" id=1]
 [ext_resource path="res://Src/Laugh/Movement/CanMovePlayer.cs" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Src/Prefabs/ShootCircle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Src/recursos/RotatePosition2d.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Src/recursos/Player.tres" type="SpriteFrames" id=8]
+[ext_resource path="res://Src/Laugh/Movement/CanMovementText.cs" type="Script" id=9]
 
 [node name="Player" instance=ExtResource( 3 )]
 input_pickable = true
@@ -22,17 +23,24 @@ texture = ExtResource( 1 )
 scale = Vector2( 0.2, 0.2 )
 frames = ExtResource( 4 )
 
-[node name="Movement" parent="." index="5"]
+[node name="Rotate" parent="." index="5" instance=ExtResource( 7 )]
+
+[node name="Camera2D" type="Camera2D" parent="." index="6"]
+
+[node name="Movement" parent="." index="7"]
 script = ExtResource( 2 )
 entityPath = NodePath("..")
 
-[node name="Shoots" parent="." index="6"]
+[node name="Shoots" parent="." index="8"]
 script = ExtResource( 5 )
 BulletScene = ExtResource( 6 )
 TimerPath = NodePath("../TimerCanShoot")
 rotatePath = NodePath("../Rotate")
 bulletPath = NodePath("../Rotate/Position2D")
 
-[node name="Rotate" parent="." index="7" instance=ExtResource( 7 )]
+[node name="MovementText" type="Node" parent="." index="9"]
+script = ExtResource( 9 )
+pathTextRotated = NodePath("../Text")
+degreesRotate = 1
 
 [editable path="Rotate"]

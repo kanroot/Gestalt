@@ -35,8 +35,7 @@ namespace Laugh.Shoots
 		private void ModifyPosition2d()
 		{
 			var angle = Circle / countDivisionCircle;
-			
-			//parte en uno porque la posicion 0 de la lista debe mantener su posicion
+			//parte en uno debido a la posicion 0 de la lista la cual debe mantener su posicion
 			for (var i = 1; i != countDivisionCircle; i++)
 			{
 				ListPosition2d[i].RotationDegrees += angle * i;
@@ -50,14 +49,17 @@ namespace Laugh.Shoots
 			{
 				var bulletInstance = (ShootDemon) BulletScene.Instance();
 				var position2d = originNode2d.GetChild<Position2D>(0);
-				
 				bulletInstance.Position = position2d.GlobalPosition;
 				bulletInstance.RotationDegrees = originNode2d.RotationDegrees;
-				
-				var position2 = originNode2d.GetChild<Position2D>(1);
-				bulletInstance.Direction = position2.GlobalPosition;
 				GetTree().Root.AddChild(bulletInstance);
 			}
 		}
+		
+		//implementar metodo giratorio
+		//LLamar o desactivar via timer ?
+		
+		//implementar metodo respiratorio, que llame y aumente la cantidad de spwan bullet
+		
+		//implementar un metodo que evite el movimiento
 	}
 }
