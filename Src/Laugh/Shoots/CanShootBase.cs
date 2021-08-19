@@ -15,7 +15,7 @@ namespace Laugh.Shoots
 
 		//CONTROLADORES DEL TIMER DEL DISPARO
 		protected Timer TimerCanShoot;
-		[Export] protected bool Canfire = true;
+		[Export] protected bool Canfire;
 		[Export] protected NodePath TimerPath;
 		[Export] protected float TimeWait = 0.5f;
 

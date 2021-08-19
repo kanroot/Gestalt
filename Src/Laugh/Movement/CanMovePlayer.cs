@@ -6,6 +6,7 @@ namespace Laugh.Movement
 	{
 		protected override void Movement(float delta)
 		{
+			if (CanMove != true) return;
 			entity.MoveAndSlide(GetInputMovement());
 		}
 

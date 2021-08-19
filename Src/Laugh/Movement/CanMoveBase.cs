@@ -5,10 +5,12 @@ namespace Laugh.Movement
 	public abstract class CanMoveBase : Node
 	{
 		protected KinematicBody2D entity;
-
+		
 		[Export] private NodePath entityPath;
 
 		[Export] protected int Speed = 200;
+
+		[Export] public bool CanMove { set; get; }
 		protected abstract void Movement(float delta);
 
 		public override void _Ready()

@@ -29,11 +29,13 @@ frames = ExtResource( 4 )
 
 [node name="Movement" parent="." index="7"]
 script = ExtResource( 2 )
+CanMove = true
 entityPath = NodePath("..")
 
 [node name="Shoots" parent="." index="8"]
 script = ExtResource( 5 )
 BulletScene = ExtResource( 6 )
+Canfire = true
 TimerPath = NodePath("../TimerCanShoot")
 rotatePath = NodePath("../Rotate")
 bulletPath = NodePath("../Rotate/Position2D")

@@ -23,12 +23,14 @@ autostart = true
 
 [node name="Movement" parent="." index="4"]
 script = ExtResource( 4 )
+CanMove = true
 entityPath = NodePath("..")
-Speed = 10
+Speed = 400
 
 [node name="Shoots" parent="." index="5"]
 script = ExtResource( 5 )
 BulletScene = ExtResource( 7 )
+Canfire = true
 TimerPath = NodePath("../TimerCanShoot")
 RotatePosition2d = ExtResource( 6 )
 countDivisionCircle = 10
