@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Laugh"
-run/main_scene="res://Src/Prefabs/Enemies/DemonBoss.tscn"
+run/main_scene="res://Src/Scenes/Main.tscn"
 config/icon="res://icon.png"
 
 [display]

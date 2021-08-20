@@ -9,8 +9,6 @@ namespace Laugh.Shoots
 		[Export] private int countDivisionCircle = 3;
 		[Export] private int degreesRotate;
 		
-
-		//tener en consideracion que en futuros metodos debere bloquear la posibilidad de disparar y tendre que editar el ready y que se active bajo cierta señal
 		public override void _Ready()
 		{
 			base._Ready();
@@ -62,7 +60,6 @@ namespace Laugh.Shoots
 				GetTree().Root.AddChild(bulletInstance);
 			}
 		}
-		//implementar metodo giratorio
 		private void RotaryNode2D()
 		{
 			foreach (var originNode2d in ListPosition2d)
@@ -72,9 +69,5 @@ namespace Laugh.Shoots
 			}	
 		}
 		
-		//implementar el patron state
-		//LLamar o desactivar via timer ?
-		//implementar metodo respiratorio, que llame y aumente la cantidad de spwan bullet
-		//implementar un metodo que evite el movimiento
 	}
 }

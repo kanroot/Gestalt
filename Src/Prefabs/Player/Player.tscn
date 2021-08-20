@@ -30,6 +30,9 @@ frames = ExtResource( 4 )
 
 [node name="Rotate" parent="." index="5" instance=ExtResource( 7 )]
 
+[node name="Position2D" parent="Rotate" index="0"]
+position = Vector2( 40.0258, 0 )
+
 [node name="Camera2D" type="Camera2D" parent="." index="6"]
 
 [node name="Movement" parent="." index="7"]

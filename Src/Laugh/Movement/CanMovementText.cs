@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-namespace Laugh.Movement
+namespace Gestalt.Movement
 {
 	public class CanMovementText : Node
 	{
