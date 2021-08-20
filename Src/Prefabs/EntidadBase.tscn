@@ -21,3 +21,5 @@ one_shot = true
 [node name="Movement" type="Node" parent="."]
 
 [node name="Shoots" type="Node" parent="."]
+
+[node name="Life" type="Node" parent="."]

@@ -72,6 +72,7 @@ namespace Laugh.Shoots
 			}	
 		}
 		
+		//implementar el patron state
 		//LLamar o desactivar via timer ?
 		//implementar metodo respiratorio, que llame y aumente la cantidad de spwan bullet
 		//implementar un metodo que evite el movimiento

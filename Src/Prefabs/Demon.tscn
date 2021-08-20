@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Src/Prefabs/EntidadBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Img/Demon/demon_letters _object.svg" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Src/recursos/RotatePosition2d.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Src/Prefabs/ShootEnemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Src/Laugh/Movement/CanMovementText.cs" type="Script" id=8]
+[ext_resource path="res://Src/Laugh/IA/EnemyIA.cs" type="Script" id=9]
+[ext_resource path="res://Src/Laugh/Life/LifeBase.cs" type="Script" id=10]
 
 [node name="Demon" instance=ExtResource( 1 )]
 
@@ -23,20 +25,28 @@ autostart = true
 
 [node name="Movement" parent="." index="4"]
 script = ExtResource( 4 )
-CanMove = true
 entityPath = NodePath("..")
 Speed = 400
 
 [node name="Shoots" parent="." index="5"]
 script = ExtResource( 5 )
 BulletScene = ExtResource( 7 )
-Canfire = true
 TimerPath = NodePath("../TimerCanShoot")
 RotatePosition2d = ExtResource( 6 )
 countDivisionCircle = 10
 degreesRotate = 1
 
-[node name="TextRotated" type="Node" parent="." index="6"]
+[node name="Life" parent="." index="6"]
+script = ExtResource( 10 )
+EntityPath = NodePath("..")
+
+[node name="TextRotated" type="Node" parent="." index="7"]
 script = ExtResource( 8 )
 pathTextRotated = NodePath("../Text")
 degreesRotate = 1
+
+[node name="IA" type="Node" parent="." index="8"]
+script = ExtResource( 9 )
+canMovePath = NodePath("../Movement")
+canShootPath = NodePath("../Shoots")
+lifePath = NodePath("../Life")
