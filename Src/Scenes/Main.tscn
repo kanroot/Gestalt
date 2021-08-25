@@ -12,7 +12,7 @@
 [node name="TileMap" parent="." instance=ExtResource( 6 )]
 
 [node name="DemonBoss" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1077.63, 424.264 )
+position = Vector2( 462.498, 409.641 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 976, 870 )

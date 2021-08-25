@@ -46,8 +46,7 @@ namespace Laugh.IA
 			//ENTRAMOS AL PRIMER ESTADO
 			currenState.OnStateEnter();
 		}
-
-		//la funcion process se llama cada vez que pasa un frame
+		
 		public override void _Process(float delta)
 		{
 			if (currentTime >= cooldown)
