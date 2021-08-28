@@ -9,7 +9,6 @@ namespace Laugh.IA
 		private new Vector2 originalShape;
 		[Export] private float factorScale;
 		protected bool CanGrow { get; set; }
-
 		public override void _Ready()
 		{
 			collisionShape2D = GetChild<CollisionShape2D>(0);
