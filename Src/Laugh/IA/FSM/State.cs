@@ -4,7 +4,6 @@ namespace Laugh.IA.FSM
 {
 	public abstract class State
 	{
-		
 		public State NextState { get; set; }
 		protected LifeBase lifeBase;
 		
@@ -16,7 +15,7 @@ namespace Laugh.IA.FSM
 
 		protected State(State nextState, LifeBase lifeBase)
 		{
-			this.NextState = nextState;
+			NextState = nextState;
 			this.lifeBase = lifeBase;
 		}
 	}

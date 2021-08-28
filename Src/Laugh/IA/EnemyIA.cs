@@ -30,6 +30,7 @@ namespace Laugh.IA
 		//Estado actual
 		private State currenState;
 
+
 		public override void _Ready()
 		{
 			canMoveBase = GetNode<CanMoveBase>(canMovePath);

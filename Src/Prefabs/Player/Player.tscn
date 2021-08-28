@@ -12,6 +12,8 @@
 
 [node name="Player" instance=ExtResource( 3 )]
 input_pickable = true
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" parent="." index="0"]
 scale = Vector2( 0.05, 0.05 )
