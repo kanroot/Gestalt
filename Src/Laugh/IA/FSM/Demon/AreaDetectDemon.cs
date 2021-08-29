@@ -4,7 +4,7 @@ using Laugh.Life;
 using Laugh.Movement;
 using Laugh.Shoots;
 
-namespace Laugh.IA.FSM
+namespace Laugh.IA.FSM.Demon
 {
 	public class AreaDetectDemon : AreaDetectBase
 	{
@@ -19,6 +19,7 @@ namespace Laugh.IA.FSM
 
 		private MoveAttack moveAttack;
 		private ShootAttack shootAttack;
+		private ChangePattern changePattern;
 
 		private int counState = 0;
 
@@ -28,18 +29,19 @@ namespace Laugh.IA.FSM
 		public override void _Ready()
 		{
 			base._Ready();
-
 			//PROPIO DEL DEMON
 			canMoveBase = GetNode<CanMoveBase>(canMovePath);
 			canShootBase = GetNode<CanShootBase>(canShootPath);
 			lifeBase = GetNode<LifeBase>(lifePath);
 			moveAttack = new MoveAttack(canMoveBase);
 			shootAttack = new ShootAttack(canShootBase);
-
+			changePattern = new ChangePattern(canShootBase);
+			changePattern.OnEnter();
 		}
 
 		public override void ChangeStateOnEnter(KinematicBody2D player)
 		{
+			changePattern.OnExit();
 			moveAttack.OnEnter();
 			CanGrow = false;
 			OriginalForm();

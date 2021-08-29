@@ -7,13 +7,17 @@ namespace Laugh.Shoots
 	{
 		private const float Circle = 360;
 		[Export] private int countDivisionCircle = 3;
-		[Export] private int degreesRotate;
+		//Para poder modificar la velocidad del patron
+		[Export] public int DegreesRotate { get; set; }
 		
+		public bool CanRotateNode { get; set; }
 		public override void _Ready()
 		{
 			base._Ready();
 			Entity.Connect("ready", this, nameof(CallerPosition));
 			TimerCanShoot.Connect("timeout", this, nameof(CreateBullet));
+			//por defecto puede rotar los spwan
+			CanRotateNode = true;
 		}
 
 		public override void _PhysicsProcess(float delta)
@@ -62,9 +66,10 @@ namespace Laugh.Shoots
 		}
 		private void RotaryNode2D()
 		{
+			if (CanRotateNode != true) return;
 			foreach (var originNode2d in ListPosition2d)
 			{
-				var degreesToRadiant = (Math.PI / 180) * degreesRotate;
+				var degreesToRadiant = (Math.PI / 180) * DegreesRotate;
 				originNode2d.Rotate((float)degreesToRadiant);
 			}	
 		}
