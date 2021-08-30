@@ -1,5 +1,3 @@
-using Godot;
-
 namespace Laugh.Shoots
 {
 	public class ShootDemon : Shoot
@@ -15,6 +13,5 @@ namespace Laugh.Shoots
 		{
 			Position += Transform.x * SpeedBullet * delta;
 		}
-		
 	}
 }

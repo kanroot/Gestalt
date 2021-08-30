@@ -8,7 +8,7 @@
 [ext_resource path="res://Src/Prefabs/Shoots/ShootCircle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Src/Resources/BulletSpawn/RotatePosition2d.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Src/Resources/Player/Player.tres" type="SpriteFrames" id=8]
-[ext_resource path="res://Src/Laugh/Movement/CanMovementText.cs" type="Script" id=9]
+[ext_resource path="res://Src/Laugh/Text/CanMovementText.cs" type="Script" id=9]
 
 [node name="Player" instance=ExtResource( 3 )]
 input_pickable = true
@@ -47,12 +47,12 @@ script = ExtResource( 5 )
 Canfire = true
 BulletScene = ExtResource( 6 )
 TimerPath = NodePath("../TimerCanShoot")
-rotatePath = NodePath("../Rotate")
 bulletPath = NodePath("../Rotate/Position2D")
+rotatePath = NodePath("../Rotate")
 
 [node name="MovementText" type="Node" parent="." index="9"]
 script = ExtResource( 9 )
-pathTextRotated = NodePath("../Text")
 degreesRotate = 1
+pathTextRotated = NodePath("../Text")
 
 [editable path="Rotate"]

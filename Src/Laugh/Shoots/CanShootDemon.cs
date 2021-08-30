@@ -6,21 +6,15 @@ namespace Laugh.Shoots
 	public class CanShootDemon : CanShootEnemy
 	{
 		private const float Circle = 360;
-		[Export] private int countDivisionCircle = 3;
-		//Para poder modificar la velocidad del patron
-		[Export] public int DegreesRotate { get; set; }
-
 		private ShootDemon bulletInstance;
-		
+		[Export] public int CountDivisionCircle { get; set; }
+		[Export] public int DegreesRotate { get; set; }
 		[Export] public float SpeedBullet { get; set; }
-		
 		public bool CanRotateNode { get; set; }
+
 		public override void _Ready()
 		{
 			base._Ready();
-			Entity.Connect("ready", this, nameof(CallerPosition));
-			TimerCanShoot.Connect("timeout", this, nameof(CreateBullet));
-			//por defecto puede rotar los spwan
 			CanRotateNode = true;
 		}
 
@@ -29,7 +23,7 @@ namespace Laugh.Shoots
 			RotaryNode2D();
 		}
 
-		private void CallerPosition()
+		public override void CallerPosition()
 		{
 			CreatePosition();
 			ModifyPosition2d();
@@ -37,7 +31,7 @@ namespace Laugh.Shoots
 
 		private void CreatePosition()
 		{
-			for (var i = 0; i < countDivisionCircle; i++)
+			for (var i = 0; i < CountDivisionCircle; i++)
 			{
 				var position2d = (Node2D)RotatePosition2d.Instance();
 				ListPosition2d.Add(position2d);
@@ -48,21 +42,14 @@ namespace Laugh.Shoots
 
 		private void ModifyPosition2d()
 		{
-			var angle = Circle / countDivisionCircle;
-			//parte en uno debido a la posicion 0 de la lista la cual debe mantener su posicion
-			for (var i = 1; i != countDivisionCircle; i++)
-			{
-				ListPosition2d[i].RotationDegrees += angle * i;
-			}
+			var angle = Circle / CountDivisionCircle;
+			for (var i = 1; i != CountDivisionCircle; i++) ListPosition2d[i].RotationDegrees += angle * i;
 		}
 
 		protected override void CreateBullet()
 		{
 			if (Canfire != true) return;
-			foreach (var originNode2d in ListPosition2d)
-			{
-				BulletInstance(originNode2d);
-			}
+			foreach (var originNode2d in ListPosition2d) BulletInstance(originNode2d);
 		}
 
 		private void BulletInstance(Node2D originNode2d)
@@ -80,16 +67,22 @@ namespace Laugh.Shoots
 			if (CanRotateNode != true) return;
 			foreach (var originNode2d in ListPosition2d)
 			{
-				var degreesToRadiant = (Math.PI / 180) * DegreesRotate;
+				var degreesToRadiant = Math.PI / 180 * DegreesRotate;
 				originNode2d.Rotate((float)degreesToRadiant);
-			}	
+			}
 		}
 
-		
-		//implemetar comportamiento del disparo y los nodos (spwan)
-		//cambio de velocidad de disparo
-		//limpiar nodos al principio de spwan, para evitar la duplicidad y poder eliminar los nodos viejos
-		//cambiar el spwan
-		
+		public void KillNodes()
+		{
+			foreach (Node n in Entity.GetChildren())
+				try
+				{
+					if (n.GetChild<Position2D>(0) != null) n.QueueFree();
+				}
+				catch (InvalidCastException e)
+				{
+					//do nothing xd
+				}
+		}
 	}
 }

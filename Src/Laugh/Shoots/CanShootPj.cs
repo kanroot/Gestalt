@@ -1,12 +1,13 @@
 using Godot;
+
 namespace Laugh.Shoots
 {
 	public class CanShootPj : CanShootBase
 	{
+		[Export] private NodePath bulletPath;
+		private bool mouserOverPlayer;
 		private Node2D rotate;
 		[Export] private NodePath rotatePath;
-		private bool mouserOverPlayer;
-		[Export] private NodePath bulletPath;
 
 		public override void _Ready()
 		{

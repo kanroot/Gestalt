@@ -6,8 +6,8 @@ namespace Laugh.Shoots
 	{
 		public float SpeedBullet { get; set; }
 		protected Timer BulletFree { get; set; } = new Timer();
-		
-		
+
+
 		//daño, el daño sera el daño base del disparo por algun multiplicador, para ello la propiedad damagetotal
 		protected int DamageTotal { get; set; }
 

@@ -1,3 +1,4 @@
+using Laugh.IA.FSM.State;
 using Laugh.Movement;
 using Laugh.Shoots;
 
@@ -13,8 +14,8 @@ namespace Laugh.IA.FSM.Demon
 			this.canMoveBase = canMoveBase;
 			this.canShootBase = canShootBase;
 		}
-		
-		
+
+
 		public override void OnEnter()
 		{
 			canMoveBase.CanMove = true;
