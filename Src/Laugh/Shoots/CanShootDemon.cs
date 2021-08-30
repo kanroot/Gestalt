@@ -9,6 +9,10 @@ namespace Laugh.Shoots
 		[Export] private int countDivisionCircle = 3;
 		//Para poder modificar la velocidad del patron
 		[Export] public int DegreesRotate { get; set; }
+
+		private ShootDemon bulletInstance;
+		
+		[Export] public float SpeedBullet { get; set; }
 		
 		public bool CanRotateNode { get; set; }
 		public override void _Ready()
@@ -57,13 +61,20 @@ namespace Laugh.Shoots
 			if (Canfire != true) return;
 			foreach (var originNode2d in ListPosition2d)
 			{
-				var bulletInstance = (ShootDemon)BulletScene.Instance();
-				var position2d = originNode2d.GetChild<Position2D>(0);
-				bulletInstance.Position = position2d.GlobalPosition;
-				bulletInstance.RotationDegrees = originNode2d.RotationDegrees;
-				GetTree().Root.AddChild(bulletInstance);
+				BulletInstance(originNode2d);
 			}
 		}
+
+		private void BulletInstance(Node2D originNode2d)
+		{
+			bulletInstance = (ShootDemon)BulletScene.Instance();
+			bulletInstance.SpeedBullet = SpeedBullet;
+			var position2d = originNode2d.GetChild<Position2D>(0);
+			bulletInstance.Position = position2d.GlobalPosition;
+			bulletInstance.RotationDegrees = originNode2d.RotationDegrees;
+			GetTree().Root.AddChild(bulletInstance);
+		}
+
 		private void RotaryNode2D()
 		{
 			if (CanRotateNode != true) return;
@@ -73,6 +84,12 @@ namespace Laugh.Shoots
 				originNode2d.Rotate((float)degreesToRadiant);
 			}	
 		}
+
+		
+		//implemetar comportamiento del disparo y los nodos (spwan)
+		//cambio de velocidad de disparo
+		//limpiar nodos al principio de spwan, para evitar la duplicidad y poder eliminar los nodos viejos
+		//cambiar el spwan
 		
 	}
 }

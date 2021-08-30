@@ -22,10 +22,10 @@ namespace Laugh.IA.FSM.Demon
 		private ChangePattern changePattern;
 
 		private int counState = 0;
-
-		//por el momento un timer que evita que salga 
-		private Timer timerChangeState = new Timer();
-
+		
+		//factor speedUp
+		[Export] private float factorSpeedUp;
+		
 		public override void _Ready()
 		{
 			base._Ready();
@@ -35,7 +35,7 @@ namespace Laugh.IA.FSM.Demon
 			lifeBase = GetNode<LifeBase>(lifePath);
 			moveAttack = new MoveAttack(canMoveBase);
 			shootAttack = new ShootAttack(canShootBase);
-			changePattern = new ChangePattern(canShootBase);
+			changePattern = new ChangePattern(canShootBase, factorSpeedUp);
 			changePattern.OnEnter();
 		}
 

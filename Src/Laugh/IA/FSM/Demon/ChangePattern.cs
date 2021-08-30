@@ -1,3 +1,4 @@
+using Godot;
 using Laugh.Shoots;
 
 namespace Laugh.IA.FSM.Demon
@@ -6,10 +7,12 @@ namespace Laugh.IA.FSM.Demon
 	{
 
 		private CanShootDemon canShootDemon;
-
-		public ChangePattern(CanShootBase canShootDemon)
+		private float factorSpeerUp;
+		
+		public ChangePattern(CanShootBase canShootDemon, float factorSpeerUp)
 		{
 			this.canShootDemon = (CanShootDemon) canShootDemon;
+			this.factorSpeerUp = factorSpeerUp;
 		}
 
 		public override void OnEnter()

@@ -15,5 +15,6 @@ namespace Laugh.Shoots
 		{
 			Position += Transform.x * SpeedBullet * delta;
 		}
+		
 	}
 }
