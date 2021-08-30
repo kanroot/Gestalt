@@ -39,7 +39,7 @@ namespace Laugh.IA.FSM.Demon
 
 		public override void ChangeStateOnEnter(KinematicBody2D player)
 		{
-			//changePattern.ChangePatterns();
+			changePattern.ChangePatterns();
 			//canShootBase.Canfire = false;
 			// changePattern.OnExit();
 			// moveAttack.OnEnter();

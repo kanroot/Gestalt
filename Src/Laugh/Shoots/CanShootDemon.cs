@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Godot;
 
 namespace Laugh.Shoots
@@ -23,14 +24,16 @@ namespace Laugh.Shoots
 			RotaryNode2D();
 		}
 
-		public override void CallerPosition()
+		public override void AddNodeSpawnBullet()
 		{
 			CreatePosition();
 			ModifyPosition2d();
+			Canfire = true;
 		}
 
 		private void CreatePosition()
 		{
+			ListPosition2d = new List<Node2D>();
 			for (var i = 0; i < CountDivisionCircle; i++)
 			{
 				var position2d = (Node2D)RotatePosition2d.Instance();
@@ -74,6 +77,7 @@ namespace Laugh.Shoots
 
 		public void KillNodes()
 		{
+			Canfire = false;
 			foreach (Node n in Entity.GetChildren())
 				try
 				{

@@ -37,9 +37,9 @@ script = ExtResource( 7 )
 BulletScene = ExtResource( 8 )
 TimerPath = NodePath("../TimerCanShoot")
 RotatePosition2d = ExtResource( 9 )
+CountDivisionCircle = 10
 DegreesRotate = 1
 SpeedBullet = 6000.0
-countDivisionCircle = 10
 
 [node name="Life" parent="." index="6"]
 script = ExtResource( 5 )

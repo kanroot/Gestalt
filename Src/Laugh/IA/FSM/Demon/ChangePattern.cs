@@ -27,9 +27,10 @@ namespace Laugh.IA.FSM.Demon
 
 		public void ChangePatterns()
 		{
+			canShootDemon.CanRotateNode = false;
 			canShootDemon.KillNodes();
-			//si llama los metodos
-			canShootDemon.CallerPosition();
+			canShootDemon.CountDivisionCircle = 20;
+			canShootDemon.AddNodeSpawnBullet();
 		}
 
 		public override bool ShouldTransition()
