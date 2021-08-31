@@ -4,5 +4,5 @@
 
 [node name="TextRotated" type="Node"]
 script = ExtResource( 1 )
-pathTextRotated = NodePath("../Text")
 degreesRotate = 1
+pathTextRotated = NodePath("../Text")

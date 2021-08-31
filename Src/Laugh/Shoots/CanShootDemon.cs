@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Godot;
+using Laugh.IA.FSM.Demon;
 
 namespace Laugh.Shoots
 {
@@ -13,10 +14,13 @@ namespace Laugh.Shoots
 		[Export] public float SpeedBullet { get; set; }
 		public bool CanRotateNode { get; set; }
 
+		public int DirectionToRotation { get; set; }
+
 		public override void _Ready()
 		{
 			base._Ready();
 			CanRotateNode = true;
+			DirectionToRotation = 1;
 		}
 
 		public override void _PhysicsProcess(float delta)
@@ -71,7 +75,7 @@ namespace Laugh.Shoots
 			foreach (var originNode2d in ListPosition2d)
 			{
 				var degreesToRadiant = Math.PI / 180 * DegreesRotate;
-				originNode2d.Rotate((float)degreesToRadiant);
+				originNode2d.Rotate((float)degreesToRadiant * DirectionToRotation);
 			}
 		}
 
@@ -81,6 +85,7 @@ namespace Laugh.Shoots
 			foreach (Node n in Entity.GetChildren())
 				try
 				{
+					if (n.GetChildCount() <= 0) continue;
 					if (n.GetChild<Position2D>(0) != null) n.QueueFree();
 				}
 				catch (InvalidCastException e)

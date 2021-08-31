@@ -6,7 +6,7 @@ namespace Laugh.IA.FSM.Demon
 	public class ChangePattern : StateBase
 	{
 		private readonly CanShootDemon canShootDemon;
-
+		
 		public ChangePattern(CanShootBase canShootDemon)
 		{
 			this.canShootDemon = (CanShootDemon)canShootDemon;
@@ -27,10 +27,24 @@ namespace Laugh.IA.FSM.Demon
 
 		public void ChangePatterns()
 		{
-			canShootDemon.CanRotateNode = false;
 			canShootDemon.KillNodes();
-			canShootDemon.CountDivisionCircle = 20;
+			PulsePattern();
 			canShootDemon.AddNodeSpawnBullet();
+		}
+
+		private void InvertRotary()
+		{
+			canShootDemon.DirectionToRotation *= -1;
+		}
+
+		private void PulsePattern()
+		{
+			canShootDemon.CountDivisionCircle = 20;
+		}
+
+		private void SpaceInvadersPattern()
+		{
+			canShootDemon.CountDivisionCircle = 4;
 		}
 
 		public override bool ShouldTransition()
