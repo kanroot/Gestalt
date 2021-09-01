@@ -13,7 +13,6 @@ namespace Laugh.Shoots
 		[Export] public int DegreesRotate { get; set; }
 		[Export] public float SpeedBullet { get; set; }
 		public bool CanRotateNode { get; set; }
-
 		public int DirectionToRotation { get; set; }
 
 		public override void _Ready()
@@ -32,7 +31,6 @@ namespace Laugh.Shoots
 		{
 			CreatePosition();
 			ModifyPosition2d();
-			Canfire = true;
 		}
 
 		private void CreatePosition()
@@ -55,7 +53,7 @@ namespace Laugh.Shoots
 
 		protected override void CreateBullet()
 		{
-			if (Canfire != true) return;
+			if (CanShoot != true) return;
 			foreach (var originNode2d in ListPosition2d) BulletInstance(originNode2d);
 		}
 
@@ -81,7 +79,7 @@ namespace Laugh.Shoots
 		
 		public void KillNodes()
 		{
-			Canfire = false;
+			CanShoot = false;
 			foreach (Node n in Entity.GetChildren())
 			{
 				if ( n.GetChildCount() > 0 && n.GetChild<Node>(0) is Position2D)

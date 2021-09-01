@@ -7,8 +7,7 @@ namespace Laugh.Movement
 		protected KinematicBody2D entity;
 
 		[Export] private NodePath entityPath;
-
-		[Export] protected int Speed = 200;
+		[Export] public int Speed { get; set; }
 
 		[Export] public bool CanMove { set; get; }
 		protected abstract void Movement(float delta);

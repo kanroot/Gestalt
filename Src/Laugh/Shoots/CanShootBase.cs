@@ -17,7 +17,7 @@ namespace Laugh.Shoots
 		protected Timer TimerCanShoot;
 		[Export] protected NodePath TimerPath;
 		[Export] protected float TimeWait = 0.5f;
-		[Export] public bool Canfire { get; set; }
+		[Export] public bool CanShoot { get; set; }
 
 		public override void _Ready()
 		{

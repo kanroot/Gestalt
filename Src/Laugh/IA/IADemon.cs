@@ -27,24 +27,20 @@ namespace Laugh.IA.FSM.Demon
 		public override void _Ready()
 		{
 			base._Ready();
-			//PROPIO DEL DEMON
 			canMoveBase = GetNode<CanMoveBase>(canMovePath);
 			canShootBase = GetNode<CanShootBase>(canShootPath);
 			lifeBase = GetNode<LifeBase>(lifePath);
 			moveAttack = new MoveAttack(canMoveBase);
 			shootAttack = new ShootAttack(canShootBase);
 			changePattern = new ChangePattern(canShootBase);
-			changePattern.OnEnter();
+			moveAttack.OnEnter();
 		}
 
 		public override void ChangeStateOnEnter(KinematicBody2D player)
 		{
-			changePattern.ChangePatterns();
-			//canShootBase.Canfire = false;
-			// changePattern.OnExit();
-			// moveAttack.OnEnter();
-			// CanGrow = false;
-			// OriginalForm();
+			moveAttack.OnExit();
+			changePattern.OnEnter();
+			OriginalForm();
 			// if (counState <= 1) return;
 			// moveAttack.OnExit();
 			// counState = 0;

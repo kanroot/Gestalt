@@ -17,12 +17,12 @@ namespace Laugh.IA.FSM.Demon
 
 		public override void OnEnter()
 		{
-			canShootBase.Canfire = true;
+			canShootBase.CanShoot = true;
 		}
 
 		public override void OnExit()
 		{
-			canShootBase.Canfire = false;
+			canShootBase.CanShoot = false;
 		}
 
 		public override bool ShouldTransition()

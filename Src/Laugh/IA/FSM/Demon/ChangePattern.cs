@@ -17,14 +17,14 @@ namespace Laugh.IA.FSM.Demon
 
 		public override void OnEnter()
 		{
-			canShootDemon.Canfire = true;
+			canShootDemon.CanShoot = true;
 			canShootDemon.CanRotateNode = true;
 		}
 
 		public override void OnExit()
 		{
 			//canShootDemon.DegreesRotate++;
-			canShootDemon.Canfire = false;
+			canShootDemon.CanShoot = false;
 			canShootDemon.CanRotateNode = true;
 		}
 

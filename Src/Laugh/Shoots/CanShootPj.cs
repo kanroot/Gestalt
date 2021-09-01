@@ -18,6 +18,7 @@ namespace Laugh.Shoots
 			Entity.Connect("mouse_entered", this, nameof(OnMousePlayer));
 			Entity.Connect("mouse_exited", this, nameof(OnMousePlayerExit));
 			BulletOrigin = GetNode<Position2D>(bulletPath);
+			CanShoot = true;
 		}
 
 		public override void _Process(float delta)
@@ -33,11 +34,11 @@ namespace Laugh.Shoots
 
 		protected override void CreateBullet()
 		{
-			if (!Canfire) return;
+			if (!CanShoot) return;
 			var bulletInstance = (Shoot)BulletScene.Instance();
 			bulletInstance.Position = BulletOrigin.GlobalPosition;
 			GetTree().Root.AddChild(bulletInstance);
-			Canfire = false;
+			CanShoot = false;
 			TimerCanShoot.Start();
 		}
 
@@ -49,7 +50,7 @@ namespace Laugh.Shoots
 		private void OnMousePlayerExit()
 		{
 			mouserOverPlayer = false;
-			Canfire = true;
+			CanShoot = true;
 		}
 
 		private void GetInputFire()
@@ -61,7 +62,7 @@ namespace Laugh.Shoots
 		protected void OnEndTime()
 		{
 			if (mouserOverPlayer) return;
-			Canfire = true;
+			CanShoot = true;
 		}
 	}
 }

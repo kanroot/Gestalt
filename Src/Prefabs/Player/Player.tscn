@@ -39,12 +39,12 @@ position = Vector2( 40.0258, 0 )
 
 [node name="Movement" parent="." index="7"]
 script = ExtResource( 2 )
+Speed = 200
 CanMove = true
 entityPath = NodePath("..")
 
 [node name="Shoots" parent="." index="8"]
 script = ExtResource( 5 )
-Canfire = true
 BulletScene = ExtResource( 6 )
 TimerPath = NodePath("../TimerCanShoot")
 bulletPath = NodePath("../Rotate/Position2D")

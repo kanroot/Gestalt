@@ -29,8 +29,8 @@ autostart = true
 
 [node name="Movement" parent="." index="4"]
 script = ExtResource( 6 )
-entityPath = NodePath("..")
 Speed = 400
+entityPath = NodePath("..")
 
 [node name="Shoots" parent="." index="5"]
 script = ExtResource( 7 )

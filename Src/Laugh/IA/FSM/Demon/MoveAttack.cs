@@ -22,6 +22,11 @@ namespace Laugh.IA.FSM.Demon
 			canMoveBase.CanMove = false;
 		}
 
+		private void SpeedUp()
+		{
+			canMoveBase.Speed *= 2;
+		}
+
 		public override bool ShouldTransition()
 		{
 			//implementar una señal cuando la vida sea inferior a cierto %
