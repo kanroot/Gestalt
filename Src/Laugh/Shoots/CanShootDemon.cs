@@ -84,8 +84,7 @@ namespace Laugh.Shoots
 			Canfire = false;
 			foreach (Node n in Entity.GetChildren())
 			{
-				if (n.GetChildCount() <= 0) continue;
-				if (n.GetChild<Node>(0) is Position2D)
+				if ( n.GetChildCount() > 0 && n.GetChild<Node>(0) is Position2D)
 				{
 					n.QueueFree();
 				}
