@@ -78,20 +78,18 @@ namespace Laugh.Shoots
 				originNode2d.Rotate((float)degreesToRadiant * DirectionToRotation);
 			}
 		}
-
+		
 		public void KillNodes()
 		{
 			Canfire = false;
 			foreach (Node n in Entity.GetChildren())
-				try
+			{
+				if (n.GetChildCount() <= 0) continue;
+				if (n.GetChild<Node>(0) is Position2D)
 				{
-					if (n.GetChildCount() <= 0) continue;
-					if (n.GetChild<Position2D>(0) != null) n.QueueFree();
+					n.QueueFree();
 				}
-				catch (InvalidCastException e)
-				{
-					//do nothing xd
-				}
+			}
 		}
 	}
 }

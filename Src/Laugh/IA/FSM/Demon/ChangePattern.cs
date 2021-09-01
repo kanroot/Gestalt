@@ -1,3 +1,4 @@
+using Godot;
 using Laugh.IA.FSM.State;
 using Laugh.Shoots;
 
@@ -6,10 +7,12 @@ namespace Laugh.IA.FSM.Demon
 	public class ChangePattern : StateBase
 	{
 		private readonly CanShootDemon canShootDemon;
-		
+		private float originalSpeedBullet;
+
 		public ChangePattern(CanShootBase canShootDemon)
 		{
 			this.canShootDemon = (CanShootDemon)canShootDemon;
+			originalSpeedBullet = this.canShootDemon.SpeedBullet;
 		}
 
 		public override void OnEnter()
@@ -28,7 +31,7 @@ namespace Laugh.IA.FSM.Demon
 		public void ChangePatterns()
 		{
 			canShootDemon.KillNodes();
-			PulsePattern();
+			SpaceInvadersPattern();
 			canShootDemon.AddNodeSpawnBullet();
 		}
 
@@ -44,7 +47,9 @@ namespace Laugh.IA.FSM.Demon
 
 		private void SpaceInvadersPattern()
 		{
+			canShootDemon.SpeedBullet *= 2;
 			canShootDemon.CountDivisionCircle = 4;
+			canShootDemon.DegreesRotate = 2;
 		}
 
 		public override bool ShouldTransition()
