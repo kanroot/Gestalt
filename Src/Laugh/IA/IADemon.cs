@@ -16,10 +16,12 @@ namespace Laugh.IA
 		private LifeBase lifeBase;
 		[Export] private NodePath lifePath;
 		private ShootAttack shootAttack;
-		
+		private MoveToPlayer moveToPlayer;
 
-		//movements 
-		[Export()]private NodePath movementPath;
+		public override void _Process(float delta)
+		{
+			moveToPlayer.MoveTo(delta);
+		}
 
 		public override void _Ready()
 		{
@@ -28,11 +30,12 @@ namespace Laugh.IA
 			lifeBase = GetNode<LifeBase>(lifePath);
 			shootAttack = new ShootAttack(canShootBase);
 			changePattern = new ChangePattern(canShootBase);
-			
+			moveToPlayer = new MoveToPlayer(entity, false, 200);
 		}
 
 		public override void ChangeStateOnEnter(KinematicBody2D player)
 		{
+			moveToPlayer.UpdatePositionPlayer(player);
 			ResetShapeSize();
 		}
 

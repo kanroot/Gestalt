@@ -4,22 +4,17 @@ namespace Laugh.Movement.Demon
 {
 	public class Bounce : CanMoveBase
 	{
-		[Export] private Vector2 directionDemon = new Vector2(1, 0);
+		private Vector2 directionDemon = new Vector2(1, 0);
 		
-		
-		public override void _Process(float delta)
-		{
-			MoveTo(delta);
-		}
-
-		protected override void MoveTo(float delta)
+		public override void MoveTo(float delta)
 		{
 			if (CanMove != true) return;
-			var collision = entity.MoveAndCollide(directionDemon * Speed * delta);
+			var collision = Entity.MoveAndCollide(directionDemon * Speed * delta);
 			if (collision != null) directionDemon = directionDemon.Bounce(collision.Normal);
 		}
-
 		
-			
+		public Bounce(KinematicBody2D entity, bool canMove, float speed) : base(entity, canMove, speed)
+		{
+		}
 	}
 }
