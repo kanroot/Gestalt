@@ -48,7 +48,7 @@ namespace Laugh.IA
 			if (CanGrow) collisionShape2D.Scale *= scalesShape2D;
 		}
 
-		protected void OriginalForm()
+		protected void ResetShapeSize()
 		{
 			collisionShape2D.Scale = originalShape;
 		}

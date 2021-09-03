@@ -8,6 +8,8 @@ namespace Laugh.IA.FSM.Demon
 		private readonly CanShootDemon canShootDemon;
 		private float originalSpeedBullet;
 
+		//cada patron de disparo que sea una clase independiente y change pattern tenga referencias a ellas
+		//changePatter decide cual seleccionar
 		public ChangePattern(CanShootBase canShootDemon)
 		{
 			this.canShootDemon = (CanShootDemon)canShootDemon;
@@ -16,6 +18,7 @@ namespace Laugh.IA.FSM.Demon
 
 		public override void OnEnter()
 		{
+			canShootDemon.KillNodes();
 			canShootDemon.CanShoot = true;
 			canShootDemon.CanRotateNode = true;
 		}

@@ -31,7 +31,7 @@ namespace Laugh.IA.FSM.Demon
 
 		public void AttackPlayer(Node2D player)
 		{
-			canMoveDemon.ChangePatternMove = true;
+			canMoveDemon.CanChangeMovement = true;
 			canMoveDemon.UpdatePositionPlayer(player);
 		}
 

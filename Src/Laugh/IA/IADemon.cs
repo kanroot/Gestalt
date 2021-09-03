@@ -38,11 +38,8 @@ namespace Laugh.IA
 		public override void ChangeStateOnEnter(KinematicBody2D player)
 		{
 			changePattern.OnExit();
-			OriginalForm();
 			moveAttack.AttackPlayer(player);
-			// if (counState <= 1) return;
-			// moveAttack.OnExit();
-			// counState = 0;
+			ResetShapeSize();
 		}
 
 		public override void ChangeStateOnExit(KinematicBody2D player)
