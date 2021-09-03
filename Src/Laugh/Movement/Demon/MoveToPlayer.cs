@@ -4,6 +4,7 @@ namespace Laugh.Movement.Demon
 {
 	public class MoveToPlayer : CanMoveBase
 	{
+		
 		private Vector2 positionPlayer;
 
 		public override void _Process(float delta)

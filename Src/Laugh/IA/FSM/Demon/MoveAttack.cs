@@ -9,13 +9,11 @@ namespace Laugh.IA.FSM.Demon
 		private Bounce bounce;
 		private KinematicBody2D entity;
 		[Export()] private NodePath entityPath;
-		private MoveToPlayer moveToPlayer;
 
 		public override void _Ready()
 		{
-			entity = GetNode<KinematicBody2D>(entityPath);
-			bounce = new Bounce();
-			moveToPlayer = new MoveToPlayer();
+			
+
 		}
 
 		public override void OnEnter()
@@ -31,14 +29,7 @@ namespace Laugh.IA.FSM.Demon
 		public override void OnExit()
 		{
 		}
-
-
-		public void AttackPlayer(Node2D player)
-		{
-			moveToPlayer.CanMove = true;
-			moveToPlayer.UpdatePositionPlayer(player);
-		}
-
+		
 		public override bool ShouldTransition()
 		{
 			//implementar una señal cuando la vida sea inferior a cierto %
