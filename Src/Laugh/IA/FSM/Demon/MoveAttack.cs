@@ -1,3 +1,4 @@
+using Godot;
 using Laugh.IA.FSM.State;
 using Laugh.Movement;
 
@@ -5,26 +6,33 @@ namespace Laugh.IA.FSM.Demon
 {
 	public class MoveAttack : StateBase
 	{
-		private readonly CanMoveBase canMoveBase;
+		private readonly CanMoveDemon canMoveDemon;
 
-		public MoveAttack(CanMoveBase canMoveBase)
+		public MoveAttack(CanMoveDemon canMoveDemon)
 		{
-			this.canMoveBase = canMoveBase;
+			this.canMoveDemon = canMoveDemon;
 		}
 
 		public override void OnEnter()
 		{
-			canMoveBase.CanMove = true;
+			canMoveDemon.CanMove = true;
 		}
 
 		public override void OnExit()
 		{
-			canMoveBase.CanMove = false;
+			canMoveDemon.CanMove = false;
 		}
 
 		private void SpeedUp()
 		{
-			canMoveBase.Speed *= 2;
+			canMoveDemon.Speed *= 2;
+		}
+
+
+		public void AttackPlayer(Node2D player)
+		{
+			canMoveDemon.ChangePatternMove = true;
+			canMoveDemon.UpdatePositionPlayer(player);
 		}
 
 		public override bool ShouldTransition()

@@ -1,5 +1,3 @@
-using Laugh.Life;
-
 namespace Laugh.IA.FSM.State
 {
 	public abstract class StateBase
@@ -7,6 +5,5 @@ namespace Laugh.IA.FSM.State
 		public abstract void OnEnter();
 		public abstract void OnExit();
 		public abstract bool ShouldTransition();
-		
 	}
 }

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Godot;
-using Laugh.IA.FSM.Demon;
 
 namespace Laugh.Shoots
 {
@@ -76,17 +75,13 @@ namespace Laugh.Shoots
 				originNode2d.Rotate((float)degreesToRadiant * DirectionToRotation);
 			}
 		}
-		
+
 		public void KillNodes()
 		{
 			CanShoot = false;
 			foreach (Node n in Entity.GetChildren())
-			{
-				if ( n.GetChildCount() > 0 && n.GetChild<Node>(0) is Position2D)
-				{
+				if (n.GetChildCount() > 0 && n.GetChild<Node>(0) is Position2D)
 					n.QueueFree();
-				}
-			}
 		}
 	}
 }

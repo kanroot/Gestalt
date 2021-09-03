@@ -1,21 +1,20 @@
 using Godot;
+using Laugh.IA.FSM.Demon;
 using Laugh.Life;
 using Laugh.Movement;
 using Laugh.Shoots;
 
-namespace Laugh.IA.FSM.Demon
+namespace Laugh.IA
 {
 	public class IADemon : IABase
 	{
-		private CanMoveBase canMoveBase;
+		private CanMoveDemon canMoveDemon;
 
 		//aceso a los otros sistemas
 		[Export] private NodePath canMovePath;
 		private CanShootBase canShootBase;
 		[Export] private NodePath canShootPath;
 		private ChangePattern changePattern;
-
-		private int counState;
 
 		//factor speedUp
 		private LifeBase lifeBase;
@@ -27,20 +26,20 @@ namespace Laugh.IA.FSM.Demon
 		public override void _Ready()
 		{
 			base._Ready();
-			canMoveBase = GetNode<CanMoveBase>(canMovePath);
+			canMoveDemon = GetNode<CanMoveDemon>(canMovePath);
 			canShootBase = GetNode<CanShootBase>(canShootPath);
 			lifeBase = GetNode<LifeBase>(lifePath);
-			moveAttack = new MoveAttack(canMoveBase);
+			moveAttack = new MoveAttack(canMoveDemon);
 			shootAttack = new ShootAttack(canShootBase);
 			changePattern = new ChangePattern(canShootBase);
-			moveAttack.OnEnter();
+			changePattern.OnEnter();
 		}
 
 		public override void ChangeStateOnEnter(KinematicBody2D player)
 		{
-			moveAttack.OnExit();
-			changePattern.OnEnter();
+			changePattern.OnExit();
 			OriginalForm();
+			moveAttack.AttackPlayer(player);
 			// if (counState <= 1) return;
 			// moveAttack.OnExit();
 			// counState = 0;

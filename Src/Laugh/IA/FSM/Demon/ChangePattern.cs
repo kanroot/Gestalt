@@ -1,4 +1,3 @@
-using Godot;
 using Laugh.IA.FSM.State;
 using Laugh.Shoots;
 
