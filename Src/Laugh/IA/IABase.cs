@@ -5,7 +5,7 @@ namespace Laugh.IA
 	public abstract class IABase : Node
 	{
 		private CollisionShape2D collisionShape2D;
-		private KinematicBody2D entity;
+		protected KinematicBody2D entity;
 		[Export] private NodePath entityPath;
 		private Vector2 originalShape;
 

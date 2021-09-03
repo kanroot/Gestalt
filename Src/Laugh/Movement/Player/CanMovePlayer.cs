@@ -2,9 +2,19 @@ using Godot;
 
 namespace Laugh.Movement
 {
-	public class CanMovePlayer : CanMoveBase
+	public class CanMovePlayer : Node
 	{
-		protected override void Movement(float delta)
+		[Export] private NodePath entityPath;
+		private KinematicBody2D entity;
+		[Export] public bool CanMove { set; get; } = true;
+		[Export] public int Speed { get; set; }
+
+		public override void _Ready()
+		{
+			entity = GetNode<KinematicBody2D>(entityPath);
+		}
+
+		public override void _Process(float delta)
 		{
 			if (CanMove != true) return;
 			entity.MoveAndSlide(GetInputMovement());
@@ -28,5 +38,7 @@ namespace Laugh.Movement
 
 			return directionPlayerVector * Speed;
 		}
+
+	
 	}
 }

@@ -5,7 +5,7 @@
 [ext_resource path="res://Src/Prefabs/BaseEntity/EntityEnemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Src/Debug/Overlay.cs" type="Script" id=4]
 [ext_resource path="res://Src/Laugh/Life/LifeBase.cs" type="Script" id=5]
-[ext_resource path="res://Src/Laugh/Movement/CanMoveDemon.cs" type="Script" id=6]
+[ext_resource path="res://Src/Laugh/Movement/Demon/MoveToPlayer.cs" type="Script" id=6]
 [ext_resource path="res://Src/Laugh/Shoots/CanShootDemon.cs" type="Script" id=7]
 [ext_resource path="res://Src/Prefabs/Shoots/ShootEnemy.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Src/Resources/BulletSpawn/RotatePosition2d.tscn" type="PackedScene" id=9]
@@ -30,7 +30,8 @@ autostart = true
 
 [node name="Movement" parent="." index="4"]
 script = ExtResource( 6 )
-Speed = 400
+Speed = 200
+CanMove = true
 entityPath = NodePath("..")
 
 [node name="Shoots" parent="." index="5"]
@@ -52,9 +53,9 @@ script = ExtResource( 12 )
 entityPath = NodePath("..")
 packedSceneRadius = ExtResource( 11 )
 scalesShape2D = 1.2
-canMovePath = NodePath("../Movement")
 canShootPath = NodePath("../Shoots")
 lifePath = NodePath("../Life")
+movementPath = NodePath("../Movement")
 
 [node name="TextRotated" parent="." index="8" instance=ExtResource( 10 )]
 
@@ -67,11 +68,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 actualPath = NodePath("VBoxContainer/Posición actual")
-destinoPath = NodePath("VBoxContainer/Posición destino")
-distanciaPath = NodePath("VBoxContainer/Distancia")
+canMovePath = NodePath("../Movement")
 CuentaSpwan = NodePath("VBoxContainer/N° de spwans")
 entityPath = NodePath("..")
-canMovePath = NodePath("../Movement")
 shootPath = NodePath("../Shoots")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Overlay" index="0"]

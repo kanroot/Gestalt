@@ -1,38 +1,42 @@
 using Godot;
 using Laugh.IA.FSM.State;
-using Laugh.Movement;
+using Laugh.Movement.Demon;
 
 namespace Laugh.IA.FSM.Demon
 {
 	public class MoveAttack : StateBase
 	{
-		private readonly CanMoveDemon canMoveDemon;
+		private Bounce bounce;
+		private KinematicBody2D entity;
+		[Export()] private NodePath entityPath;
+		private MoveToPlayer moveToPlayer;
 
-		public MoveAttack(CanMoveDemon canMoveDemon)
+		public override void _Ready()
 		{
-			this.canMoveDemon = canMoveDemon;
+			entity = GetNode<KinematicBody2D>(entityPath);
+			bounce = new Bounce();
+			moveToPlayer = new MoveToPlayer();
 		}
 
 		public override void OnEnter()
 		{
-			canMoveDemon.CanMove = true;
+			
+		}
+
+		public override void _Process(float delta)
+		{
+			
 		}
 
 		public override void OnExit()
 		{
-			canMoveDemon.CanMove = false;
-		}
-
-		private void SpeedUp()
-		{
-			canMoveDemon.Speed *= 2;
 		}
 
 
 		public void AttackPlayer(Node2D player)
 		{
-			canMoveDemon.CanChangeMovement = true;
-			canMoveDemon.UpdatePositionPlayer(player);
+			moveToPlayer.CanMove = true;
+			moveToPlayer.UpdatePositionPlayer(player);
 		}
 
 		public override bool ShouldTransition()

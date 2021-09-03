@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Img/Laught/LaughtMan_letters.svg" type="Texture" id=1]
-[ext_resource path="res://Src/Laugh/Movement/CanMovePlayer.cs" type="Script" id=2]
+[ext_resource path="res://Src/Laugh/Movement/Player/CanMovePlayer.cs" type="Script" id=2]
 [ext_resource path="res://Src/Prefabs/BaseEntity/EntidadBase.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Src/Resources/Player/PlayerLineOutside.tres" type="SpriteFrames" id=4]
 [ext_resource path="res://Src/Laugh/Shoots/CanShootPj.cs" type="Script" id=5]
@@ -40,7 +40,6 @@ position = Vector2( 40.0258, 0 )
 [node name="Movement" parent="." index="7"]
 script = ExtResource( 2 )
 Speed = 200
-CanMove = true
 entityPath = NodePath("..")
 
 [node name="Shoots" parent="." index="8"]
