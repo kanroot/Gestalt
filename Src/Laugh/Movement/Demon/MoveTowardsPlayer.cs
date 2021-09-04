@@ -6,12 +6,7 @@ namespace Laugh.Movement.Demon
 	{
 		private Vector2 positionPlayer;
 
-		public override void _Process(float delta)
-		{
-			MoveTo(delta);
-		}
-
-		public override void MoveTo(float delta)
+		protected override void PerformMovement(float delta)
 		{
 			if (CanMove != true) return;
 			if (Entity.GlobalPosition.Round().DistanceTo(positionPlayer.Round()) < 8) return;

@@ -10,6 +10,7 @@ namespace Laugh.IA
 	{
 		private CanShootBase canShootBase;
 		[Export] private NodePath canShootPath;
+
 		private ChangePattern changePattern;
 
 		//factor speedUp
@@ -18,7 +19,7 @@ namespace Laugh.IA
 		private ShootAttack shootAttack;
 		private MovementAttack movementAttack;
 		[Export] private NodePath movementAttackPath;
-		
+
 
 		public override void _Ready()
 		{
@@ -29,7 +30,7 @@ namespace Laugh.IA
 			changePattern = new ChangePattern(canShootBase);
 			movementAttack = GetNode<MovementAttack>(movementAttackPath);
 		}
-		
+
 		public override void ChangeStateOnEnter(KinematicBody2D player)
 		{
 			movementAttack.PositionPlayer = player;

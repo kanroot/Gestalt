@@ -6,6 +6,9 @@ namespace Laugh.Debug
 	public class Overlay : Control
 	{
 		private Label actual;
+		//estado actual
+		//movimiento
+		//disparos
 
 		[Export] private NodePath actualPath;
 		[Export] private NodePath canMovePath;

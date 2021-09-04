@@ -14,8 +14,13 @@ namespace Laugh.Movement
 			this.CanMove = canMove;
 			this.Speed = speed;
 		}
+		
+		public override void _Process(float delta)
+		{
+			PerformMovement(delta);	
+		}
 
-		public abstract void MoveTo(float delta);
+		protected abstract void PerformMovement(float delta);
 
 		public void SpeedChange(float multiplier)
 		{
