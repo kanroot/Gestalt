@@ -11,8 +11,7 @@ namespace Laugh.Debug
 		[Export] private NodePath canMovePath;
 		private CanShootDemon canShootDemon;
 		private Label cuentaSpawn;
-		[Export] private NodePath CuentaSpwan;
-		private Label destino;
+		[Export] private NodePath cuentaSpwan;
 		private KinematicBody2D entity;
 		[Export] private NodePath entityPath;
 		[Export] private NodePath shootPath;
@@ -22,7 +21,7 @@ namespace Laugh.Debug
 			entity = GetNode<KinematicBody2D>(entityPath);
 			actual = GetNode<Label>(actualPath);
 			canShootDemon = GetNode<CanShootDemon>(shootPath);
-			cuentaSpawn = GetNode<Label>(CuentaSpwan);
+			cuentaSpawn = GetNode<Label>(cuentaSpwan);
 		}
 
 		public override void _Process(float delta)

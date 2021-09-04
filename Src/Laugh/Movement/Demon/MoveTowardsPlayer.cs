@@ -2,10 +2,15 @@ using Godot;
 
 namespace Laugh.Movement.Demon
 {
-	public class MoveToPlayer : CanMoveBase
+	public class MoveTowardsPlayer : CanMoveBase
 	{
 		private Vector2 positionPlayer;
-		
+
+		public override void _Process(float delta)
+		{
+			MoveTo(delta);
+		}
+
 		public override void MoveTo(float delta)
 		{
 			if (CanMove != true) return;
@@ -14,13 +19,13 @@ namespace Laugh.Movement.Demon
 			Entity.MoveAndCollide(dir * Speed * delta);
 		}
 
-		public void UpdatePositionPlayer(Node2D player)
+		public void UpdatePositionPlayer(KinematicBody2D player)
 		{
 			CanMove = true;
 			positionPlayer = player.GlobalPosition;
 		}
 
-		public MoveToPlayer(KinematicBody2D entity, bool canMove, float speed) : base(entity, canMove, speed)
+		public MoveTowardsPlayer(KinematicBody2D entity, bool canMove, float speed) : base(entity, canMove, speed)
 		{
 		}
 	}

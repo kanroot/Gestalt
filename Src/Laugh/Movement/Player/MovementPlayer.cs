@@ -1,8 +1,8 @@
 using Godot;
 
-namespace Laugh.Movement
+namespace Laugh.Movement.Player
 {
-	public class CanMovePlayer : Node
+	public class MovementPlayer : Node
 	{
 		[Export] private NodePath entityPath;
 		private KinematicBody2D entity;

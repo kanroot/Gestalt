@@ -2,10 +2,15 @@ using Godot;
 
 namespace Laugh.Movement.Demon
 {
-	public class Bounce : CanMoveBase
+	public class BounceMovement : CanMoveBase
 	{
 		private Vector2 directionDemon = new Vector2(1, 0);
 		
+		public override void _Process(float delta)
+		{
+			MoveTo(delta);	
+		}
+
 		public override void MoveTo(float delta)
 		{
 			if (CanMove != true) return;
@@ -13,7 +18,7 @@ namespace Laugh.Movement.Demon
 			if (collision != null) directionDemon = directionDemon.Bounce(collision.Normal);
 		}
 		
-		public Bounce(KinematicBody2D entity, bool canMove, float speed) : base(entity, canMove, speed)
+		public BounceMovement(KinematicBody2D entity, bool canMove, float speed) : base(entity, canMove, speed)
 		{
 		}
 	}
