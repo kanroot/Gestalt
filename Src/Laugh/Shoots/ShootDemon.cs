@@ -1,5 +1,3 @@
-using Godot;
-
 namespace Laugh.Shoots
 {
 	public class ShootDemon : Shoot

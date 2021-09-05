@@ -4,20 +4,20 @@ namespace Laugh.Shoots
 {
 	public abstract class CanShootBase : Node
 	{
-		//CUERPO
-		protected KinematicBody2D Entity;
+		//PUNTO DE ORIGEN DE LA BALA
+		protected Position2D BulletOrigin;
 
 		//todos aquellos que puedan disparar por obligacion deben hacer referencia a una Scena de Bala
 		[Export] protected PackedScene BulletScene;
 
-		//PUNTO DE ORIGEN DE LA BALA
-		protected Position2D BulletOrigin;
+		//CUERPO
+		protected KinematicBody2D Entity;
 
 		//CONTROLADORES DEL TIMER DEL DISPARO
 		protected Timer TimerCanShoot;
-		[Export] public bool Canfire { get; set; }
 		[Export] protected NodePath TimerPath;
 		[Export] protected float TimeWait = 0.5f;
+		[Export] public bool CanShoot { get; set; }
 
 		public override void _Ready()
 		{
