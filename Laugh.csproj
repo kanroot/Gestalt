@@ -4,11 +4,12 @@
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="GDMechanic" Version="1.0.0-alpha4" />
+        <PackageReference Include="GDMechanic" Version="1.0.0-alpha4"/>
     </ItemGroup>
     <ItemGroup>
-        <Folder Include="Src\Laugh\Movement\Player" />
-        <Folder Include="Src\Laugh\Text" />
-        <Folder Include="Src\Prefabs" />
+        <Folder Include="Src\Laugh\Movement\Player"/>
+        <Folder Include="Src\Laugh\Shoots\CanShoots"/>
+        <Folder Include="Src\Laugh\Text"/>
+        <Folder Include="Src\Prefabs"/>
     </ItemGroup>
 </Project>

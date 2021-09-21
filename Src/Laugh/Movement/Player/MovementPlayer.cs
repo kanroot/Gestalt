@@ -4,8 +4,8 @@ namespace Laugh.Movement.Player
 {
 	public class MovementPlayer : Node
 	{
-		[Export] private NodePath entityPath;
 		private KinematicBody2D entity;
+		[Export] private NodePath entityPath;
 		[Export] public bool CanMove { set; get; } = true;
 		[Export] public int Speed { get; set; }
 
@@ -38,7 +38,5 @@ namespace Laugh.Movement.Player
 
 			return directionPlayerVector * Speed;
 		}
-
-	
 	}
 }

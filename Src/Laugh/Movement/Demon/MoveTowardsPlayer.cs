@@ -6,6 +6,10 @@ namespace Laugh.Movement.Demon
 	{
 		private Vector2 positionPlayer;
 
+		public MoveTowardsPlayer(KinematicBody2D entity, bool canMove, float speed) : base(entity, canMove, speed)
+		{
+		}
+
 		protected override void PerformMovement(float delta)
 		{
 			if (CanMove != true) return;
@@ -18,10 +22,6 @@ namespace Laugh.Movement.Demon
 		{
 			CanMove = true;
 			positionPlayer = player.GlobalPosition;
-		}
-
-		public MoveTowardsPlayer(KinematicBody2D entity, bool canMove, float speed) : base(entity, canMove, speed)
-		{
 		}
 	}
 }

@@ -1,7 +1,6 @@
 using Godot;
 using Laugh.IA.FSM.Demon;
 using Laugh.Life;
-using Laugh.Movement.Demon;
 using Laugh.Shoots;
 
 namespace Laugh.IA
@@ -16,9 +15,9 @@ namespace Laugh.IA
 		//factor speedUp
 		private LifeBase lifeBase;
 		[Export] private NodePath lifePath;
-		private ShootAttack shootAttack;
 		private MovementAttack movementAttack;
 		[Export] private NodePath movementAttackPath;
+		private ShootAttack shootAttack;
 
 
 		public override void _Ready()

@@ -12,7 +12,7 @@ namespace Laugh.Debug
 
 		[Export] private NodePath actualPath;
 		[Export] private NodePath canMovePath;
-		private CanShootDemon canShootDemon;
+		private CanShootCircularEnemy canShootDemon;
 		private Label cuentaSpawn;
 		[Export] private NodePath cuentaSpwan;
 		private KinematicBody2D entity;
@@ -23,7 +23,7 @@ namespace Laugh.Debug
 		{
 			entity = GetNode<KinematicBody2D>(entityPath);
 			actual = GetNode<Label>(actualPath);
-			canShootDemon = GetNode<CanShootDemon>(shootPath);
+			canShootDemon = GetNode<CanShootCircularEnemy>(shootPath);
 			cuentaSpawn = GetNode<Label>(cuentaSpwan);
 		}
 
