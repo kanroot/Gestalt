@@ -4,7 +4,7 @@ using Laugh.Shoots.CanShoots;
 
 namespace Laugh.IA.FSM.PatternOfShoots
 {
-	public abstract class PatternBase : Node
+	public class PatternBase : Node
 	{
 		private readonly int CountOfNodeSpawns;
 		private readonly float factor;
@@ -18,6 +18,7 @@ namespace Laugh.IA.FSM.PatternOfShoots
 			CanShootCircularEnemy.KillNodes();
 			AssignCountOfSpawns();
 			SpeedUpOrDown();
+			CanShootCircularEnemy.AddNodeSpawnBullet();
 		}
 
 		private void AssignCountOfSpawns()
@@ -25,7 +26,7 @@ namespace Laugh.IA.FSM.PatternOfShoots
 			CanShootCircularEnemy.CountDivisionCircle = CountOfNodeSpawns;
 		}
 
-		private void SpeedUpOrDown()
+		protected void SpeedUpOrDown()
 		{
 			CanShootCircularEnemy.SpeedBullet *= factor;
 		}

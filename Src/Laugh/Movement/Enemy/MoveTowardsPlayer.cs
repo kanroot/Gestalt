@@ -23,5 +23,7 @@ namespace Laugh.Movement.Enemy
 			CanMove = true;
 			positionPlayer = player.GlobalPosition;
 		}
+		
+
 	}
 }

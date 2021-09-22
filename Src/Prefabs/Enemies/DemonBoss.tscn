@@ -49,7 +49,6 @@ packedSceneRadius = ExtResource( 11 )
 scalesShape2D = 1.2
 canShootPath = NodePath("../Shoots")
 lifePath = NodePath("../Life")
-movementAttackPath = NodePath("../Movement")
 
 [node name="TextRotated" parent="." index="8" instance=ExtResource( 10 )]
 

@@ -8,7 +8,7 @@ namespace Laugh.Movement
 		protected KinematicBody2D Entity;
 		protected float Speed;
 
-		public CanMoveBase(KinematicBody2D entity, bool canMove, float speed)
+		protected CanMoveBase(KinematicBody2D entity, bool canMove, float speed)
 		{
 			Entity = entity;
 			CanMove = canMove;
