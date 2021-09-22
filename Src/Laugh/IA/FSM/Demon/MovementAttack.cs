@@ -10,7 +10,7 @@ namespace Laugh.IA.FSM.Demon
 		private KinematicBody2D entity;
 		[Export] private NodePath entityPath;
 		private MoveTowardsPlayer moveTowardsPlayer;
-		[Export] public bool CanMove { get; set; }
+		[Export] public bool CanMove { get; set;}
 		[Export] private float Speed { get; set; }
 
 		public KinematicBody2D PositionPlayer { set; get; } = new KinematicBody2D();

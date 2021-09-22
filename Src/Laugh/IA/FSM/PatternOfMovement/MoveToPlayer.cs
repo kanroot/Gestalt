@@ -4,44 +4,30 @@ using Laugh.Movement.Enemy;
 
 namespace Laugh.IA.FSM.PatternOfMovement
 {
-	public class MoveToPlayer : StateBase
+	public class MoveToPlayer : PatternBase
 	{
-		private BounceMovement bounceMovement;
-		private KinematicBody2D entity;
-		[Export] private NodePath entityPath;
 		private MoveTowardsPlayer moveTowardsPlayer;
-		[Export] public bool CanMove { get; set; }
-		[Export] private float Speed { get; set; }
-		
+		private bool canMove;
+		private float speed;
 		public KinematicBody2D PositionPlayer { set; get; } = new KinematicBody2D();
 		
-		public override void _Ready()
+		public MoveToPlayer(KinematicBody2D entity, bool canMove, float speed) : base(entity)
 		{
-			entity = GetNode<KinematicBody2D>(entityPath);
-			bounceMovement = new BounceMovement(entity, CanMove, Speed);
-			moveTowardsPlayer = new MoveTowardsPlayer(entity, CanMove, Speed);
-			entity.Connect("ready", this, nameof(CallMovements));
+			this.canMove = canMove; 
+			this.speed = speed;
+			entity.Connect("ready", this, nameof(AddChild));
+			moveTowardsPlayer = new MoveTowardsPlayer(entity, canMove, speed);
+		}
+		public void CallMovement()
+		{
+			moveTowardsPlayer.UpdatePositionPlayer(PositionPlayer);
 		}
 		
-		public override void OnEnter()
+		private void AddChild()
 		{
-			throw new System.NotImplementedException();
-		}
-
-		public override void OnExit()
-		{
-			throw new System.NotImplementedException();
-		}
-
-		public override bool ShouldTransition()
-		{
-			throw new System.NotImplementedException();
-		}
-		private void CallMovements()
-		{
-			entity.AddChild(bounceMovement);
 			entity.AddChild(moveTowardsPlayer);
 		}
-		
+
+
 	}
 }

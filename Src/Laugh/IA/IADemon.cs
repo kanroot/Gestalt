@@ -1,5 +1,6 @@
 using Godot;
 using Laugh.IA.FSM.Demon;
+using Laugh.IA.FSM.PatternOfMovement;
 using Laugh.Life;
 using Laugh.Shoots.CanShoots;
 
@@ -15,10 +16,10 @@ namespace Laugh.IA
 		//factor speedUp
 		private LifeBase lifeBase;
 		[Export] private NodePath lifePath;
-		private MovementAttack movementAttack;
 		[Export] private NodePath movementAttackPath;
 		private ShootAttack shootAttack;
 
+		private MoveToPlayer moveToPlayer;
 
 		public override void _Ready()
 		{
@@ -27,13 +28,13 @@ namespace Laugh.IA
 			lifeBase = GetNode<LifeBase>(lifePath);
 			shootAttack = new ShootAttack(canShootBase);
 			changePattern = new ChangePattern(canShootBase);
-			movementAttack = GetNode<MovementAttack>(movementAttackPath);
+			moveToPlayer = new MoveToPlayer(entity, true, 300);
 		}
 
 		public override void ChangeStateOnEnter(KinematicBody2D player)
 		{
-			movementAttack.PositionPlayer = player;
-			movementAttack.OnEnter();
+			moveToPlayer.PositionPlayer = player;
+			moveToPlayer.CallMovement();
 			ResetShapeSize();
 		}
 
