@@ -1,5 +1,6 @@
 using Godot;
 using Laugh.Shoots;
+using Laugh.Shoots.CanShoots;
 
 namespace Laugh.IA.FSM.PatternOfShoots
 {

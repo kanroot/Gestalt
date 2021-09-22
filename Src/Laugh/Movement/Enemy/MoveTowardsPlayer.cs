@@ -1,6 +1,6 @@
 using Godot;
 
-namespace Laugh.Movement.Demon
+namespace Laugh.Movement.Enemy
 {
 	public class MoveTowardsPlayer : CanMoveBase
 	{

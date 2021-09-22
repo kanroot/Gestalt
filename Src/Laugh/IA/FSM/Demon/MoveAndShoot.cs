@@ -1,6 +1,7 @@
 using Laugh.IA.FSM.State;
 using Laugh.Movement;
 using Laugh.Shoots;
+using Laugh.Shoots.CanShoots;
 
 namespace Laugh.IA.FSM.Demon
 {

@@ -1,6 +1,7 @@
 using Godot;
+using Laugh.Shoots.ConductOfShoots;
 
-namespace Laugh.Shoots
+namespace Laugh.Shoots.CanShoots
 {
 	public class CanShootPj : CanShootBase
 	{

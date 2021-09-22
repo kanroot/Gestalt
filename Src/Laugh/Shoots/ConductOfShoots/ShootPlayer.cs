@@ -1,6 +1,6 @@
 using Godot;
 
-namespace Laugh.Shoots
+namespace Laugh.Shoots.ConductOfShoots
 {
 	public class ShootPlayer : Shoot
 	{

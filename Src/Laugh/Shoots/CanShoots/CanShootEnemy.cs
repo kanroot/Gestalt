@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Godot;
 
-namespace Laugh.Shoots
+namespace Laugh.Shoots.CanShoots
 {
 	public abstract class CanShootEnemy : CanShootBase
 	{

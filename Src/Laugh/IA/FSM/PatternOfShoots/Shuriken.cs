@@ -1,4 +1,5 @@
 using Laugh.Shoots;
+using Laugh.Shoots.CanShoots;
 
 namespace Laugh.IA.FSM.PatternOfShoots
 {
@@ -16,7 +17,7 @@ namespace Laugh.IA.FSM.PatternOfShoots
 
 		private void ChangeDirectionNode()
 		{
-			CanShootCircularEnemy.DirectionToRotation *= 1;
+			CanShootCircularEnemy.DirectionToRotation *= -1;
 		}
 
 		private void ChangeDegreesRotation()

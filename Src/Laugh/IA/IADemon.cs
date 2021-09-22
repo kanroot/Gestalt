@@ -1,7 +1,7 @@
 using Godot;
 using Laugh.IA.FSM.Demon;
 using Laugh.Life;
-using Laugh.Shoots;
+using Laugh.Shoots.CanShoots;
 
 namespace Laugh.IA
 {

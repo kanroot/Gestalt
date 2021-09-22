@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Godot;
+using Laugh.Shoots.ConductOfShoots;
 
-namespace Laugh.Shoots
+namespace Laugh.Shoots.CanShoots
 {
 	public class CanShootCircularEnemy : CanShootEnemy
 	{
