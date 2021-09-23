@@ -85,5 +85,9 @@ namespace Laugh.Shoots.CanShoots
 				if (n.GetChildCount() > 0 && n.GetChild<Node>(0) is Position2D)
 					n.QueueFree();
 		}
+
+		public CanShootCircularEnemy(KinematicBody2D entity)
+		{
+		}
 	}
 }

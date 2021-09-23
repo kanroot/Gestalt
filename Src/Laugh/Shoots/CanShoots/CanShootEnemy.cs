@@ -5,7 +5,9 @@ namespace Laugh.Shoots.CanShoots
 {
 	public abstract class CanShootEnemy : CanShootBase
 	{
-		//cantidad de nodos con los cuales dispara, sea uno o más
+
+		protected KinematicBody2D entity;
+		
 		protected List<Node2D> ListPosition2d;
 
 		//Scena a instanciar
@@ -21,5 +23,6 @@ namespace Laugh.Shoots.CanShoots
 		public abstract void AddNodeSpawnBullet();
 
 		public abstract void KillNodes();
+		
 	}
 }

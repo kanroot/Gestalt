@@ -1,13 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Img/Demon/demon_letters _object.svg" type="Texture" id=1]
 [ext_resource path="res://Src/Resources/Demon/DemonBody.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Src/Prefabs/BaseEntity/EntityEnemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Src/Debug/Overlay.cs" type="Script" id=4]
 [ext_resource path="res://Src/Laugh/Life/LifeBase.cs" type="Script" id=5]
-[ext_resource path="res://Src/Laugh/Shoots/CanShoots/CanShootCircularEnemy.cs" type="Script" id=7]
-[ext_resource path="res://Src/Prefabs/Shoots/ShootEnemy.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Src/Resources/BulletSpawn/RotatePosition2d.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Src/Resources/NodeTextRotated/TextRotated.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Src/Resources/Radius/DemonBoss/AreaDetect.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Src/Laugh/IA/IADemon.cs" type="Script" id=12]
@@ -27,16 +24,6 @@ texture = ExtResource( 1 )
 one_shot = false
 autostart = true
 
-[node name="Shoots" parent="." index="5"]
-script = ExtResource( 7 )
-SpeedBullet = 3000.0
-CanShoot = true
-BulletScene = ExtResource( 8 )
-TimerPath = NodePath("../TimerCanShoot")
-RotatePosition2d = ExtResource( 9 )
-CountDivisionCircle = 10
-DegreesRotate = 1
-
 [node name="Life" parent="." index="6"]
 script = ExtResource( 5 )
 EntityPath = NodePath("..")
@@ -47,8 +34,6 @@ script = ExtResource( 12 )
 entityPath = NodePath("..")
 packedSceneRadius = ExtResource( 11 )
 scalesShape2D = 1.2
-canShootPath = NodePath("../Shoots")
-lifePath = NodePath("../Life")
 
 [node name="TextRotated" parent="." index="8" instance=ExtResource( 10 )]
 
@@ -64,7 +49,6 @@ actualPath = NodePath("VBoxContainer/Posición actual")
 canMovePath = NodePath("../Movement")
 cuentaSpwan = NodePath("VBoxContainer/N° de spwans")
 entityPath = NodePath("..")
-shootPath = NodePath("../Shoots")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Overlay" index="0"]
 margin_right = 40.0

@@ -20,9 +20,10 @@ namespace Laugh.Shoots.CanShoots
 		[Export] public float SpeedBullet { get; set; }
 		[Export] public bool CanShoot { get; set; }
 
+		
+
 		public override void _Ready()
 		{
-			Entity = GetParent<KinematicBody2D>();
 			TimerCanShoot = GetNode<Timer>(TimerPath);
 			TimerCanShoot.WaitTime = TimeWait;
 		}

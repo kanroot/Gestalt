@@ -44,9 +44,10 @@ entityPath = NodePath("..")
 
 [node name="Shoots" parent="." index="8"]
 script = ExtResource( 5 )
+SpeedBullet = 10.0
+CanShoot = true
 BulletScene = ExtResource( 6 )
 TimerPath = NodePath("../TimerCanShoot")
-SpeedBullet = 10.0
 bulletPath = NodePath("../Rotate/Position2D")
 rotatePath = NodePath("../Rotate")
 

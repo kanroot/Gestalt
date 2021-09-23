@@ -4,13 +4,13 @@ using Laugh.Shoots.CanShoots;
 
 namespace Laugh.IA.FSM.PatternOfShoots
 {
-	public class PatternBase : Node
+	public class PatternBaseShoot : Node
 	{
 		private readonly int CountOfNodeSpawns;
 		private readonly float factor;
 		protected CanShootCircularEnemy CanShootCircularEnemy;
 
-		protected PatternBase(CanShootCircularEnemy canShootCircularEnemy, int countOfNodeSpawns, float factor)
+		public PatternBaseShoot(CanShootCircularEnemy canShootCircularEnemy, int countOfNodeSpawns, float factor)
 		{
 			CanShootCircularEnemy = canShootCircularEnemy;
 			CountOfNodeSpawns = countOfNodeSpawns;

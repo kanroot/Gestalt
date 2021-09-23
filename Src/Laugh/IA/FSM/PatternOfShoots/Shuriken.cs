@@ -3,7 +3,7 @@ using Laugh.Shoots.CanShoots;
 
 namespace Laugh.IA.FSM.PatternOfShoots
 {
-	public class Shuriken : PatternBase
+	public class Shuriken : PatternBaseShoot
 	{
 		private readonly int rotation;
 		

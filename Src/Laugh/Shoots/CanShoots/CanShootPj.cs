@@ -9,12 +9,11 @@ namespace Laugh.Shoots.CanShoots
 		private bool mouserOverPlayer;
 		private Node2D rotate;
 		[Export] private NodePath rotatePath;
-		[Export] public float SpeedBullet { get; set; }
-
+		
 		public override void _Ready()
 		{
 			base._Ready();
-			//propias
+			Entity = GetParent<KinematicBody2D>();
 			rotate = GetNode<Node2D>(rotatePath);
 			TimerCanShoot.Connect("timeout", this, nameof(OnEndTime));
 			Entity.Connect("mouse_entered", this, nameof(OnMousePlayer));
@@ -67,5 +66,7 @@ namespace Laugh.Shoots.CanShoots
 			if (mouserOverPlayer) return;
 			CanShoot = true;
 		}
+		
+		
 	}
 }
