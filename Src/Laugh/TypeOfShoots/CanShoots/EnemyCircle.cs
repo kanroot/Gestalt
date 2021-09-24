@@ -5,28 +5,35 @@ using Laugh.Shoots.ConductOfShoots;
 
 namespace Laugh.Shoots.CanShoots
 {
-	public class CanShootCircularEnemy : CanShootEnemy
+	public class EnemyCircle : Enemy
 	{
 		private const float Circle = 360;
 		private ShootEnemy bulletInstance;
-
-		[Export] public int CountDivisionCircle { get; set; }
-		[Export] public int DegreesRotate { get; set; }
-
+		public int CountDivisionCircle { get; set; }
+		public int DegreesRotate { get; set; }
 		public bool CanRotateNode { get; set; }
 		public int DirectionToRotation { get; set; }
 
-		public override void _Ready()
+		private PackedScene bulletSpawn;
+		private bool thisCanShoot;
+		private KinematicBody2D entity;
+		private PackedScene bulletScene;
+
+
+		public void CreateEnemy(PackedScene bulletSpawn, bool thisCanShoot, KinematicBody2D entity,
+			PackedScene bulletScene)
 		{
-			base._Ready();
-			CanRotateNode = true;
-			DirectionToRotation = 1;
+			this.bulletSpawn = bulletSpawn;
+			this.thisCanShoot = thisCanShoot;
+			this.entity = entity;
 		}
 
-		public override void _PhysicsProcess(float delta)
-		{
-			RotaryNode2D();
-		}
+		// public EnemyCircle(PackedScene bulletSpawn, bool thisCanShoot, KinematicBody2D entity,
+		// 	PackedScene bulletScene) : base(bulletSpawn, thisCanShoot, entity,
+		// 	bulletScene)
+		// {
+		// 	
+		// }
 
 		public override void AddNodeSpawnBullet()
 		{
@@ -39,7 +46,7 @@ namespace Laugh.Shoots.CanShoots
 			ListPosition2d = new List<Node2D>();
 			for (var i = 0; i < CountDivisionCircle; i++)
 			{
-				var position2d = (Node2D)RotatePosition2d.Instance();
+				var position2d = (Node2D)BulletSpawn.Instance();
 				ListPosition2d.Add(position2d);
 				Entity.AddChild(position2d);
 				position2d.LookAt(Vector2.Up);
@@ -54,7 +61,7 @@ namespace Laugh.Shoots.CanShoots
 
 		protected override void CreateBullet()
 		{
-			if (CanShoot != true) return;
+			if (ThisCanShoot != true) return;
 			foreach (var originNode2d in ListPosition2d) BulletInstance(originNode2d);
 		}
 
@@ -80,14 +87,10 @@ namespace Laugh.Shoots.CanShoots
 
 		public override void KillNodes()
 		{
-			CanShoot = false;
+			ThisCanShoot = false;
 			foreach (Node n in Entity.GetChildren())
 				if (n.GetChildCount() > 0 && n.GetChild<Node>(0) is Position2D)
 					n.QueueFree();
-		}
-
-		public CanShootCircularEnemy(KinematicBody2D entity)
-		{
 		}
 	}
 }

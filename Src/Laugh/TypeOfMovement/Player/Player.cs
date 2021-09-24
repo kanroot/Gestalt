@@ -1,25 +1,20 @@
 using Godot;
+using Laugh.Movement.Enemy;
+using Laugh.TypeOfMovement.Enemy;
 
-namespace Laugh.Movement.Player
+namespace Laugh.TypeOfMovement.Player
 {
-	public class MovementPlayer : Node
+	public class Player : MovementBase
 	{
-		private KinematicBody2D entity;
-		[Export] private NodePath entityPath;
-		[Export] public bool CanMove { set; get; } = true;
-		[Export] public int Speed { get; set; }
-
-		public override void _Ready()
+		public Player(KinematicBody2D entity, float speed, bool canMove) : base(entity, speed, canMove)
 		{
-			entity = GetNode<KinematicBody2D>(entityPath);
 		}
 
-		public override void _Process(float delta)
+		public override void DoMovement(float delta)
 		{
-			if (CanMove != true) return;
-			entity.MoveAndSlide(GetInputMovement());
+			Entity.MoveAndSlide(GetInputMovement());
 		}
-
+		
 		private Vector2 GetInputMovement()
 		{
 			var directionPlayerVector = new Vector2();

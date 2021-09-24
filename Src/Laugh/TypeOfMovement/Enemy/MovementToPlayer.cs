@@ -1,29 +1,28 @@
 using Godot;
+using Laugh.TypeOfMovement;
+using Laugh.TypeOfMovement.Enemy;
 
 namespace Laugh.Movement.Enemy
 {
-	public class MoveTowardsPlayer : CanMoveBase
+	public class MovementToPlayer : MovementBase
 	{
 		private Vector2 positionPlayer;
-
-		public MoveTowardsPlayer(KinematicBody2D entity, bool canMove, float speed) : base(entity, canMove, speed)
+		
+		public MovementToPlayer(KinematicBody2D entity, float speed, bool canMove) : base(entity, speed, canMove)
 		{
 		}
 
-		protected override void PerformMovement(float delta)
+		public override void DoMovement(float delta)
 		{
 			if (CanMove != true) return;
 			if (Entity.GlobalPosition.Round().DistanceTo(positionPlayer.Round()) < 8) return;
 			var dir = (positionPlayer - Entity.GlobalPosition).Normalized();
 			Entity.MoveAndCollide(dir * Speed * delta);
 		}
-
+		
 		public void UpdatePositionPlayer(KinematicBody2D player)
 		{
-			CanMove = true;
 			positionPlayer = player.GlobalPosition;
 		}
-		
-
 	}
 }

@@ -8,7 +8,6 @@ namespace Laugh.IA
 		protected KinematicBody2D entity;
 		[Export] private NodePath entityPath;
 		private Vector2 originalShape;
-
 		[Export] private PackedScene packedSceneRadius;
 		private Area2D radiusNode;
 		[Export] private float scalesShape2D;

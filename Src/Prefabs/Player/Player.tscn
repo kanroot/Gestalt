@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Img/Laught/LaughtMan_letters.svg" type="Texture" id=1]
-[ext_resource path="res://Src/Laugh/Movement/Player/MovementPlayer.cs" type="Script" id=2]
+[ext_resource path="res://Src/Laugh/TypeOfMovement/Player/MovementPlayer.cs" type="Script" id=2]
 [ext_resource path="res://Src/Prefabs/BaseEntity/EntidadBase.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Src/Resources/Player/PlayerLineOutside.tres" type="SpriteFrames" id=4]
-[ext_resource path="res://Src/Laugh/Shoots/CanShoots/CanShootPj.cs" type="Script" id=5]
+[ext_resource path="res://Src/Laugh/TypeOfShoots/CanShoots/CanShootPj.cs" type="Script" id=5]
 [ext_resource path="res://Src/Prefabs/Shoots/ShootCircle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Src/Resources/BulletSpawn/RotatePosition2d.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Src/Resources/Player/Player.tres" type="SpriteFrames" id=8]
@@ -39,17 +39,17 @@ position = Vector2( 40.0258, 0 )
 
 [node name="Movement" parent="." index="7"]
 script = ExtResource( 2 )
-Speed = 200
+Speed = 150
 entityPath = NodePath("..")
 
 [node name="Shoots" parent="." index="8"]
 script = ExtResource( 5 )
 SpeedBullet = 10.0
 CanShoot = true
-BulletScene = ExtResource( 6 )
 TimerPath = NodePath("../TimerCanShoot")
 bulletPath = NodePath("../Rotate/Position2D")
 rotatePath = NodePath("../Rotate")
+BulletScene = ExtResource( 6 )
 
 [node name="MovementText" type="Node" parent="." index="9"]
 script = ExtResource( 9 )

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Img/Shoots/shoot_pink.svg" type="Texture" id=1]
-[ext_resource path="res://Src/Laugh/Shoots/ConductOfShoots/ShootEnemy.cs" type="Script" id=2]
+[ext_resource path="res://Src/Laugh/TypeOfShoots/ConductOfShoots/ShootEnemy.cs" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 282.625
@@ -9,6 +9,8 @@ radius = 282.625
 [node name="ShootEnemy" type="Area2D"]
 scale = Vector2( 0.0204089, 0.02 )
 gravity = 0.0
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

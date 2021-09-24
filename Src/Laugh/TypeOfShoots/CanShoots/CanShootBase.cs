@@ -7,11 +7,8 @@ namespace Laugh.Shoots.CanShoots
 		//PUNTO DE ORIGEN DE LA BALA
 		protected Position2D BulletOrigin;
 
-		//todos aquellos que puedan disparar por obligacion deben hacer referencia a una Scena de Bala
-		[Export] protected PackedScene BulletScene;
-
 		//CUERPO
-		protected KinematicBody2D Entity;
+		public KinematicBody2D Entity;
 
 		//CONTROLADORES DEL TIMER DEL DISPARO
 		protected Timer TimerCanShoot;
@@ -19,8 +16,6 @@ namespace Laugh.Shoots.CanShoots
 		[Export] protected float TimeWait = 0.5f;
 		[Export] public float SpeedBullet { get; set; }
 		[Export] public bool CanShoot { get; set; }
-
-		
 
 		public override void _Ready()
 		{

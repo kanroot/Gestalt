@@ -1,6 +1,6 @@
 using Godot;
 
-namespace Laugh.Movement
+namespace Laugh.TypeOfMovement
 {
 	public abstract class CanMoveBase : Node
 	{
@@ -15,12 +15,7 @@ namespace Laugh.Movement
 			Speed = speed;
 		}
 
-		public override void _Process(float delta)
-		{
-			PerformMovement(delta);
-		}
-
-		protected abstract void PerformMovement(float delta);
+		public abstract void PerformMovement(float delta);
 
 		public void SpeedChange(float multiplier)
 		{

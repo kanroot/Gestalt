@@ -9,7 +9,8 @@ namespace Laugh.Shoots.CanShoots
 		private bool mouserOverPlayer;
 		private Node2D rotate;
 		[Export] private NodePath rotatePath;
-		
+		[Export] protected PackedScene BulletScene;
+
 		public override void _Ready()
 		{
 			base._Ready();
@@ -66,7 +67,5 @@ namespace Laugh.Shoots.CanShoots
 			if (mouserOverPlayer) return;
 			CanShoot = true;
 		}
-		
-		
 	}
 }
