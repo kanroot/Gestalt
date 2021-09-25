@@ -8,7 +8,8 @@ namespace Laugh.IA.Enemy
 	{
 		private Movement movementNode;
 		private MovementToPlayer movementBase;
-		[Export()]private NodePath movementNodePath;
+		[Export()] private NodePath movementNodePath;
+
 		public override void _Ready()
 		{
 			base._Ready();

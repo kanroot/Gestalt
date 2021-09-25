@@ -7,7 +7,7 @@ namespace Laugh.Movement.Enemy
 	public class MovementToPlayer : MovementBase
 	{
 		private Vector2 positionPlayer;
-		
+
 		public MovementToPlayer(KinematicBody2D entity, float speed, bool canMove) : base(entity, speed, canMove)
 		{
 		}
@@ -19,7 +19,7 @@ namespace Laugh.Movement.Enemy
 			var dir = (positionPlayer - Entity.GlobalPosition).Normalized();
 			Entity.MoveAndCollide(dir * Speed * delta);
 		}
-		
+
 		public void UpdatePositionPlayer(KinematicBody2D player)
 		{
 			positionPlayer = player.GlobalPosition;

@@ -4,9 +4,9 @@ using Laugh.TypeOfMovement.Enemy;
 
 namespace Laugh.TypeOfMovement.Player
 {
-	public class Player : MovementBase
+	public class PlayerMovement : MovementBase
 	{
-		public Player(KinematicBody2D entity, float speed, bool canMove) : base(entity, speed, canMove)
+		public PlayerMovement(KinematicBody2D entity, float speed, bool canMove) : base(entity, speed, canMove)
 		{
 		}
 
@@ -14,7 +14,7 @@ namespace Laugh.TypeOfMovement.Player
 		{
 			Entity.MoveAndSlide(GetInputMovement());
 		}
-		
+
 		private Vector2 GetInputMovement()
 		{
 			var directionPlayerVector = new Vector2();

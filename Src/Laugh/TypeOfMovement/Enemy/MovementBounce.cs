@@ -6,7 +6,7 @@ namespace Laugh.TypeOfMovement.Enemy
 	public class MovementBounce : MovementBase
 	{
 		private Vector2 directionDemon = new Vector2(1, 0);
-		
+
 		public override void DoMovement(float delta)
 		{
 			if (CanMove != true) return;
