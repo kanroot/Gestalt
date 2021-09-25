@@ -8,7 +8,7 @@ namespace Laugh.Shoots.CanShoots
 	public class EnemyCircle : Enemy
 	{
 		private const float Circle = 360;
-		private ShootEnemy bulletInstance;
+		private Shoot bulletInstance;
 		public int CountDivisionCircle { get; set; }
 		public int DegreesRotate { get; set; }
 		public bool CanRotateNode { get; set; }

@@ -18,7 +18,7 @@ namespace Laugh.IA.Enemy
 		public override void _Ready()
 		{
 			entity = GetNode<KinematicBody2D>(entityPath);
-			shootBase = new ShootEnemy(spawnNode, countSpawn, bulletScene, speedBullet, entity);
+			shootBase = new ShootCircleEnemy(spawnNode, countSpawn, bulletScene, speedBullet, entity);
 			shootBase.CreateSpawn();
 		}
 		
