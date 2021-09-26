@@ -21,7 +21,12 @@ namespace Laugh.IA.Enemy
 			shootBase = new ShootCircleEnemy(spawnNode, countSpawn, bulletScene, speedBullet, entity);
 			shootBase.CreateSpawn();
 		}
-		
-		
+
+		public override void _Process(float delta)
+		{
+			base._Process(delta);
+			var listInstanceShoot = shootBase.CreateBullet();
+			foreach (var n in listInstanceShoot) GetTree().Root.AddChild(n);
+		}
 	}
 }

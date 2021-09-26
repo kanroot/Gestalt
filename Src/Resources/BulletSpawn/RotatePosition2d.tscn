@@ -1,11 +1,6 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[gd_scene format=2]
 
 [node name="Rotate" type="Node2D"]
 
 [node name="Position2D" type="Position2D" parent="."]
-
-[node name="Sprite" type="Sprite" parent="Position2D"]
-position = Vector2( 0.148499, 0 )
-texture = ExtResource( 1 )
+position = Vector2( 150, 0 )

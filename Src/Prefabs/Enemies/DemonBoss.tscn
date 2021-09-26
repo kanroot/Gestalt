@@ -13,6 +13,8 @@
 [ext_resource path="res://Src/Resources/Radius/DemonBoss/AreaDetect.tscn" type="PackedScene" id=11]
 
 [node name="DemonBoss" instance=ExtResource( 3 )]
+collision_layer = 2
+collision_mask = 3
 
 [node name="CollisionShape2D" parent="." index="0"]
 visible = false
@@ -34,7 +36,7 @@ movementNodePath = NodePath("../Movement")
 script = ExtResource( 6 )
 entityPath = NodePath("..")
 countSpawn = 10
-speedBullet = 600.0
+speedBullet = 6000.0
 spawnNode = ExtResource( 7 )
 bulletScene = ExtResource( 9 )
 

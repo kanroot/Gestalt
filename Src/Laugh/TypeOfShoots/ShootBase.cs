@@ -1,4 +1,7 @@
+using System.Collections.Generic;
 using Godot;
+using Laugh.IA.Enemy;
+using Laugh.Shoots.ConductOfShoots;
 
 namespace Laugh.TypeOfShoots
 {
@@ -23,7 +26,7 @@ namespace Laugh.TypeOfShoots
 		}
 
 		public abstract void CreateSpawn();
-		public abstract void CreateBullet();
+		public abstract List<ShootEnemy> CreateBullet();
 		public abstract void KillNodes();
 	}
 }
