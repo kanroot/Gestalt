@@ -8,7 +8,6 @@ export_presets.cfg
 
 # Exclude imported translations
 *.translation
-
 # Mono-specific
 .mono/
 data_*/
@@ -16,6 +15,7 @@ data_*/
 # Don't include those pesky .DS_Store files on macOS
 .DS_Store
 
+/logos
 /.idea
 /.import
 /.mono
