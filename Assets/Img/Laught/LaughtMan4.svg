@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1920px"
+   height="1080px"
+   viewBox="0 0 1920 1080"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="LaughtMan3.svg"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview920"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.22761294"
+     inkscape:cx="894.06164"
+     inkscape:cy="1166.4539"
+     inkscape:window-width="1360"
+     inkscape:window-height="768"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="1156.4746,503.40116"
+       orientation="1,0"
+       id="guide849" />
+    <sodipodi:guide
+       position="767.05304,503.40116"
+       orientation="1,0"
+       id="guide851" />
+    <sodipodi:guide
+       position="826.50141,587.58462"
+       orientation="1,0"
+       id="guide875" />
+    <sodipodi:guide
+       position="1074.8903,840.7903"
+       orientation="0,-1"
+       id="guide877" />
+    <sodipodi:guide
+       position="1097.0262,587.58462"
+       orientation="1,0"
+       id="guide879" />
+    <sodipodi:guide
+       position="826.50145,565.69773"
+       orientation="0,-1"
+       id="guide906" />
+  </sodipodi:namedview>
+  <defs
+     id="defs915">
+    <rect
+       x="359.72718"
+       y="373.86276"
+       width="128.028"
+       height="129.71904"
+       id="rect314" />
+    <marker
+       style="overflow:visible"
+       id="Arrow1Sstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Sstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.2) translate(6,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1431" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1419" />
+    </marker>
+    <rect
+       x="359.72717"
+       y="373.86276"
+       width="128.028"
+       height="129.71904"
+       id="rect314-3" />
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       inkscape:connector-curvature="0"
+       style="font-size:12px;fill:#ffffff;fill-opacity:0.9961;fill-rule:evenodd;stroke:none;stroke-width:2.87088"
+       d="m 1325.9252,539.93702 c 0,201.82895 -163.7812,365.35828 -365.98826,365.35828 -202.08083,0 -365.86213,-163.52933 -365.86213,-365.35828 0,-201.70298 163.7813,-365.23229 365.86213,-365.23229 202.20706,0 365.98826,163.52931 365.98826,365.23229 z m -24.1893,-0.50395 c 0,187.97052 -153.0724,340.53913 -341.79896,340.53913 -188.85233,0 -341.79888,-152.56861 -341.79888,-340.53913 0,-188.09654 152.94654,-340.53912 341.79888,-340.53912 188.72656,0 341.79896,152.44258 341.79896,340.53912 z"
+       id="path663" />
+    <g
+       id="g1086"
+       transform="matrix(2.2966972,0,0,2.2966972,-276.2927,-731.12128)"
+       style="fill:#ffffff">
+      <path
+         inkscape:connector-curvature="0"
+         style="font-size:12px;fill:#ffffff;fill-rule:evenodd"
+         d="m 623.83812,569.39161 c -7.40544,40.04424 -42.56757,70.37912 -84.75116,70.37912 -42.18359,0 -77.34573,-30.33488 -84.80603,-70.37912 H 475.839 c 6.91174,28.46981 32.6388,49.53418 63.24796,49.53418 30.60916,0 56.33621,-21.06437 63.24796,-49.53418 z m -147.99912,0 h 126.49592"
+         id="path691" />
+      <rect
+         style="font-size:12px;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:1"
+         id="rect709"
+         width="148.97415"
+         height="18.313845"
+         x="464.65005"
+         y="569.37714" />
+      <rect
+         style="font-size:12px;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.889022"
+         id="rect709-6"
+         width="117.74335"
+         height="18.313845"
+         x="480.37134"
+         y="585.39679" />
+      <rect
+         style="font-size:12px;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.800162"
+         id="rect709-6-5"
+         width="90.239128"
+         height="19.357611"
+         x="496.2363"
+         y="600.61078" />
+    </g>
+    <g
+       aria-label="&lt;"
+       transform="matrix(0,3.1705794,-3.1705794,0,2119.0451,-689.77478)"
+       id="text312"
+       style="font-size:40px;line-height:1.25;white-space:pre;shape-inside:url(#rect314);fill:#ffffff">
+      <path
+         d="m 379.76562,407.66799 -18.75,-7.83203 v -3.96484 l 18.75,-7.83203 v 5.11718 l -11.60156,4.6875 11.60156,4.62891 z"
+         style="font-family:Impact;-inkscape-font-specification:Impact"
+         id="path24" />
+    </g>
+    <g
+       aria-label="&lt;"
+       transform="matrix(0,3.1705794,-3.1705794,0,2327.3349,-689.77478)"
+       id="text312-6"
+       style="font-size:40px;line-height:1.25;white-space:pre;shape-inside:url(#rect314-3);fill:#ffffff">
+      <path
+         d="m 379.76562,407.66799 -18.75,-7.83203 v -3.96484 l 18.75,-7.83203 v 5.11718 l -11.60156,4.6875 11.60156,4.62891 z"
+         style="font-family:Impact;-inkscape-font-specification:Impact"
+         id="path27" />
+    </g>
+  </g>
+</svg>

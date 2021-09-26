@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 520.553
+
+[node name="EntityEnemy" type="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 1 )
+
+[node name="Body" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Text" type="Sprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+
+[node name="IA" type="Node" parent="."]
+
+[node name="Shoot" type="Node" parent="."]
+
+[node name="Movement" type="Node" parent="."]
