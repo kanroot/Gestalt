@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1920"
+   height="1080"
+   viewBox="0 0 508.00002 285.74999"
+   version="1.1"
+   id="svg339"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   sodipodi:docname="oraculo1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs333" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#000000"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.1767767"
+     inkscape:cx="1137.0277"
+     inkscape:cy="571.34228"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     width="1080px"
+     inkscape:window-width="659"
+     inkscape:window-height="707"
+     inkscape:window-x="687"
+     inkscape:window-y="47"
+     inkscape:window-maximized="0"
+     inkscape:pagecheckerboard="false" />
+  <metadata
+     id="metadata336">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       d="m 254.0055,74.231079 c -37.8541,0 -68.6523,30.789551 -68.6523,68.643641 0,37.85413 30.7982,68.6523 68.6523,68.6523 37.84549,0 68.64369,-30.79817 68.64369,-68.6523 0,-37.85409 -30.7982,-68.643641 -68.64369,-68.643641 z m 0,152.075271 c -46.0108,0 -83.44031,-37.42071 -83.44031,-83.43163 0,-46.002218 37.42951,-83.431625 83.44031,-83.431625 46.00219,0 83.4317,37.429407 83.4317,83.431625 0,46.01092 -37.42951,83.43163 -83.4317,83.43163"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0866822"
+       id="path807" />
+    <circle
+       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:2.45713;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path2471"
+       cx="254.00119"
+       cy="142.87473"
+       r="98.349037" />
+  </g>
+</svg>
