@@ -12,6 +12,12 @@ _global_script_classes=[  ]
 _global_script_class_icons={
 }
 
+[MonoCustomResourceRegistry]
+
+ClassPrefix=""
+SearchType=0
+ResourceScriptDirectories=[ "res://" ]
+
 [application]
 
 config/name="Laugh"
@@ -22,6 +28,10 @@ config/icon="res://icon.png"
 
 window/size/width=1920
 window/size/height=1080
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/Godot-Mono-CustomResourceRegistry-main/addons/MonoCustomResourceRegistry/plugin.cfg" )
 
 [global]
 

@@ -4,15 +4,17 @@
 [ext_resource path="res://Src/Resources/Demon/DemonBody.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Src/Prefabs/BaseEntity/EntityEnemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Src/Debug/Overlay.cs" type="Script" id=4]
-[ext_resource path="res://Src/Laugh/Life/LifeBase.cs" type="Script" id=5]
-[ext_resource path="res://Src/Laugh/Shoots/CanShoots/CanShootCircularEnemy.cs" type="Script" id=7]
-[ext_resource path="res://Src/Prefabs/Shoots/ShootEnemy.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Src/Resources/BulletSpawn/RotatePosition2d.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Src/Laugh/IA/Enemy/Movement.cs" type="Script" id=5]
+[ext_resource path="res://Src/Laugh/IA/Enemy/Shoot.cs" type="Script" id=6]
+[ext_resource path="res://Src/Resources/BulletSpawn/RotatePosition2d.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Src/Laugh/IA/IAEnemy.cs" type="Script" id=8]
+[ext_resource path="res://Src/Prefabs/Shoots/ShootEnemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Src/Resources/NodeTextRotated/TextRotated.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Src/Resources/Radius/DemonBoss/AreaDetect.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Src/Laugh/IA/IADemon.cs" type="Script" id=12]
 
 [node name="DemonBoss" instance=ExtResource( 3 )]
+collision_layer = 2
+collision_mask = 3
 
 [node name="CollisionShape2D" parent="." index="0"]
 visible = false
@@ -23,36 +25,29 @@ frames = ExtResource( 2 )
 [node name="Text" parent="." index="2"]
 texture = ExtResource( 1 )
 
-[node name="TimerCanShoot" parent="." index="3"]
-one_shot = false
-autostart = true
-
-[node name="Shoots" parent="." index="5"]
-script = ExtResource( 7 )
-SpeedBullet = 3000.0
-CanShoot = true
-BulletScene = ExtResource( 8 )
-TimerPath = NodePath("../TimerCanShoot")
-RotatePosition2d = ExtResource( 9 )
-CountDivisionCircle = 10
-DegreesRotate = 1
-
-[node name="Life" parent="." index="6"]
-script = ExtResource( 5 )
-EntityPath = NodePath("..")
-Life = 1000
-
-[node name="IA" parent="." index="7"]
-script = ExtResource( 12 )
+[node name="IA" parent="." index="3"]
+script = ExtResource( 8 )
 entityPath = NodePath("..")
 packedSceneRadius = ExtResource( 11 )
 scalesShape2D = 1.2
-canShootPath = NodePath("../Shoots")
-lifePath = NodePath("../Life")
+movementNodePath = NodePath("../Movement")
 
-[node name="TextRotated" parent="." index="8" instance=ExtResource( 10 )]
+[node name="Shoot" parent="." index="4"]
+script = ExtResource( 6 )
+entityPath = NodePath("..")
+countSpawn = 10
+speedBullet = 6000.0
+spawnNode = ExtResource( 7 )
+bulletScene = ExtResource( 9 )
 
-[node name="Overlay" type="Control" parent="." index="9"]
+[node name="Movement" parent="." index="5"]
+script = ExtResource( 5 )
+entityPath = NodePath("..")
+speed = 2000.0
+
+[node name="TextRotated" parent="." index="6" instance=ExtResource( 10 )]
+
+[node name="Overlay" type="Control" parent="." index="7"]
 margin_top = 104.0
 margin_right = 40.0
 margin_bottom = 144.0
@@ -64,7 +59,6 @@ actualPath = NodePath("VBoxContainer/Posición actual")
 canMovePath = NodePath("../Movement")
 cuentaSpwan = NodePath("VBoxContainer/N° de spwans")
 entityPath = NodePath("..")
-shootPath = NodePath("../Shoots")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Overlay" index="0"]
 margin_right = 40.0

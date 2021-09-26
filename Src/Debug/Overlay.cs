@@ -7,13 +7,8 @@ namespace Laugh.Debug
 	public class Overlay : Control
 	{
 		private Label actual;
-		//estado actual
-		//movimiento
-		//disparos
-
 		[Export] private NodePath actualPath;
 		[Export] private NodePath canMovePath;
-		private CanShootCircularEnemy canShootDemon;
 		private Label cuentaSpawn;
 		[Export] private NodePath cuentaSpwan;
 		private KinematicBody2D entity;
@@ -24,7 +19,6 @@ namespace Laugh.Debug
 		{
 			entity = GetNode<KinematicBody2D>(entityPath);
 			actual = GetNode<Label>(actualPath);
-			canShootDemon = GetNode<CanShootCircularEnemy>(shootPath);
 			cuentaSpawn = GetNode<Label>(cuentaSpwan);
 		}
 
@@ -32,7 +26,7 @@ namespace Laugh.Debug
 		{
 			base._Process(delta);
 			actual.Text = "Actual: " + entity.GlobalPosition;
-			cuentaSpawn.Text = $"N° Spwan: {canShootDemon.CountDivisionCircle.ToString()}";
+			//cuentaSpawn.Text = $"N° Spwan: {canShootDemon.CountDivisionCircle.ToString()}";
 		}
 	}
 }
