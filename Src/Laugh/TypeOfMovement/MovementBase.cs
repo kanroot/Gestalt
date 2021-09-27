@@ -6,8 +6,6 @@ namespace Laugh.TypeOfMovement
 	{
 		protected KinematicBody2D Entity;
 		protected float Speed;
-		protected bool CanMove { get; set; }
-		public abstract void DoMovement(float delta);
 
 		protected MovementBase(KinematicBody2D entity, float speed, bool canMove)
 		{
@@ -15,5 +13,8 @@ namespace Laugh.TypeOfMovement
 			Speed = speed;
 			CanMove = canMove;
 		}
+
+		protected bool CanMove { get; set; }
+		public abstract void DoMovement(float delta);
 	}
 }

@@ -1,5 +1,4 @@
 using Godot;
-using System;
 using MonoCustomResourceRegistry;
 
 [RegisteredType(nameof(CustomNodeDemo), "res://Testing/icon.png", nameof(Node2D))]

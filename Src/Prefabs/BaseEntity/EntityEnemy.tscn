@@ -20,3 +20,6 @@ scale = Vector2( 0.2, 0.2 )
 [node name="Shoot" type="Node" parent="."]
 
 [node name="Movement" type="Node" parent="."]
+
+[node name="TimerToShoot" type="Timer" parent="."]
+autostart = true

@@ -1,6 +1,4 @@
 using Godot;
-using Laugh.Shoots;
-using Laugh.Shoots.CanShoots;
 
 namespace Laugh.Debug
 {

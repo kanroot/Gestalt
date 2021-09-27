@@ -1,7 +1,7 @@
-using Godot;
-using Godot.Collections;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Godot;
+using Godot.Collections;
 
 namespace MonoCustomResourceRegistry
 {
@@ -26,7 +26,7 @@ namespace MonoCustomResourceRegistry
 			AddSetting(nameof(SearchType), Variant.Type.Int, ResourceSearchType.Recursive, PropertyHint.Enum,
 				"Recursive,Namespace");
 			AddSetting(nameof(ResourceScriptDirectories), Variant.Type.StringArray,
-				new Array<string>(new string[] { "res://" }));
+				new Array<string>("res://"));
 		}
 
 		private static object GetSettings(string title)

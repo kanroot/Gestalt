@@ -1,14 +1,13 @@
 using Godot;
 using Laugh.Movement.Enemy;
-using Laugh.TypeOfMovement;
 
 namespace Laugh.IA.Enemy
 {
 	public class IAEnemy : IABase
 	{
-		private Movement movementNode;
 		private MovementToPlayer movementBase;
-		[Export()] private NodePath movementNodePath;
+		private Movement movementNode;
+		[Export] private NodePath movementNodePath;
 
 		public override void _Ready()
 		{

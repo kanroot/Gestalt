@@ -1,18 +1,16 @@
 using System.Collections.Generic;
 using Godot;
-using Laugh.IA.Enemy;
-using Laugh.Shoots.ConductOfShoots;
+using Laugh.TypeOfShoots.ConductOfShoots;
 
 namespace Laugh.TypeOfShoots
 {
 	public abstract class ShootBase
 	{
-		protected PackedScene Spawn;
-		protected int CountSpawn;
 		protected PackedScene Bullet;
-		protected float SpeedBullet;
+		protected int CountSpawn;
 		protected KinematicBody2D Entity;
-		public bool CanShoot { get; set; }
+		protected PackedScene Spawn;
+		protected float SpeedBullet;
 
 		protected ShootBase(PackedScene spawn, int countSpawn, PackedScene bullet, float speedBullet,
 			KinematicBody2D entity)
@@ -22,11 +20,12 @@ namespace Laugh.TypeOfShoots
 			Bullet = bullet;
 			SpeedBullet = speedBullet;
 			Entity = entity;
-			CanShoot = false;
 		}
 
 		public abstract void CreateSpawn();
 		public abstract List<ShootEnemy> CreateBullet();
 		public abstract void KillNodes();
+
+		public abstract void Rotate();
 	}
 }

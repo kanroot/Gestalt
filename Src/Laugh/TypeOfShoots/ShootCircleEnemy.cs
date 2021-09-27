@@ -2,26 +2,30 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Godot;
-using Laugh.Shoots.ConductOfShoots;
-using Shoot = Laugh.IA.Enemy.Shoot;
+using Laugh.TypeOfShoots.ConductOfShoots;
 
 namespace Laugh.TypeOfShoots
 {
 	public class ShootCircleEnemy : ShootBase
 
 	{
-		private List<Node2D> spawnList;
-		private Node2D spawmNode;
-		private float angle;
-		private float sumAngle = 0;
+		private readonly float angle;
+		private readonly int degreesRotate;
+		private readonly int directionToRotation;
 
 		private ShootEnemy bulletInstance;
+		private Node2D spawmNode;
+		private List<Node2D> spawnList;
+		private float sumAngle;
 
 		public ShootCircleEnemy(PackedScene spawn, int countSpawn, PackedScene bullet, float speedBullet,
-			KinematicBody2D entity) : base(spawn, countSpawn, bullet, speedBullet, entity)
+			KinematicBody2D entity, int directionToRotation, int degreesRotate) : base(spawn,
+			countSpawn, bullet, speedBullet, entity)
 		{
 			angle = (float)360 / CountSpawn;
 			sumAngle = angle;
+			this.directionToRotation = directionToRotation;
+			this.degreesRotate = degreesRotate;
 		}
 
 		public override void CreateSpawn()
@@ -42,7 +46,6 @@ namespace Laugh.TypeOfShoots
 			sumAngle += angle;
 		}
 
-
 		public override List<ShootEnemy> CreateBullet()
 		{
 			return spawnList.Select(CreateInstanceBullet).ToList();
@@ -60,10 +63,18 @@ namespace Laugh.TypeOfShoots
 
 		public override void KillNodes()
 		{
-			CanShoot = false;
 			foreach (Node n in Entity.GetChildren())
 				if (n.GetChildCount() > 0 && n.GetChild<Node>(0) is Position2D)
 					n.QueueFree();
+		}
+
+		public override void Rotate()
+		{
+			foreach (var originNode2d in spawnList)
+			{
+				var degreesToRadiant = Math.PI / 180 * degreesRotate;
+				originNode2d.Rotate((float)degreesToRadiant * directionToRotation);
+			}
 		}
 	}
 }

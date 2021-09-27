@@ -7,11 +7,11 @@ namespace Laugh.IA.Player
 	[RegisteredType(nameof(MovementPlayer), "res://logos//hitomi.png", nameof(Node))]
 	public class MovementPlayer : Node
 	{
-		private PlayerMovement movement;
+		[Export] private bool canMove;
 		private KinematicBody2D entity;
-		[Export()] private NodePath entityPath;
-		[Export()] private float speed;
-		[Export()] private bool canMove;
+		[Export] private NodePath entityPath;
+		private PlayerMovement movement;
+		[Export] private float speed;
 
 		public override void _Ready()
 		{

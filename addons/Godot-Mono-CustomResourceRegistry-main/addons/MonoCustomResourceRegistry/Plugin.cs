@@ -1,6 +1,3 @@
-using System.Runtime.InteropServices.ComTypes;
-using System.Security.AccessControl;
-using System.Linq.Expressions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -161,15 +158,11 @@ namespace MonoCustomResourceRegistry
 					var fileOrDirName = dir.GetNext();
 
 					// Skips hidden files like .
-					if (fileOrDirName == "")
-					{
-						break;
-					}
-					else if (fileOrDirName.BeginsWith("."))
-					{
-						continue;
-					}
-					else if (dir.CurrentIsDir())
+					if (fileOrDirName == "") break;
+
+					if (fileOrDirName.BeginsWith(".")) continue;
+
+					if (dir.CurrentIsDir())
 					{
 						var foundFilePath =
 							FindClassPathRecursiveHelper(type, dir.GetCurrentDir() + "/" + fileOrDirName);

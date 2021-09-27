@@ -34,20 +34,26 @@ movementNodePath = NodePath("../Movement")
 
 [node name="Shoot" parent="." index="4"]
 script = ExtResource( 6 )
-entityPath = NodePath("..")
-countSpawn = 10
-speedBullet = 6000.0
-spawnNode = ExtResource( 7 )
 bulletScene = ExtResource( 9 )
+countSpawn = 10
+degreesToRotate = 1
+directionToRotation = 1
+entityPath = NodePath("..")
+spawnNode = ExtResource( 7 )
+speedBullet = 6000.0
+timerPath = NodePath("../TimerToShoot")
 
 [node name="Movement" parent="." index="5"]
 script = ExtResource( 5 )
 entityPath = NodePath("..")
 speed = 2000.0
 
-[node name="TextRotated" parent="." index="6" instance=ExtResource( 10 )]
+[node name="TimerToShoot" parent="." index="6"]
+wait_time = 0.5
 
-[node name="Overlay" type="Control" parent="." index="7"]
+[node name="TextRotated" parent="." index="7" instance=ExtResource( 10 )]
+
+[node name="Overlay" type="Control" parent="." index="8"]
 margin_top = 104.0
 margin_right = 40.0
 margin_bottom = 144.0

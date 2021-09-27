@@ -1,4 +1,6 @@
-namespace Laugh.Shoots.ConductOfShoots
+using Laugh.Shoots.ConductOfShoots;
+
+namespace Laugh.TypeOfShoots.ConductOfShoots
 {
 	public class ShootEnemy : Shoot
 	{

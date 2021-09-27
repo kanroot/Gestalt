@@ -1,6 +1,7 @@
 using Godot;
+using Laugh.Shoots.ConductOfShoots;
 
-namespace Laugh.Shoots.ConductOfShoots
+namespace Laugh.TypeOfShoots.ConductOfShoots
 {
 	public class ShootPlayer : Shoot
 	{
