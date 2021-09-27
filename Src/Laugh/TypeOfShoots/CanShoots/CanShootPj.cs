@@ -6,10 +6,10 @@ namespace Laugh.Shoots.CanShoots
 	public class CanShootPj : CanShootBase
 	{
 		[Export] private NodePath bulletPath;
+		[Export] protected PackedScene BulletScene;
 		private bool mouserOverPlayer;
 		private Node2D rotate;
 		[Export] private NodePath rotatePath;
-		[Export] protected PackedScene BulletScene;
 
 		public override void _Ready()
 		{

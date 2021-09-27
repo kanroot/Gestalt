@@ -1,6 +1,5 @@
 using Godot;
 using Laugh.TypeOfMovement;
-using Laugh.TypeOfMovement.Enemy;
 
 namespace Laugh.Movement.Enemy
 {

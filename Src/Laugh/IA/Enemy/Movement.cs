@@ -8,11 +8,11 @@ namespace Laugh.IA.Enemy
 	[RegisteredType(nameof(Movement), "res://logos//hitomi.png", nameof(Node))]
 	public class Movement : Node
 	{
-		private MovementBase movementPattern;
+		[Export] private bool canMove;
 		private KinematicBody2D entity;
-		[Export()] private NodePath entityPath;
-		[Export()] private float speed;
-		[Export()] private bool canMove;
+		[Export] private NodePath entityPath;
+		private MovementBase movementPattern;
+		[Export] private float speed;
 
 		public override void _Ready()
 		{

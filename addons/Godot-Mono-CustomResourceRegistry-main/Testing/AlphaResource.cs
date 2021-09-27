@@ -1,8 +1,7 @@
 using Godot;
-using System;
 using MonoCustomResourceRegistry;
 
-[RegisteredType(nameof(AlphaResource), "")]
+[RegisteredType(nameof(AlphaResource))]
 public class AlphaResource : Resource
 {
 	public AlphaResource()
@@ -16,7 +15,7 @@ public class AlphaResource : Resource
 		BetaSubResource = betaSubResource;
 	}
 
-	[Export] public int IntegerField { get; set; } = 0;
+	[Export] public int IntegerField { get; set; }
 	[Export] public string TextField { get; set; } = "";
 	[Export] public BetaResource BetaSubResource { get; set; }
 

@@ -1,5 +1,4 @@
 using Godot;
-using System;
 using MonoCustomResourceRegistry;
 
 [RegisteredType(nameof(BetaResource), "res://Testing/icon.png")]
@@ -18,7 +17,7 @@ public class BetaResource : Resource
 	}
 
 	[Export] public float[] FloatArrayField { get; set; } = new float[0];
-	[Export] public float FloatField { get; set; } = 0;
+	[Export] public float FloatField { get; set; }
 	[Export] public string TextField { get; set; } = "";
 	[Export] public string TextField2 { get; set; } = "";
 
