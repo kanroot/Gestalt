@@ -2,12 +2,13 @@ using Godot;
 
 namespace Laugh.Life
 {
-	public class LifeBase : Node
+	public abstract class LifeBase : Node
 	{
 		private CanvasLayer barCanvas;
 		private TextureProgress barLife;
 		private KinematicBody2D entity;
 		[Export] private NodePath entityPath;
+		[Export] private float maxhealth;
 		[Export] private float health;
 		[Export] private PackedScene lifeBar;
 		[Export] private PackedScene packedSceneRadius;
@@ -16,17 +17,22 @@ namespace Laugh.Life
 		public override void _Ready()
 		{
 			barCanvas = (CanvasLayer)lifeBar.Instance();
-			SetBar(health);
+			barLife = barCanvas.GetChild<TextureProgress>(0);
+			SetBarLife(health, maxhealth);
 			entity = GetNode<KinematicBody2D>(entityPath);
 			entity.CallDeferred("add_child", barCanvas);
 			entity.Connect("ready", this, nameof(AddCollisionShape));
 			entity.Connect("ready", this, nameof(AddConnect));
 		}
 
-		private void SetBar(float life)
+		private void SetBarLife(float currentLife)
 		{
-			barLife = barCanvas.GetChild<TextureProgress>(0);
-			barLife.Value = life;
+			barLife.Value = currentLife;
+		}
+		private void SetBarLife(float currentLife, float maxLife)
+		{
+			barLife.MaxValue = maxLife;
+			barLife.Value = currentLife;
 		}
 
 		private void AddCollisionShape()
@@ -44,18 +50,13 @@ namespace Laugh.Life
 			area2DCollision.Connect("area_entered", this, nameof(ShootEnter));
 		}
 
-		private void GetDamage(float damage)
+		protected void GetDamage(float damage)
 		{
 			health -= damage;
-			SetBar(health);
+			SetBarLife(health);
 		}
 
-		public void ShootEnter(Area2D bullet)
-		{
-			if (!bullet.GetGroups().Contains("shootPlayer")) return;
-			GetDamage(10);
-			GD.Print("entre");
-		}
+		public abstract void ShootEnter(Area2D bullet);
 		
 		//implementar como señal
 		protected void Death()

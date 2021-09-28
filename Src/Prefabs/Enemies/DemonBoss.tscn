@@ -11,7 +11,7 @@
 [ext_resource path="res://Src/Resources/Shoots/ShootEnemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Src/Resources/NodeTextRotated/TextRotated.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Src/Resources/Radius/DemonBoss/AreaDetect.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Src/Laugh/Life/LifeBase.cs" type="Script" id=12]
+[ext_resource path="res://Src/Laugh/Life/LifeBoss.cs" type="Script" id=12]
 [ext_resource path="res://Src/Resources/LifeBoss/LifeBoss.tscn" type="PackedScene" id=13]
 
 [node name="DemonBoss" instance=ExtResource( 3 )]
@@ -48,6 +48,7 @@ speed = 2000.0
 [node name="Life" parent="." index="6"]
 script = ExtResource( 12 )
 entityPath = NodePath("..")
+maxhealth = 1000.0
 health = 1000.0
 lifeBar = ExtResource( 13 )
 packedSceneRadius = ExtResource( 11 )
