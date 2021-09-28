@@ -7,11 +7,11 @@ namespace Laugh.Life
 		private CanvasLayer barCanvas;
 		private TextureProgress barLife;
 		private KinematicBody2D entity;
-		[Export] protected NodePath entityPath;
-		[Export] protected float health;
-		[Export] public PackedScene lifeBar;
+		[Export] private NodePath entityPath;
+		[Export] private float health;
+		[Export] private PackedScene lifeBar;
 		[Export] private PackedScene packedSceneRadius;
-		private Area2D radiusNode;
+		private Area2D area2DCollision;
 
 		public override void _Ready()
 		{
@@ -19,7 +19,7 @@ namespace Laugh.Life
 			SetBar(health);
 			entity = GetNode<KinematicBody2D>(entityPath);
 			entity.CallDeferred("add_child", barCanvas);
-			entity.Connect("ready", this, nameof(AdderRadius));
+			entity.Connect("ready", this, nameof(AddCollisionShape));
 			entity.Connect("ready", this, nameof(AddConnect));
 		}
 
@@ -29,19 +29,19 @@ namespace Laugh.Life
 			barLife.Value = life;
 		}
 
-		private void AdderRadius()
+		private void AddCollisionShape()
 		{
-			radiusNode = (Area2D)packedSceneRadius.Instance();
-			var shapeInstanced = radiusNode.GetChild<CollisionShape2D>(0);
-			var shapeEntity = entity.GetChild<CollisionShape2D>(0);
-			shapeInstanced.Scale = shapeEntity.Scale;
-			shapeInstanced.Shape = shapeEntity.Shape;
-			entity.AddChild(radiusNode);
+			area2DCollision = (Area2D)packedSceneRadius.Instance();
+			var collisionShape = area2DCollision.GetChild<CollisionShape2D>(0);
+			var entityShape = entity.GetChild<CollisionShape2D>(0);
+			collisionShape.Scale = entityShape.Scale;
+			collisionShape.Shape = entityShape.Shape;
+			entity.AddChild(area2DCollision);
 		}
 
 		private void AddConnect()
 		{
-			radiusNode.Connect("area_entered", this, nameof(ShootEnter));
+			area2DCollision.Connect("area_entered", this, nameof(ShootEnter));
 		}
 
 		private void GetDamage(float damage)
