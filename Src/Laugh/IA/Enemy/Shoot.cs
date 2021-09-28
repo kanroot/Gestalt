@@ -7,18 +7,18 @@ namespace Laugh.IA.Enemy
 	[RegisteredType(nameof(Movement), "res://logos//rei.png", nameof(Node))]
 	public class Shoot : Node
 	{
-		[Export] public bool CanShoot { get; set; }
+		[Export] private PackedScene bulletScene;
 		[Export] private int countSpawn;
-		[Export] private float speedBullet;
 		[Export] private int degreesToRotate;
 		[Export] private int directionToRotation;
-		[Export] private NodePath entityPath;
-		[Export] private NodePath timerPath;
-		[Export] private PackedScene bulletScene;
 		private KinematicBody2D entity;
+		[Export] private NodePath entityPath;
 		private ShootBase shootBase;
 		[Export] private PackedScene spawnNode;
+		[Export] private float speedBullet;
+		[Export] private NodePath timerPath;
 		private Timer timeToShoot;
+		[Export] public bool CanShoot { get; set; }
 
 		public override void _Ready()
 		{
@@ -28,6 +28,7 @@ namespace Laugh.IA.Enemy
 			shootBase.CreateSpawn();
 			timeToShoot = GetNode<Timer>(timerPath);
 			timeToShoot.Connect("timeout", this, nameof(SetCanShoot));
+			shootBase.CanRotate = true;
 		}
 
 		public override void _Process(float delta)

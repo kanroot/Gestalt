@@ -12,11 +12,11 @@ namespace Laugh.TypeOfShoots
 		private readonly float angle;
 		private readonly int degreesRotate;
 		private readonly int directionToRotation;
-
 		private ShootEnemy bulletInstance;
 		private Node2D spawmNode;
 		private List<Node2D> spawnList;
 		private float sumAngle;
+
 
 		public ShootCircleEnemy(PackedScene spawn, int countSpawn, PackedScene bullet, float speedBullet,
 			KinematicBody2D entity, int directionToRotation, int degreesRotate) : base(spawn,
@@ -70,6 +70,7 @@ namespace Laugh.TypeOfShoots
 
 		public override void Rotate()
 		{
+			if (CanRotate == false) return;
 			foreach (var originNode2d in spawnList)
 			{
 				var degreesToRadiant = Math.PI / 180 * degreesRotate;

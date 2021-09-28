@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Img/Demon/demon_letters _object.svg" type="Texture" id=1]
 [ext_resource path="res://Src/Resources/Demon/DemonBody.tres" type="SpriteFrames" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Src/Prefabs/Shoots/ShootEnemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Src/Resources/NodeTextRotated/TextRotated.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Src/Resources/Radius/DemonBoss/AreaDetect.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Src/Laugh/Life/LifeBase.cs" type="Script" id=12]
+[ext_resource path="res://Src/Resources/LifeBoss/LifeBoss.tscn" type="PackedScene" id=13]
 
 [node name="DemonBoss" instance=ExtResource( 3 )]
 collision_layer = 2
@@ -45,11 +47,15 @@ timerPath = NodePath("../TimerToShoot")
 
 [node name="Movement" parent="." index="5"]
 script = ExtResource( 5 )
+canMove = true
 entityPath = NodePath("..")
 speed = 2000.0
 
-[node name="TimerToShoot" parent="." index="6"]
-wait_time = 0.5
+[node name="Life" parent="." index="6"]
+script = ExtResource( 12 )
+entityPath = NodePath("..")
+Life = 1000
+lifeBar = ExtResource( 13 )
 
 [node name="TextRotated" parent="." index="7" instance=ExtResource( 10 )]
 
@@ -104,3 +110,6 @@ margin_bottom = 68.0
 margin_top = 72.0
 margin_right = 57.0
 margin_bottom = 86.0
+
+[node name="TimerToShoot" parent="." index="9"]
+wait_time = 0.5

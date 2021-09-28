@@ -4,26 +4,37 @@ namespace Laugh.Life
 {
 	public class LifeBase : Node
 	{
-		private KinematicBody2D Entity;
-		[Export] protected NodePath EntityPath;
-		[Export] protected int Life;
+		private CanvasLayer barCanvas;
+		private KinematicBody2D entity;
+		[Export] protected NodePath entityPath;
+		[Export] protected float health;
+		[Export] public PackedScene lifeBar;
 
 		public override void _Ready()
 		{
-			Entity = GetNode<KinematicBody2D>(EntityPath);
+			barCanvas = (CanvasLayer)lifeBar.Instance();
+			entity = GetNode<KinematicBody2D>(entityPath);
+			entity.CallDeferred("add_child", barCanvas);
 		}
+
+
+		public void GetDamage(float damage)
+		{
+			health -= damage;
+		}
+
 
 		//implementar como señal
 		protected void Death()
 		{
-			if (Life > 0) return;
-			Entity.QueueFree();
+			if (health > 0) return;
+			entity.QueueFree();
 		}
 
 		//implementar como señal
 		protected void GrowingLife(int value)
 		{
-			Life += value;
+			health += value;
 		}
 	}
 }
