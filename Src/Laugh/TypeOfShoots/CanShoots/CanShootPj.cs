@@ -40,6 +40,7 @@ namespace Laugh.Shoots.CanShoots
 			var bulletInstance = (Shoot)BulletScene.Instance();
 			bulletInstance.Position = BulletOrigin.GlobalPosition;
 			bulletInstance.SpeedBullet = SpeedBullet;
+			bulletInstance.AddToGroup("bullet");
 			GetTree().Root.AddChild(bulletInstance);
 			CanShoot = false;
 			TimerCanShoot.Start();
