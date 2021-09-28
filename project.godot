@@ -22,7 +22,7 @@ ResourceScriptDirectories=[ "res://" ]
 
 config/name="Laugh"
 run/main_scene="res://Src/Scenes/Main.tscn"
-config/icon="res://icon.png"
+config/icon="res://logo.png"
 
 [display]
 
