@@ -1,11 +1,11 @@
 using Godot;
-using Laugh.IA.Enemy;
 
 namespace Laugh.Life
 {
 	public class LifeBase : Node
 	{
 		private CanvasLayer barCanvas;
+		private TextureProgress barLife;
 		private KinematicBody2D entity;
 		[Export] protected NodePath entityPath;
 		[Export] protected float health;
@@ -16,13 +16,20 @@ namespace Laugh.Life
 		public override void _Ready()
 		{
 			barCanvas = (CanvasLayer)lifeBar.Instance();
+			SetBar(health);
 			entity = GetNode<KinematicBody2D>(entityPath);
 			entity.CallDeferred("add_child", barCanvas);
-			entity.Connect("ready", this, nameof(Adder));
+			entity.Connect("ready", this, nameof(AdderRadius));
 			entity.Connect("ready", this, nameof(AddConnect));
 		}
 
-		private void Adder()
+		private void SetBar(float life)
+		{
+			barLife = barCanvas.GetChild<TextureProgress>(0);
+			barLife.Value = life;
+		}
+
+		private void AdderRadius()
 		{
 			radiusNode = (Area2D)packedSceneRadius.Instance();
 			var shapeInstanced = radiusNode.GetChild<CollisionShape2D>(0);
@@ -34,35 +41,27 @@ namespace Laugh.Life
 
 		private void AddConnect()
 		{
-			radiusNode.Connect("body_entered", this, nameof(ShootEnter));
-			radiusNode.Connect("body_exited", this, nameof(ChangeStateOnExit));
+			radiusNode.Connect("area_entered", this, nameof(ShootEnter));
 		}
 
-		public void GetDamage(float damage)
+		private void GetDamage(float damage)
 		{
 			health -= damage;
+			SetBar(health);
 		}
 
 		public void ShootEnter(Area2D bullet)
 		{
-			
+			if (!bullet.GetGroups().Contains("shootPlayer")) return;
+			GetDamage(10);
+			GD.Print("entre");
 		}
-
-		public void ChangeStateOnExit(Area2D bullet)
-		{
-		}
-
-
+		
 		//implementar como señal
 		protected void Death()
 		{
 			if (health > 0) return;
 			entity.QueueFree();
-		}
-		
-		protected void GrowingLife(int value)
-		{
-			health += value;
 		}
 	}
 }
