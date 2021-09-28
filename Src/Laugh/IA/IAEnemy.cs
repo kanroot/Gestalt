@@ -15,16 +15,5 @@ namespace Laugh.IA.Enemy
 			movementBase = new MovementToPlayer(entity, 2000, true);
 			movementNode = GetNode<Movement>(movementNodePath);
 		}
-
-		public override void ChangeStateOnEnter(KinematicBody2D player)
-		{
-			//movementBase.UpdatePositionPlayer(player);
-			//movementNode.SetPattern(movementBase);
-			ResetShapeSize();
-		}
-
-		public override void ChangeStateOnExit(KinematicBody2D player)
-		{
-		}
 	}
 }

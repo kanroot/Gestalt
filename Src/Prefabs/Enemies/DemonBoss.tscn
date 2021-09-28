@@ -18,9 +18,6 @@
 collision_layer = 2
 collision_mask = 3
 
-[node name="CollisionShape2D" parent="." index="0"]
-visible = false
-
 [node name="Body" parent="." index="1"]
 frames = ExtResource( 2 )
 
@@ -30,8 +27,6 @@ texture = ExtResource( 1 )
 [node name="IA" parent="." index="3"]
 script = ExtResource( 8 )
 entityPath = NodePath("..")
-packedSceneRadius = ExtResource( 11 )
-scalesShape2D = 1.2
 movementNodePath = NodePath("../Movement")
 
 [node name="Shoot" parent="." index="4"]
@@ -54,8 +49,8 @@ speed = 2000.0
 [node name="Life" parent="." index="6"]
 script = ExtResource( 12 )
 entityPath = NodePath("..")
-Life = 1000
 lifeBar = ExtResource( 13 )
+packedSceneRadius = ExtResource( 11 )
 
 [node name="TextRotated" parent="." index="7" instance=ExtResource( 10 )]
 
