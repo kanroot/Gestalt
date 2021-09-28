@@ -22,6 +22,8 @@ namespace Laugh.TypeOfShoots
 			Entity = entity;
 		}
 
+		public bool CanRotate { get; set; }
+
 		public abstract void CreateSpawn();
 		public abstract List<ShootEnemy> CreateBullet();
 		public abstract void KillNodes();

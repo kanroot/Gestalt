@@ -18,8 +18,8 @@ namespace Laugh.IA.Enemy
 
 		public override void ChangeStateOnEnter(KinematicBody2D player)
 		{
-			movementBase.UpdatePositionPlayer(player);
-			movementNode.SetPattern(movementBase);
+			//movementBase.UpdatePositionPlayer(player);
+			//movementNode.SetPattern(movementBase);
 			ResetShapeSize();
 		}
 
