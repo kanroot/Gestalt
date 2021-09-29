@@ -1,7 +1,8 @@
 using Godot;
-using Laugh.Shoots.ConductOfShoots;
+using Laugh.Bullets;
+using Laugh.IA.Enemy;
 
-namespace Laugh.Shoots.CanShoots
+namespace Laugh.Shoots
 {
 	public class CanShootPj : CanShootBase
 	{
@@ -37,7 +38,7 @@ namespace Laugh.Shoots.CanShoots
 		protected override void CreateBullet()
 		{
 			if (!CanShoot) return;
-			var bulletInstance = (Shoot)BulletScene.Instance();
+			var bulletInstance = (BulletBase) BulletScene.Instance();
 			bulletInstance.Position = BulletOrigin.GlobalPosition;
 			bulletInstance.SpeedBullet = SpeedBullet;
 			bulletInstance.AddToGroup("bullet");

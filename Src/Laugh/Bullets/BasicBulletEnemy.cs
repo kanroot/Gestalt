@@ -1,8 +1,6 @@
-using Laugh.Shoots.ConductOfShoots;
-
-namespace Laugh.TypeOfShoots.ConductOfShoots
+namespace Laugh.Bullets
 {
-	public class ShootEnemy : Shoot
+	public class BasicBulletEnemy : BulletBase
 	{
 		public override void _Ready()
 		{

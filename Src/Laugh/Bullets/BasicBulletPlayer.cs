@@ -1,9 +1,8 @@
 using Godot;
-using Laugh.Shoots.ConductOfShoots;
 
-namespace Laugh.TypeOfShoots.ConductOfShoots
+namespace Laugh.Bullets
 {
-	public class ShootPlayer : Shoot
+	public class BasicBulletPlayer : BulletBase
 	{
 		private Vector2 Movement { get; set; }
 		private Vector2 MousePosition { get; set; }

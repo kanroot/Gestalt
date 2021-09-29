@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Godot;
-using Laugh.TypeOfShoots.ConductOfShoots;
+using Laugh.Bullets;
 
 namespace Laugh.TypeOfShoots
 {
@@ -25,7 +25,7 @@ namespace Laugh.TypeOfShoots
 		public bool CanRotate { get; set; }
 
 		public abstract void CreateSpawn();
-		public abstract List<ShootEnemy> CreateBullet();
+		public abstract List<BasicBulletEnemy> CreateBullet();
 		public abstract void KillNodes();
 
 		public abstract void Rotate();

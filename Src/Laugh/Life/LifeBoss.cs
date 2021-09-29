@@ -7,7 +7,7 @@ namespace Laugh.Life
 		private CanvasLayer barCanvas;
 		private TextureProgress barLife;
 		[Export] private PackedScene lifeBar;
-		
+
 		public override void _Ready()
 		{
 			base._Ready();

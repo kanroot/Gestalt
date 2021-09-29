@@ -4,12 +4,12 @@ namespace Laugh.Life
 {
 	public abstract class LifeBase : Node
 	{
+		private Area2D area2DCollision;
+		protected KinematicBody2D Entity;
+		[Export] private NodePath entityPath;
 		[Export] protected float Health;
 		[Export] protected float MaxHealth;
-		private Area2D area2DCollision;
-		[Export] private NodePath entityPath;
 		[Export] private PackedScene packedSceneRadius;
-		protected KinematicBody2D Entity;
 
 		public override void _Ready()
 		{

@@ -13,12 +13,12 @@ namespace Laugh.IA.FSM.Enemy
 		protected int DegreesToRotate;
 		protected int DirectionToRotate;
 		protected KinematicBody2D Entity;
-		protected PackedScene SpawnBullet;
-		protected float SpeedBullet;
 		protected MovementBase MovementBase;
+		protected IA.Enemy.Movement MovementNode;
 		protected ShootBase ShootBase;
 		protected Shoot ShootNode;
-		protected IA.Enemy.Movement MovementNode;
+		protected PackedScene SpawnBullet;
+		protected float SpeedBullet;
 
 		protected StateBase(Shoot shootNode, IA.Enemy.Movement movementNode, PackedScene spawn, int countSpawn,
 			PackedScene bullet, float speedBullet,
