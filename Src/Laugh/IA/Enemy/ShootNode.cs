@@ -35,6 +35,7 @@ namespace Laugh.IA.Enemy
 		public override void _Process(float delta)
 		{
 			base._Process(delta);
+			if (CanShoot == false) return;
 			shootBase.Rotate();
 			CreateInstanceOfBullets();
 		}
@@ -46,7 +47,6 @@ namespace Laugh.IA.Enemy
 
 		private void CreateInstanceOfBullets()
 		{
-			if (CanShoot == false) return;
 			var listBullet = shootBase.CreateBullet();
 			foreach (var n in listBullet) GetTree().Root.AddChild(n);
 			CanShoot = false;
