@@ -3,13 +3,21 @@ using Laugh.IA.Enemy;
 
 namespace Laugh.IA.FSM.Enemy
 {
-	public class StateBase
+	public abstract class StateBase
 	{
-		protected Shoot shoot;
-		protected MovementNode movement;
-		public StateBase(NodePath shootPath)
+		protected MovementNode NodeMovement = new MovementNode();
+		protected ShootNode NodeShoot = new ShootNode();
+
+		protected StateBase(NodePath shootPath, NodePath movementPath, PackedScene spawn, int countSpawn,
+			PackedScene bullet, float speedBullet,
+			KinematicBody2D entity, int directionToRotation, int degreesRotate)
 		{
-			shoot = shoot.GetNode<Shoot>(shootPath);
+			NodeShoot = NodeShoot.GetNode<ShootNode>(shootPath);
+			NodeMovement = NodeMovement.GetNode<MovementNode>(movementPath);
 		}
+
+
+		public abstract void OnEnter();
+		public abstract void OnExit();
 	}
 }

@@ -37,7 +37,7 @@ namespace Laugh.Shoots
 		protected override void CreateBullet()
 		{
 			if (!CanShoot) return;
-			var bulletInstance = (BulletBase) BulletScene.Instance();
+			var bulletInstance = (BulletBase)BulletScene.Instance();
 			bulletInstance.Position = BulletOrigin.GlobalPosition;
 			bulletInstance.SpeedBullet = SpeedBullet;
 			bulletInstance.AddToGroup("bullet");

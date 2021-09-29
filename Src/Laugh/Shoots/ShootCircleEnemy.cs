@@ -53,7 +53,7 @@ namespace Laugh.Shoots
 
 		private BasicBulletEnemy CreateInstanceBullet(Node2D originNode2d)
 		{
-			basicBulletInstance = (BasicBulletEnemy) Bullet.Instance();
+			basicBulletInstance = (BasicBulletEnemy)Bullet.Instance();
 			basicBulletInstance.SpeedBullet = SpeedBullet;
 			var position2d = originNode2d.GetChild<Position2D>(0);
 			basicBulletInstance.Position = position2d.GlobalPosition;
