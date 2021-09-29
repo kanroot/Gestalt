@@ -4,7 +4,7 @@ using MonoCustomResourceRegistry;
 
 namespace Laugh.IA.Enemy
 {
-	[RegisteredType(nameof(Movement), "res://logos//rei.png", nameof(Node))]
+	[RegisteredType(nameof(Shoot), "res://logos//rei.png", nameof(Node))]
 	public class Shoot : Node
 	{
 		[Export] private PackedScene bulletScene;

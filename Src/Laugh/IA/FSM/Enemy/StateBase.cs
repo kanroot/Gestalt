@@ -1,38 +1,15 @@
 using Godot;
 using Laugh.IA.Enemy;
-using Laugh.Shoots;
-using Laugh.TypeOfMovement;
 
 namespace Laugh.IA.FSM.Enemy
 {
-	public abstract class StateBase
+	public class StateBase
 	{
-		protected PackedScene Bullet;
-		protected int CountSpawn;
-		protected StateBase CurrentState;
-		protected int DegreesToRotate;
-		protected int DirectionToRotate;
-		protected KinematicBody2D Entity;
-		protected MovementBase MovementBase;
-		protected IA.Enemy.Movement MovementNode;
-		protected ShootBase ShootBase;
-		protected Shoot ShootNode;
-		protected PackedScene SpawnBullet;
-		protected float SpeedBullet;
-
-		protected StateBase(Shoot shootNode, IA.Enemy.Movement movementNode, PackedScene spawn, int countSpawn,
-			PackedScene bullet, float speedBullet,
-			KinematicBody2D entity, int directionToRotation, int degreesRotate)
+		protected Shoot shoot;
+		protected MovementNode movement;
+		public StateBase(NodePath shootPath)
 		{
-			ShootNode = shootNode;
-			MovementNode = movementNode;
-			ShootBase = new ShootCircleEnemy(spawn, countSpawn, bullet, speedBullet, entity, directionToRotation,
-				degreesRotate);
+			shoot = shoot.GetNode<Shoot>(shootPath);
 		}
-
-		public abstract void OnEnter(
-		);
-
-		public abstract void OnExit();
 	}
 }

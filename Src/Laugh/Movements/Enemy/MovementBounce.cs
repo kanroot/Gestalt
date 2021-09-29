@@ -1,6 +1,7 @@
 using Godot;
+using Laugh.TypeOfMovement;
 
-namespace Laugh.TypeOfMovement.Enemy
+namespace Laugh.Movements.Enemy
 {
 	public class MovementBounce : MovementBase
 	{

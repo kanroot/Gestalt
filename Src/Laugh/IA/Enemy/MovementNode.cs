@@ -1,12 +1,12 @@
 using Godot;
+using Laugh.Movements.Enemy;
 using Laugh.TypeOfMovement;
-using Laugh.TypeOfMovement.Enemy;
 using MonoCustomResourceRegistry;
 
 namespace Laugh.IA.Enemy
 {
-	[RegisteredType(nameof(Movement), "res://logos//hitomi.png", nameof(Node))]
-	public class Movement : Node
+	[RegisteredType(nameof(MovementNode), "res://logos//hitomi.png", nameof(Node))]
+	public class MovementNode : Node
 	{
 		[Export] private bool canMove;
 		private KinematicBody2D entity;

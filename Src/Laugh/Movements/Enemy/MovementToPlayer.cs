@@ -1,7 +1,7 @@
 using Godot;
 using Laugh.TypeOfMovement;
 
-namespace Laugh.Movement.Enemy
+namespace Laugh.Movements.Enemy
 {
 	public class MovementToPlayer : MovementBase
 	{
