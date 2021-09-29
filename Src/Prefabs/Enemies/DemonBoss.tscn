@@ -47,11 +47,11 @@ speed = 2000.0
 
 [node name="Life" parent="." index="6"]
 script = ExtResource( 12 )
+Health = 1000.0
+MaxHealth = 1000.0
 entityPath = NodePath("..")
-maxhealth = 1000.0
-health = 1000.0
-lifeBar = ExtResource( 13 )
 packedSceneRadius = ExtResource( 11 )
+lifeBar = ExtResource( 13 )
 
 [node name="TextRotated" parent="." index="7" instance=ExtResource( 10 )]
 
