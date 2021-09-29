@@ -1,13 +1,14 @@
 using Godot;
-using Laugh.TypeOfShoots;
+using Laugh.Shoots;
 using MonoCustomResourceRegistry;
 
 namespace Laugh.IA.Enemy
 {
-	[RegisteredType(nameof(Movement), "res://logos//rei.png", nameof(Node))]
-	public class Shoot : Node
+	[RegisteredType(nameof(ShootNode), "res://logos//rei.png", nameof(Node))]
+	public class ShootNode : Node
 	{
 		[Export] private PackedScene bulletScene;
+
 		[Export] private int countSpawn;
 		[Export] private int degreesToRotate;
 		[Export] private int directionToRotation;

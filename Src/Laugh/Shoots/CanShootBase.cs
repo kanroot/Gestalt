@@ -1,6 +1,6 @@
 using Godot;
 
-namespace Laugh.Shoots.CanShoots
+namespace Laugh.Shoots
 {
 	public abstract class CanShootBase : Node
 	{

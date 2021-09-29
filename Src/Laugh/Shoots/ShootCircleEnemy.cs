@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Godot;
-using Laugh.TypeOfShoots.ConductOfShoots;
+using Laugh.Bullets;
 
-namespace Laugh.TypeOfShoots
+namespace Laugh.Shoots
 {
 	public class ShootCircleEnemy : ShootBase
 
@@ -12,7 +12,7 @@ namespace Laugh.TypeOfShoots
 		private readonly float angle;
 		private readonly int degreesRotate;
 		private readonly int directionToRotation;
-		private ShootEnemy bulletInstance;
+		private BasicBulletEnemy basicBulletInstance;
 		private Node2D spawmNode;
 		private List<Node2D> spawnList;
 		private float sumAngle;
@@ -46,19 +46,19 @@ namespace Laugh.TypeOfShoots
 			sumAngle += angle;
 		}
 
-		public override List<ShootEnemy> CreateBullet()
+		public override List<BasicBulletEnemy> CreateBullet()
 		{
 			return spawnList.Select(CreateInstanceBullet).ToList();
 		}
 
-		private ShootEnemy CreateInstanceBullet(Node2D originNode2d)
+		private BasicBulletEnemy CreateInstanceBullet(Node2D originNode2d)
 		{
-			bulletInstance = (ShootEnemy)Bullet.Instance();
-			bulletInstance.SpeedBullet = SpeedBullet;
+			basicBulletInstance = (BasicBulletEnemy)Bullet.Instance();
+			basicBulletInstance.SpeedBullet = SpeedBullet;
 			var position2d = originNode2d.GetChild<Position2D>(0);
-			bulletInstance.Position = position2d.GlobalPosition;
-			bulletInstance.RotationDegrees = originNode2d.RotationDegrees;
-			return bulletInstance;
+			basicBulletInstance.Position = position2d.GlobalPosition;
+			basicBulletInstance.RotationDegrees = originNode2d.RotationDegrees;
+			return basicBulletInstance;
 		}
 
 		public override void KillNodes()
