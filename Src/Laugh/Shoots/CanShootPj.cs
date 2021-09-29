@@ -1,6 +1,5 @@
 using Godot;
 using Laugh.Bullets;
-using Laugh.IA.Enemy;
 
 namespace Laugh.Shoots
 {

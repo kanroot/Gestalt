@@ -1,5 +1,5 @@
 using Godot;
-using Laugh.TypeOfShoots;
+using Laugh.Shoots;
 using MonoCustomResourceRegistry;
 
 namespace Laugh.IA.Enemy

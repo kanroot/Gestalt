@@ -1,7 +1,7 @@
 using Godot;
 using Laugh.IA.Enemy;
+using Laugh.Shoots;
 using Laugh.TypeOfMovement;
-using Laugh.TypeOfShoots;
 
 namespace Laugh.IA.FSM.Enemy
 {

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Godot;
 using Laugh.Bullets;
 
-namespace Laugh.TypeOfShoots
+namespace Laugh.Shoots
 {
 	public abstract class ShootBase
 	{

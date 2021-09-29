@@ -4,7 +4,7 @@ using System.Linq;
 using Godot;
 using Laugh.Bullets;
 
-namespace Laugh.TypeOfShoots
+namespace Laugh.Shoots
 {
 	public class ShootCircleEnemy : ShootBase
 
