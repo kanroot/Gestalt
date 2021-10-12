@@ -1,60 +1,60 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Assets/Img/Laught/LaughtMan_letters.svg" type="Texture" id=1]
-[ext_resource path="res://Src/Laugh/IA/Player/MovementPlayer.cs" type="Script" id=2]
-[ext_resource path="res://Src/Prefabs/BaseEntity/EntidadBase.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Src/Resources/Player/PlayerLineOutside.tres" type="SpriteFrames" id=4]
-[ext_resource path="res://Src/Laugh/Shoots/CanShootPj.cs" type="Script" id=5]
-[ext_resource path="res://Src/Resources/Shoots/ShootCircle.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Src/Resources/BulletSpawn/RotatePosition2d.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Src/Resources/Player/Player.tres" type="SpriteFrames" id=8]
-[ext_resource path="res://Src/Laugh/Text/CanMovementText.cs" type="Script" id=9]
+[ext_resource path="res://Src/Prefabs/Enemies/EnemyCircle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Img/Laught/LineOutsideSegements3.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Img/Laught/LaughtMan_letters.svg" type="Texture" id=3]
+[ext_resource path="res://Assets/Img/Laught/LaughtMan4.svg" type="Texture" id=4]
+[ext_resource path="res://Assets/Img/Laught/LineOutsideSegements2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Img/Laught/LineOutsideSegements1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Img/Laught/LineOutsideSegements0.png" type="Texture" id=7]
+[ext_resource path="res://Src/Gestalt/IA/Player/MovementPlayer.cs" type="Script" id=8]
+[ext_resource path="res://Src/Gestalt/Shoots/CanShootPj.cs" type="Script" id=9]
+[ext_resource path="res://Src/Prefabs/Shoots/ShootPlayer.tscn" type="PackedScene" id=10]
 
-[node name="Player" instance=ExtResource( 3 )]
-input_pickable = true
-collision_layer = 3
-collision_mask = 3
+[sub_resource type="CircleShape2D" id=1]
+radius = 517.544
 
-[node name="CollisionShape2D" parent="." index="0"]
-scale = Vector2( 0.08, 0.08 )
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Player" instance=ExtResource( 1 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 1 )
 
 [node name="Body" parent="." index="1"]
-scale = Vector2( 0.08, 0.08 )
-frames = ExtResource( 8 )
+texture = ExtResource( 4 )
 
-[node name="Text" parent="." index="2"]
-scale = Vector2( 0.08, 0.08 )
-texture = ExtResource( 1 )
-
-[node name="LineOutside" type="AnimatedSprite" parent="." index="3"]
-scale = Vector2( 0.08, 0.08 )
-frames = ExtResource( 4 )
-
-[node name="Rotate" parent="." index="5" instance=ExtResource( 7 )]
-
-[node name="Position2D" parent="Rotate" index="0"]
-position = Vector2( 54.9798, 0 )
-
-[node name="Camera2D" type="Camera2D" parent="." index="6"]
-
-[node name="Movement" parent="." index="7"]
-script = ExtResource( 2 )
+[node name="Movement" parent="." index="2"]
+script = ExtResource( 8 )
 canMove = true
 entityPath = NodePath("..")
-speed = 400.0
+speed = 200.0
 
-[node name="Shoots" parent="." index="8"]
-script = ExtResource( 5 )
+[node name="LifeLine" type="AnimatedSprite" parent="." index="3"]
+frames = SubResource( 2 )
+
+[node name="Text" parent="." index="4"]
+texture = ExtResource( 3 )
+
+[node name="Shoot" parent="." index="5"]
+script = ExtResource( 9 )
 SpeedBullet = 10.0
 CanShoot = true
-TimerPath = NodePath("../TimerCanShoot")
-bulletPath = NodePath("../Rotate/Position2D")
-BulletScene = ExtResource( 6 )
-rotatePath = NodePath("../Rotate")
+TimerPath = NodePath("../Timer")
+bulletPath = NodePath("../Node2D/Position2D")
+BulletScene = ExtResource( 10 )
+rotatePath = NodePath("../Node2D")
 
-[node name="MovementText" type="Node" parent="." index="9"]
-script = ExtResource( 9 )
-degreesRotate = 1
-pathTextRotated = NodePath("../Text")
+[node name="Node2D" type="Node2D" parent="." index="9"]
 
-[editable path="Rotate"]
+[node name="Position2D" type="Position2D" parent="Node2D" index="0"]
+position = Vector2( 550, 0 )
+__meta__ = {
+"_gizmo_extents_": 100.0
+}
