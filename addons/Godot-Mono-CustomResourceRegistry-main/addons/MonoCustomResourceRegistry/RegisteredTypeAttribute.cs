@@ -1,13 +1,14 @@
+using Godot;
 using System;
 
 namespace MonoCustomResourceRegistry
 {
-	[AttributeUsage(AttributeTargets.Class)]
-	public class RegisteredTypeAttribute : Attribute
+	[AttributeUsage(System.AttributeTargets.Class)]
+	public class RegisteredTypeAttribute : System.Attribute
 	{
-		public string baseType;
-		public string iconPath;
 		public string name;
+		public string iconPath;
+		public string baseType;
 
 		public RegisteredTypeAttribute(string name, string iconPath = "", string baseType = "")
 		{
