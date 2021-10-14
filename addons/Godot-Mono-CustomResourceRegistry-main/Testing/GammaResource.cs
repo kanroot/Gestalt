@@ -1,23 +1,23 @@
 using Godot;
-using System;
 
 public class GammaResource : Resource
 {
-    public GammaResource() {}
-    
-    public GammaResource(BetaResource[] betaArray, string textField)
-    {
-        BetaArray = betaArray;
-        TextField = textField;
-    }
+	public GammaResource()
+	{
+	}
 
-    [Export]
-    public BetaResource[] BetaArray { get; set; } = new BetaResource[0];
-    [Export]
-    public string TextField { get; set; } = "";
+	public GammaResource(BetaResource[] betaArray, string textField)
+	{
+		BetaArray = betaArray;
+		TextField = textField;
+	}
 
-    public override string ToString()
-    {
-        return $"Gamma: [{String.Join<BetaResource>(", ", BetaArray)} {TextField}]";
-    }
+	[Export] public BetaResource[] BetaArray { get; set; } = new BetaResource[0];
+
+	[Export] public string TextField { get; set; } = "";
+
+	public override string ToString()
+	{
+		return $"Gamma: [{string.Join<BetaResource>(", ", BetaArray)} {TextField}]";
+	}
 }

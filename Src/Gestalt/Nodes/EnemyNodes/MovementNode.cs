@@ -1,23 +1,14 @@
 using Gestalt.Movements;
-using Gestalt.Movements.Enemy;
 using Godot;
 using MonoCustomResourceRegistry;
 
-namespace Gestalt.IA.Enemy
+namespace Gestalt.Nodes.EnemyNodes
 {
-	[RegisteredType(nameof(MovementNode), nameof(Node))]
+	[RegisteredType(nameof(MovementNode))]
 	public class MovementNode : Node
 	{
-		[Export] private bool CanMove { get; set; }
-		private KinematicBody2D entity;
-		[Export] private NodePath entityPath;
 		private MovementBase movementPattern;
-
-
-		public override void _Ready()
-		{
-			entity = GetNode<KinematicBody2D>(entityPath);
-		}
+		[Export] public bool CanMove { get; set; }
 
 		public void SetPattern(MovementBase pattern)
 		{

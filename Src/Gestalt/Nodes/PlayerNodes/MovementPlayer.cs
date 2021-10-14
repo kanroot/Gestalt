@@ -2,7 +2,7 @@ using Gestalt.Movements.Player;
 using Godot;
 using MonoCustomResourceRegistry;
 
-namespace Gestalt.IA.Player
+namespace Gestalt.Nodes.PlayerNodes
 {
 	[RegisteredType(nameof(MovementPlayer), nameof(Node))]
 	public class MovementPlayer : Node

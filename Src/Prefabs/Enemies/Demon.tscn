@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Src/Prefabs/Enemies/EnemyCircle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Img/Demon/demon_letters _object.svg" type="Texture" id=2]
 [ext_resource path="res://Assets/Img/Demon/demon.svg" type="Texture" id=3]
-[ext_resource path="res://Src/Gestalt/IA/Enemy/ShootNode.cs" type="Script" id=4]
-[ext_resource path="res://Src/Gestalt/IA/Enemy/MovementNode.cs" type="Script" id=5]
+[ext_resource path="res://Src/Gestalt/Nodes/EnemyNodes/ShootNode.cs" type="Script" id=4]
+[ext_resource path="res://Src/Gestalt/Nodes/EnemyNodes/MovementNode.cs" type="Script" id=5]
 [ext_resource path="res://Src/Gestalt/Life/LifeBoss.cs" type="Script" id=6]
 [ext_resource path="res://Src/Prefabs/Life/LifeBoss.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Src/Prefabs/DetectShoots/AreaDetect.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Src/Gestalt/IA/IAEnemy.cs" type="Script" id=9]
+[ext_resource path="res://Src/Prefabs/SaveTress/States/DemonOne.tres" type="Resource" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 499.858
@@ -27,11 +28,9 @@ texture = ExtResource( 2 )
 
 [node name="Movement" parent="." index="3"]
 script = ExtResource( 5 )
-entityPath = NodePath("..")
 
 [node name="Shoot" parent="." index="4"]
 script = ExtResource( 4 )
-entityPath = NodePath("..")
 
 [node name="Life" parent="." index="5"]
 script = ExtResource( 6 )
@@ -43,6 +42,7 @@ lifeBar = ExtResource( 7 )
 
 [node name="IA" parent="." index="6"]
 script = ExtResource( 9 )
-entityPath = NodePath("..")
+EntityPath = NodePath("..")
 movementNodePath = NodePath("../Movement")
 shootNodePath = NodePath("../Shoot")
+resourceStateOne = ExtResource( 10 )

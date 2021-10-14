@@ -4,7 +4,7 @@ namespace Gestalt.Movements.Player
 {
 	public class PlayerMovement : MovementBase
 	{
-		public PlayerMovement(KinematicBody2D entity, float speed, bool canMove) : base(entity, speed, canMove)
+		public PlayerMovement(KinematicBody2D entity, float speed, bool canMove) : base(entity, speed)
 		{
 		}
 
