@@ -1,15 +1,15 @@
 using Godot;
 
-namespace Laugh.IA
+namespace Gestalt.IA
 {
 	public abstract class IABase : Node
 	{
-		protected KinematicBody2D entity;
-		[Export] private NodePath entityPath;
+		protected KinematicBody2D Entity;
+		[Export] protected NodePath EntityPath;
 
 		public override void _Ready()
 		{
-			entity = GetNode<KinematicBody2D>(entityPath);
+			Entity = GetNode<KinematicBody2D>(EntityPath);
 		}
 	}
 }
