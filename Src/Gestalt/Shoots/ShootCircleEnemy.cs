@@ -13,8 +13,8 @@ namespace Gestalt.Shoots
 		private readonly int degreesRotate;
 		private readonly int directionToRotation;
 		private BasicBulletEnemy basicBulletInstance;
-		private Node2D spawnNode;
 		private List<Node2D> spawnList;
+		private Node2D spawnNode;
 		private float sumAngle;
 
 
@@ -22,7 +22,7 @@ namespace Gestalt.Shoots
 			KinematicBody2D entity, int directionToRotation, int degreesRotate) : base(spawn,
 			countSpawn, bullet, speedBullet, entity)
 		{
-			angle = (float) 360 / CountSpawn;
+			angle = (float)360 / CountSpawn;
 			sumAngle = angle;
 			this.directionToRotation = directionToRotation;
 			this.degreesRotate = degreesRotate;

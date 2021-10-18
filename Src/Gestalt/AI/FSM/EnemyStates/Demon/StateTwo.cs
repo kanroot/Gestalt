@@ -25,7 +25,6 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 		{
 			shootCircleEnemy = new ShootCircleEnemy(spawn, countNodes, bullet, speedBullet, Entity, direction, degrees);
 			movementToPlayer = new MovementToPlayer(Entity, speedMovement);
-			
 		}
 
 		public override void OnEnter()

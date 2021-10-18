@@ -1,25 +1,12 @@
-using System;
-using Gestalt.Bullets;
 using Godot;
 
 namespace Gestalt.Life
 {
 	public class LifeBoss : LifeBase
 	{
-		[Signal]
-		public delegate void FirstThird();
-		
-		[Signal]
-		public delegate void SecondThird();
-		
-		[Signal]
-		public delegate void DeathBoss();
-
 		private CanvasLayer barCanvas;
 		private TextureProgress barLife;
-		private float firsThirdHealt;
 		[Export] private PackedScene lifeBar;
-		private float secondThirdHealt;
 
 		public override void _Ready()
 		{
@@ -28,10 +15,9 @@ namespace Gestalt.Life
 			barLife = barCanvas.GetChild<TextureProgress>(0);
 			SetBarLife(Health, MaxHealth);
 			Entity.CallDeferred("add_child", barCanvas);
-			CalLife();
 		}
 
-		
+
 		private void SetBarLife(float currentLife)
 		{
 			barLife.Value = currentLife;
@@ -48,42 +34,10 @@ namespace Gestalt.Life
 			Health -= damage;
 			SetBarLife(Health);
 		}
-		
 
 		public override void ShootEnter(Area2D bullet)
 		{
-			if (!bullet.GetGroups().Contains("shootPlayer")) return;
-			var bulletPlayer = (BulletBase) bullet;
-			GetDamage(bulletPlayer.Damage);
-			Switcher();
-		}
-
-
-		private void Switcher()
-		{
-			if (Health < secondThirdHealt && Health > firsThirdHealt)
-			{
-				EmitSignal(nameof(SecondThird));
-			}
-			else
-			{
-				if (Health < firsThirdHealt && Health > 0)
-				{
-					EmitSignal(nameof(FirstThird));
-				}
-				else
-				{
-					if (!(Health <= 0)) return;
-					EmitSignal(nameof(DeathBoss));
-				}
-			}
-		}
-
-
-		private void CalLife()
-		{
-			firsThirdHealt = MaxHealth / 3;
-			secondThirdHealt = firsThirdHealt * 2;
+			//No puede utilizar el base._ready()
 		}
 	}
 }
