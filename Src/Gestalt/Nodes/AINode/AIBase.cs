@@ -1,4 +1,3 @@
-using Gestalt.Life;
 using Gestalt.Nodes.EnemyNodes;
 using Godot;
 
@@ -6,12 +5,12 @@ namespace Gestalt.Nodes.AINode
 {
 	public abstract class AIBase : Node
 	{
-		protected MovementNode NodeMovement;
+		private protected KinematicBody2D Entity;
+		[Export] private NodePath entityPath;
 		[Export] private NodePath movementNodePath;
+		protected MovementNode NodeMovement;
 		protected ShootNode NodeShoot;
 		[Export] private NodePath shootNodePath;
-		[Export] private NodePath entityPath;
-		private protected KinematicBody2D Entity;
 
 		public override void _Ready()
 		{

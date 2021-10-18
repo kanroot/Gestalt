@@ -32,6 +32,7 @@ script = ExtResource( 5 )
 
 [node name="Shoot" parent="." index="4"]
 script = ExtResource( 4 )
+timerPath = NodePath("../Timer")
 
 [node name="Life" parent="." index="5"]
 script = ExtResource( 6 )
@@ -43,9 +44,12 @@ lifeBar = ExtResource( 7 )
 
 [node name="IA" parent="." index="6"]
 script = ExtResource( 9 )
+entityPath = NodePath("..")
 movementNodePath = NodePath("../Movement")
 shootNodePath = NodePath("../Shoot")
-entityPath = NodePath("..")
 lifePath = NodePath("../Life")
 resourceOne = ExtResource( 11 )
 resourceTwo = ExtResource( 10 )
+
+[node name="Timer" parent="." index="7"]
+wait_time = 0.2

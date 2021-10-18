@@ -1,15 +1,15 @@
+using System;
 using Gestalt.AI.FSM.EnemyStates.Demon;
 using Gestalt.AI.FSM.Resources;
 using Gestalt.Life;
-using Gestalt.Nodes.EnemyNodes;
 using Godot;
 
 namespace Gestalt.Nodes.AINode
 {
 	public class IABoss : AIBase
 	{
-		[Export()] private NodePath lifePath;
 		private LifeBoss lifeBoss;
+		[Export] private NodePath lifePath;
 		[Export] private DemonState resourceOne;
 		[Export] private DemonState resourceTwo;
 		private StateOne stateOne;
@@ -23,7 +23,7 @@ namespace Gestalt.Nodes.AINode
 			lifeBoss.Connect("FirstThird", this, nameof(EnterStateOne));
 			lifeBoss.Connect("SecondThird", this, nameof(EnterStateTwo));
 		}
-		
+
 
 		protected override void EnterStateOne()
 		{
@@ -38,9 +38,9 @@ namespace Gestalt.Nodes.AINode
 
 		protected override void EnterStateThree()
 		{
-			throw new System.NotImplementedException();
+			throw new NotImplementedException();
 		}
-		
+
 		protected override void BuildStates()
 		{
 			stateOne = new StateOne(
@@ -55,7 +55,7 @@ namespace Gestalt.Nodes.AINode
 				resourceOne.Direction,
 				resourceOne.SpeedMovement
 			);
-			
+
 			stateTwo = new StateTwo(
 				NodeShoot,
 				NodeMovement,
@@ -68,7 +68,6 @@ namespace Gestalt.Nodes.AINode
 				resourceOne.Direction,
 				resourceOne.SpeedMovement
 			);
-			
 		}
 	}
 }

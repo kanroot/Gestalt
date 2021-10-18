@@ -6,18 +6,21 @@ namespace Gestalt.Life
 {
 	public class LifeBoss : LifeBase
 	{
+		[Signal]
+		public delegate void FirstThird();
+
+		[Signal]
+		public delegate void LastThird();
+
+		[Signal]
+		public delegate void SecondThird();
+
 		private CanvasLayer barCanvas;
 		private TextureProgress barLife;
 		private float firsThirdHealt;
-		private float secondThirdHealt;
 		[Export] private PackedScene lifeBar;
-		[Signal]
-		public delegate void FirstThird();
-		[Signal]
-		public delegate void SecondThird();
-		[Signal]
-		public delegate void LastThird();
-		
+		private float secondThirdHealt;
+
 		public override void _Ready()
 		{
 			base._Ready();
@@ -32,7 +35,7 @@ namespace Gestalt.Life
 		{
 			Switcher();
 		}
-		
+
 		private void SetBarLife(float currentLife)
 		{
 			barLife.Value = currentLife;
@@ -53,7 +56,7 @@ namespace Gestalt.Life
 		public override void ShootEnter(Area2D bullet)
 		{
 			if (!bullet.GetGroups().Contains("shootPlayer")) return;
-			var bulletPlayer = (BulletBase)bullet;
+			var bulletPlayer = (BulletBase) bullet;
 			GetDamage(bulletPlayer.Damage);
 		}
 
@@ -62,13 +65,9 @@ namespace Gestalt.Life
 		{
 			//si la vida es distinta a la vida maxima entra
 			if (!(Math.Abs(Health - MaxHealth) < 1))
-			{
 				EmitSignal(Health > secondThirdHealt ? nameof(SecondThird) : nameof(LastThird));
-			}
 			else
-			{
 				EmitSignal(nameof(FirstThird));
-			}
 		}
 
 		private void CalLife()
