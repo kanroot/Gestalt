@@ -26,7 +26,6 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 		{
 			shootCircleEnemy = new ShootCircleEnemy(spawn, countNodes, bullet, speedBullet, Entity, direction, degrees);
 			movementBounce = new MovementBounce(Entity, speedMovement);
-			ShootNode.TimerToShoot.Autostart = true;
 		}
 
 		public override void OnEnter()
@@ -36,10 +35,12 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 			shootCircleEnemy.CreateSpawn();
 			shootCircleEnemy.CanRotate = true;
 			MovementNode.CanMove = true;
+			ShootNode.TimerToShoot.Autostart = true;
 		}
 
 		public override void OnExit()
 		{
+			ShootNode.TimerToShoot.Autostart = false;
 			MovementNode.CanMove = false;
 			shootCircleEnemy.CanRotate = false;
 			ShootNode.CanShoot = false;

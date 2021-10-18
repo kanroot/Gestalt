@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Src/Prefabs/Enemies/EnemyCircle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Img/Demon/demon_letters _object.svg" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Src/Gestalt/Nodes/AINode/IABoss.cs" type="Script" id=9]
 [ext_resource path="res://Src/Prefabs/SaveTress/States/DemonTwo.tres" type="Resource" id=10]
 [ext_resource path="res://Src/Prefabs/SaveTress/States/DemonOne.tres" type="Resource" id=11]
+[ext_resource path="res://Src/Gestalt/Text/CanMovementText.cs" type="Script" id=12]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 499.858
@@ -37,8 +38,8 @@ timerPath = NodePath("../Timer")
 [node name="Life" parent="." index="5"]
 script = ExtResource( 6 )
 entityPath = NodePath("..")
-Health = 1000.0
-MaxHealth = 1000.0
+Health = 10000.0
+MaxHealth = 10000.0
 packedSceneRadius = ExtResource( 8 )
 lifeBar = ExtResource( 7 )
 
@@ -52,4 +53,10 @@ resourceOne = ExtResource( 11 )
 resourceTwo = ExtResource( 10 )
 
 [node name="Timer" parent="." index="7"]
+process_mode = 0
 wait_time = 0.2
+
+[node name="TextRotation" parent="." index="8"]
+script = ExtResource( 12 )
+degreesRotate = 1
+pathTextRotated = NodePath("../Text")
