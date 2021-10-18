@@ -1,3 +1,4 @@
+using Gestalt.Bullets;
 using Godot;
 
 namespace Gestalt.Life
@@ -6,8 +7,17 @@ namespace Gestalt.Life
 	{
 		private CanvasLayer barCanvas;
 		private TextureProgress barLife;
+		private float firsThirdHealt;
+		private float secondThirdHealt;
+		private float LastThirdHealt;
 		[Export] private PackedScene lifeBar;
-
+		[Signal]
+		public delegate void FirstThird();
+		[Signal]
+		public delegate void SecondThird();
+		[Signal]
+		public delegate void LastThird();
+		
 		public override void _Ready()
 		{
 			base._Ready();
@@ -17,6 +27,11 @@ namespace Gestalt.Life
 			Entity.CallDeferred("add_child", barCanvas);
 		}
 
+		public override void _Process(float delta)
+		{
+			base._Process(delta);
+		}
+		
 		private void SetBarLife(float currentLife)
 		{
 			barLife.Value = currentLife;
@@ -37,7 +52,8 @@ namespace Gestalt.Life
 		public override void ShootEnter(Area2D bullet)
 		{
 			if (!bullet.GetGroups().Contains("shootPlayer")) return;
-			GetDamage(10);
+			var bulletPlayer = (BulletBase)bullet;
+			GetDamage(bulletPlayer.Damage);
 		}
 	}
 }

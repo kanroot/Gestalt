@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
-[ext_resource path="res://Src/Gestalt/IA/Resources/DemonState.cs" type="Script" id=1]
+[ext_resource path="res://Src/Gestalt/AI/FSM/Resources/DemonState.cs" type="Script" id=1]
 [ext_resource path="res://Src/Prefabs/Bullets/ShootEnemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Src/Prefabs/Spawn/RotatePosition2d.tscn" type="PackedScene" id=3]
 

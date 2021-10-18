@@ -5,7 +5,11 @@ namespace Gestalt.Movements.Enemy
 	public class MovementToPlayer : MovementBase
 	{
 		private Vector2 positionPlayer;
-		
+
+		public MovementToPlayer(KinematicBody2D entity, float speed) : base(entity, speed)
+		{
+		}
+
 		public override void DoMovement(float delta)
 		{
 			if (Entity.GlobalPosition.Round().DistanceTo(positionPlayer.Round()) < 8) return;
@@ -16,10 +20,6 @@ namespace Gestalt.Movements.Enemy
 		public void UpdatePositionPlayer(KinematicBody2D player)
 		{
 			positionPlayer = player.GlobalPosition;
-		}
-
-		public MovementToPlayer(KinematicBody2D entity, float speed) : base(entity, speed)
-		{
 		}
 	}
 }

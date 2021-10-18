@@ -7,8 +7,9 @@ namespace Gestalt.IA.FSM.EnemyStates.Demon
 {
 	public class StateOne : StateBase
 	{
-		private readonly ShootCircleEnemy shootCircleEnemy;
 		private readonly MovementBounce movementBounce;
+		private readonly ShootCircleEnemy shootCircleEnemy;
+
 		public StateOne(
 			ShootNode shootNode,
 			MovementNode movementNode,
@@ -21,7 +22,7 @@ namespace Gestalt.IA.FSM.EnemyStates.Demon
 			int direction,
 			int speedMovement
 		) : base(shootNode, movementNode, entity)
-		
+
 		{
 			shootCircleEnemy = new ShootCircleEnemy(spawn, countNodes, bullet, speedBullet, Entity, direction, degrees);
 			movementBounce = new MovementBounce(Entity, speedMovement);
