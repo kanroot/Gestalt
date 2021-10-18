@@ -3,7 +3,7 @@ using Gestalt.Nodes.EnemyNodes;
 using Gestalt.Shoots;
 using Godot;
 
-namespace Gestalt.IA.FSM.EnemyStates.Demon
+namespace Gestalt.AI.FSM.EnemyStates.Demon
 {
 	public class StateOne : StateBase
 	{
