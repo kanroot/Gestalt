@@ -7,9 +7,7 @@ namespace Gestalt.Bullets
 		public float SpeedBullet { get; set; }
 		protected Timer BulletFree { get; set; } = new Timer();
 
-		//daño, el daño sera el daño base del disparo por algun multiplicador, para ello la propiedad damagetotal
-		protected int DamageTotal { get; set; }
-		protected int DamageBase => 10;
+		[Export] public float Damage { get; set; }
 
 		private void _on_Shoot_body_entered(Node2D node2D)
 		{

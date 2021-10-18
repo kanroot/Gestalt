@@ -7,10 +7,10 @@ namespace Gestalt.Shoots
 	{
 		[Export] private NodePath bulletPath;
 		[Export] protected PackedScene BulletScene;
-		[Export] private NodePath rotatePath;
 		private bool mouserOverPlayer;
 		private Node2D rotate;
-		
+		[Export] private NodePath rotatePath;
+
 		public override void _Ready()
 		{
 			base._Ready();
@@ -37,7 +37,7 @@ namespace Gestalt.Shoots
 		protected override void CreateBullet()
 		{
 			if (!CanShoot) return;
-			var bulletInstance = (BulletBase) BulletScene.Instance();
+			var bulletInstance = (BulletBase)BulletScene.Instance();
 			bulletInstance.Position = BulletOrigin.GlobalPosition;
 			bulletInstance.SpeedBullet = SpeedBullet;
 			bulletInstance.AddToGroup("bullet");

@@ -10,6 +10,7 @@ radius = 5.57572
 [node name="ShootEnemy" instance=ExtResource( 1 )]
 scale = Vector2( 1.00401, 1 )
 script = ExtResource( 3 )
+Damage = 100.0
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 0.02, 0.02 )

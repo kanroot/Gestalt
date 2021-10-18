@@ -9,7 +9,7 @@ namespace Gestalt.Nodes.EnemyNodes
 	{
 		private ShootBase shootBase;
 		[Export] public bool CanShoot { get; set; }
-		
+
 		public override void _Process(float delta)
 		{
 			if (CanShoot == false) return;
