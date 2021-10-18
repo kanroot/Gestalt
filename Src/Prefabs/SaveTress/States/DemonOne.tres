@@ -11,5 +11,5 @@ CountNodes = 15
 Degrees = 1
 Direction = 1
 Spawn = ExtResource( 3 )
-SpeedBullet = 2000
+SpeedBullet = 500
 SpeedMovement = 1000
