@@ -6,10 +6,10 @@
 
 [resource]
 script = ExtResource( 1 )
-Spawn = ExtResource( 3 )
 Bullet = ExtResource( 2 )
-CountNodes = 10
-SpeedBullet = 2000
+CountNodes = 15
 Degrees = 1
 Direction = 1
-SpeedMovement = 0
+Spawn = ExtResource( 3 )
+SpeedBullet = 2000
+SpeedMovement = 1000

@@ -1,3 +1,4 @@
+using System;
 using Gestalt.Bullets;
 using Godot;
 
@@ -9,7 +10,6 @@ namespace Gestalt.Life
 		private TextureProgress barLife;
 		private float firsThirdHealt;
 		private float secondThirdHealt;
-		private float LastThirdHealt;
 		[Export] private PackedScene lifeBar;
 		[Signal]
 		public delegate void FirstThird();
@@ -25,11 +25,12 @@ namespace Gestalt.Life
 			barLife = barCanvas.GetChild<TextureProgress>(0);
 			SetBarLife(Health, MaxHealth);
 			Entity.CallDeferred("add_child", barCanvas);
+			CalLife();
 		}
 
 		public override void _Process(float delta)
 		{
-			base._Process(delta);
+			Switcher();
 		}
 		
 		private void SetBarLife(float currentLife)
@@ -54,6 +55,26 @@ namespace Gestalt.Life
 			if (!bullet.GetGroups().Contains("shootPlayer")) return;
 			var bulletPlayer = (BulletBase)bullet;
 			GetDamage(bulletPlayer.Damage);
+		}
+
+
+		private void Switcher()
+		{
+			//si la vida es distinta a la vida maxima entra
+			if (!(Math.Abs(Health - MaxHealth) < 1))
+			{
+				EmitSignal(Health > secondThirdHealt ? nameof(SecondThird) : nameof(LastThird));
+			}
+			else
+			{
+				EmitSignal(nameof(FirstThird));
+			}
+		}
+
+		private void CalLife()
+		{
+			firsThirdHealt = MaxHealth / 3;
+			secondThirdHealt = firsThirdHealt * 2;
 		}
 	}
 }

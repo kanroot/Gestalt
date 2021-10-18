@@ -32,15 +32,17 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 			ShootNode.SetPattern(shootCircleEnemy);
 			shootCircleEnemy.CreateSpawn();
 			MovementNode.SetPattern(movementToPlayer);
+			shootCircleEnemy.CanRotate = true;
 			ShootNode.CanShoot = true;
 			MovementNode.CanMove = true;
 		}
 
 		public override void OnExit()
 		{
+			MovementNode.CanMove = false;
+			shootCircleEnemy.CanRotate = false;
 			ShootNode.CanShoot = false;
 			shootCircleEnemy.KillNodes();
-			MovementNode.CanMove = false;
 		}
 	}
 }
