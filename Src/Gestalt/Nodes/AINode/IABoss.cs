@@ -14,31 +14,38 @@ namespace Gestalt.Nodes.AINode
 		[Export] private DemonState resourceTwo;
 		private StateOne stateOne;
 		private StateTwo stateTwo;
-
+		private int counter = 0;
 		public override void _Ready()
 		{
 			base._Ready();
 			lifeBoss = GetNode<LifeBoss>(lifePath);
 			BuildStates();
-			lifeBoss.Connect("FirstThird", this, nameof(EnterStateOne));
+			EnterStateOne();
 			lifeBoss.Connect("SecondThird", this, nameof(EnterStateTwo));
 		}
 
 
 		protected override void EnterStateOne()
 		{
+			if (counter != 0) return;
 			stateOne.OnEnter();
+			counter += 1;
+
 		}
 
 		protected override void EnterStateTwo()
 		{
+			if (counter != 1) return;
 			stateOne.OnExit();
 			stateTwo.OnEnter();
+			counter += 1;
 		}
 
 		protected override void EnterStateThree()
 		{
-			throw new NotImplementedException();
+			if (counter != 2) return;
+			stateTwo.OnExit();
+			counter += 1;
 		}
 
 		protected override void BuildStates()
@@ -60,13 +67,13 @@ namespace Gestalt.Nodes.AINode
 				NodeShoot,
 				NodeMovement,
 				Entity,
-				resourceOne.Spawn,
-				resourceOne.Bullet,
-				resourceOne.CountNodes,
-				resourceOne.SpeedBullet,
-				resourceOne.Degrees,
-				resourceOne.Direction,
-				resourceOne.SpeedMovement
+				resourceTwo.Spawn,
+				resourceTwo.Bullet,
+				resourceTwo.CountNodes,
+				resourceTwo.SpeedBullet,
+				resourceTwo.Degrees,
+				resourceTwo.Direction,
+				resourceTwo.SpeedMovement
 			);
 		}
 	}

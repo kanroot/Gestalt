@@ -24,10 +24,6 @@ config/name="Gestalt"
 run/main_scene="res://Src/Prefabs/Scenes/Main.tscn"
 config/icon="res://logo.png"
 
-[debug]
-
-settings/fps/force_fps=60
-
 [display]
 
 window/size/width=1920

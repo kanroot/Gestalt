@@ -14,6 +14,9 @@ namespace Gestalt.Life
 
 		[Signal]
 		public delegate void SecondThird();
+		
+		[Signal]
+		public delegate void DeathBoss();
 
 		private CanvasLayer barCanvas;
 		private TextureProgress barLife;
@@ -31,11 +34,7 @@ namespace Gestalt.Life
 			CalLife();
 		}
 
-		public override void _Process(float delta)
-		{
-			Switcher();
-		}
-
+		
 		private void SetBarLife(float currentLife)
 		{
 			barLife.Value = currentLife;
@@ -52,23 +51,36 @@ namespace Gestalt.Life
 			Health -= damage;
 			SetBarLife(Health);
 		}
+		
 
 		public override void ShootEnter(Area2D bullet)
 		{
 			if (!bullet.GetGroups().Contains("shootPlayer")) return;
 			var bulletPlayer = (BulletBase) bullet;
 			GetDamage(bulletPlayer.Damage);
+			Switcher();
 		}
 
 
 		private void Switcher()
 		{
-			//si la vida es distinta a la vida maxima entra
-			if (!(Math.Abs(Health - MaxHealth) < 1))
-				EmitSignal(Health > secondThirdHealt ? nameof(SecondThird) : nameof(LastThird));
+			if (Health > secondThirdHealt && Health < MaxHealth)
+			{
+				EmitSignal(nameof(SecondThird));
+			}
 			else
-				EmitSignal(nameof(FirstThird));
+			{
+				if (Health < secondThirdHealt && Health > 0)
+				{
+					EmitSignal(nameof(FirstThird));
+				}
+				else
+				{
+					EmitSignal(nameof(DeathBoss));
+				}
+			}
 		}
+
 
 		private void CalLife()
 		{
