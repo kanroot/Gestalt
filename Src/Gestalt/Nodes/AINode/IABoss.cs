@@ -22,6 +22,7 @@ namespace Gestalt.Nodes.AINode
 			BuildStates();
 			EnterStateOne();
 			lifeBoss.Connect("SecondThird", this, nameof(EnterStateTwo));
+			lifeBoss.Connect("DeathBoss", this, nameof(Death));
 		}
 
 
@@ -46,6 +47,11 @@ namespace Gestalt.Nodes.AINode
 			if (counter != 2) return;
 			stateTwo.OnExit();
 			counter += 1;
+		}
+
+		private void Death()
+		{
+			Entity.QueueFree();
 		}
 
 		protected override void BuildStates()

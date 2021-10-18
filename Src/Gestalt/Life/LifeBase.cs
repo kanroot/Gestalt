@@ -36,11 +36,5 @@ namespace Gestalt.Life
 		protected abstract void GetDamage(float damage);
 
 		public abstract void ShootEnter(Area2D bullet);
-
-		protected void Death()
-		{
-			if (Health > 0) return;
-			Entity.QueueFree();
-		}
 	}
 }

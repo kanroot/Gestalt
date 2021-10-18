@@ -8,10 +8,7 @@ namespace Gestalt.Life
 	{
 		[Signal]
 		public delegate void FirstThird();
-
-		[Signal]
-		public delegate void LastThird();
-
+		
 		[Signal]
 		public delegate void SecondThird();
 		
@@ -64,18 +61,19 @@ namespace Gestalt.Life
 
 		private void Switcher()
 		{
-			if (Health > secondThirdHealt && Health < MaxHealth)
+			if (Health < secondThirdHealt && Health > firsThirdHealt)
 			{
 				EmitSignal(nameof(SecondThird));
 			}
 			else
 			{
-				if (Health < secondThirdHealt && Health > 0)
+				if (Health < firsThirdHealt && Health > 0)
 				{
 					EmitSignal(nameof(FirstThird));
 				}
 				else
 				{
+					if (!(Health <= 0)) return;
 					EmitSignal(nameof(DeathBoss));
 				}
 			}
