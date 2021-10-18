@@ -1,7 +1,7 @@
 using Gestalt.Nodes.EnemyNodes;
 using Godot;
 
-namespace Gestalt.IA.FSM.EnemyStates
+namespace Gestalt.AI.FSM.EnemyStates
 {
 	public abstract class StateBase
 	{

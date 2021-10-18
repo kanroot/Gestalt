@@ -1,7 +1,7 @@
 using Godot;
 using MonoCustomResourceRegistry;
 
-namespace Gestalt.IA.Resources
+namespace Gestalt.AI.FSM.Resources
 {
 	[RegisteredType(nameof(DemonState))]
 	public class DemonState : Resource
