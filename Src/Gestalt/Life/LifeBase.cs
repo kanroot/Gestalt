@@ -20,7 +20,7 @@ namespace Gestalt.Life
 
 		private void AddCollisionShape()
 		{
-			area2DCollision = (Area2D)packedSceneRadius.Instance();
+			area2DCollision = (Area2D) packedSceneRadius.Instance();
 			var collisionShape = area2DCollision.GetChild<CollisionShape2D>(0);
 			var entityShape = Entity.GetChild<CollisionShape2D>(0);
 			collisionShape.Scale = entityShape.Scale;

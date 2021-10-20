@@ -7,8 +7,11 @@ namespace Gestalt.Nodes.AINode
 	public class IADemon : IABoss
 	{
 		[Export] private DemonState resourceOne;
-		[Export] private DemonState resourceTwo;
+		[Export] private DemonStateTwo resourceTwo;
+		private CollisionShape2D originalFormRadius;
 
+		//Radius of entity
+		private Area2D radius;
 
 		public override void _Ready()
 		{
@@ -29,6 +32,7 @@ namespace Gestalt.Nodes.AINode
 			if (Counter != 1) return;
 			StateOne.OnExit();
 			StateTwo.OnEnter();
+			GetChild();
 			Counter += 1;
 		}
 
@@ -59,6 +63,7 @@ namespace Gestalt.Nodes.AINode
 				NodeMovement,
 				Entity,
 				resourceTwo.Spawn,
+				resourceTwo.Radius,
 				resourceTwo.Bullet,
 				resourceTwo.CountNodes,
 				resourceTwo.SpeedBullet,
@@ -67,5 +72,44 @@ namespace Gestalt.Nodes.AINode
 				resourceTwo.SpeedMovement
 			);
 		}
+		private void GetChild()
+		{
+			var children = Entity.GetChildren();
+			foreach (var child in children)
+			{
+				if (!(child is Area2D r)) continue;
+				radius = r;
+				originalFormRadius = r.GetChild<CollisionShape2D>(0);
+			}
+			AddConnections();
+		}
+
+		private void AddConnections()
+		{
+			var timer = (Timer) radius.GetChild(1);
+			timer.Connect("timeout", this, nameof(GrowAreaDetect));
+			radius.Connect("body_entered", this, nameof(OnBodyEntered));
+		}
+
+
+		private void OnBodyEntered(KinematicBody2D body)
+		{
+			GD.Print(body);
+			GD.Print("entre");
+			ResetForm();
+		}
+
+		private void GrowAreaDetect()
+		{
+			var collisionShape = (CollisionShape2D) radius.GetChild(0);
+			collisionShape.Scale = (collisionShape.Scale * 2);
+		}
+
+		private void ResetForm()
+		{
+			//two.CollisionShape2D.Scale = originalFormRadius.Scale;
+		}
+		
+		
 	}
 }

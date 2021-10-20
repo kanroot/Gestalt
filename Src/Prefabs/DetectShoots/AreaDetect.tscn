@@ -4,8 +4,8 @@
 radius = 109.223
 
 [node name="AreaDetect" type="Area2D"]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 7
+collision_mask = 7
 __meta__ = {
 "_edit_group_": true
 }
