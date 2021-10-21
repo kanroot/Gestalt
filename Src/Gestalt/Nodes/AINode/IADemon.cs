@@ -6,14 +6,14 @@ namespace Gestalt.Nodes.AINode
 {
 	public class IADemon : IABoss
 	{
+		private CollisionShape2D areaDetect;
+		private Area2D detectArea2D;
+		private Timer growingTimer;
 		[Export] private DemonState resourceOne;
 		[Export] private DemonStateTwo resourceTwo;
 
 		//Radius of second state
 		private StateTwo stateTwo;
-		private Area2D detectArea2D;
-		private CollisionShape2D areaDetect;
-		private Timer growingTimer;
 
 		public override void _Ready()
 		{
@@ -21,7 +21,7 @@ namespace Gestalt.Nodes.AINode
 			LifeBoss.Connect("SecondThird", this, nameof(EnterStateTwo));
 			//LifeBoss.Connect("FirstThird", this, nameof(EnterStateTwo));
 		}
-		
+
 		//por defecto se entra en el estado uno
 		protected override void EnterStateOne()
 		{
@@ -35,7 +35,6 @@ namespace Gestalt.Nodes.AINode
 			if (Counter != 1) return;
 			StateOne.OnExit();
 			StateTwo.OnEnter();
-			GetAreaDetect();
 			Counter += 1;
 		}
 
@@ -45,7 +44,7 @@ namespace Gestalt.Nodes.AINode
 			StateTwo.OnExit();
 			Counter += 1;
 		}
-		
+
 		protected override void BuildStates()
 		{
 			StateOne = new StateOne(
@@ -77,40 +76,5 @@ namespace Gestalt.Nodes.AINode
 			);
 			stateTwo = (StateTwo)StateTwo;
 		}
-		
-		//segundo estado
-		private void GetAreaDetect()
-		{
-			detectArea2D = stateTwo.GetChild();
-			areaDetect = detectArea2D.GetChild<CollisionShape2D>(0);
-			growingTimer = (Timer) detectArea2D.GetChild(1);
-			AddConnections();
-		}
-
-		private void AddConnections()
-		{
-			growingTimer.Connect("timeout", this, nameof(GrowAreaDetect));
-			detectArea2D.Connect("body_entered", this, nameof(OnBodyEntered));
-		}
-
-
-		private void OnBodyEntered(KinematicBody2D player)
-		{
-			if (!player.IsInGroup("player")) return;
-			stateTwo.MovementToPlayer.UpdatePositionPlayer(player);
-			ResetForm();
-		}
-
-		private void GrowAreaDetect()
-		{
-			areaDetect.Scale *= resourceTwo.ScaleOfAreaDetect;
-		}
-
-		private void ResetForm()
-		{
-			areaDetect.Scale = stateTwo.EntityShape.Scale;
-		}
-		
-		
 	}
 }

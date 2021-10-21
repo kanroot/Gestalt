@@ -1,6 +1,4 @@
 using Gestalt.AI.FSM.EnemyStates;
-using Gestalt.AI.FSM.EnemyStates.Demon;
-using Gestalt.AI.FSM.Resources;
 using Gestalt.Life;
 using Godot;
 
@@ -21,7 +19,7 @@ namespace Gestalt.Nodes.AINode
 			BuildStates();
 			EnterStateOne();
 		}
-		
+
 		protected void Death()
 		{
 			Entity.QueueFree();
