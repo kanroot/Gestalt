@@ -7,6 +7,12 @@ namespace Gestalt.Nodes.EnemyNodes
 	[RegisteredType(nameof(ShootNode))]
 	public class ShootNode : Node
 	{
+		private CollisionShape2D areaDetect;
+
+
+		//Radius of second state
+		private Area2D detectArea2D;
+		private Timer growingTimer;
 		private ShootBase shootBase;
 		[Export] private NodePath timerPath;
 		public Timer TimerToShoot;
@@ -35,6 +41,7 @@ namespace Gestalt.Nodes.EnemyNodes
 		{
 			shootBase = shoot;
 		}
+
 
 		private void CreateInstanceOfBullets()
 		{

@@ -1,5 +1,4 @@
 using Gestalt.Movements.Enemy;
-using Gestalt.Nodes.AINode;
 using Gestalt.Nodes.EnemyNodes;
 using Gestalt.Shoots;
 using Godot;
@@ -9,12 +8,12 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 	public class StateTwo : StateBase
 	{
 		public readonly MovementToPlayer MovementToPlayer;
-		private readonly ShootCircleEnemy shootCircleEnemy;
 		private readonly PackedScene radius;
-		public CollisionShape2D EntityShape;
-		private Timer timerToGrow;
+		private readonly ShootCircleEnemy shootCircleEnemy;
 		private Area2D area2DCollision;
 		private CollisionShape2D collisionShape2D;
+		public CollisionShape2D EntityShape;
+		private Timer timerToGrow;
 
 		public StateTwo(
 			ShootNode shootNode,
@@ -41,7 +40,7 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 			AddRadius();
 			ShootNode.SetPattern(shootCircleEnemy);
 			shootCircleEnemy.CreateSpawn();
-			MovementNode.SetPattern(MovementToPlayer);
+			MovementNode.SetPattern(MovementToPlayer, "StateTwo");
 			shootCircleEnemy.CanRotate = true;
 			MovementNode.CanMove = true;
 			ShootNode.TimerToShoot.Autostart = true;
@@ -64,7 +63,7 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 			collisionShape2D.Scale = EntityShape.Scale;
 			collisionShape2D.Shape = EntityShape.Shape;
 			timerToGrow = area2DCollision.GetChild<Timer>(1);
-			Entity.CallDeferred("add_child",area2DCollision);
+			Entity.CallDeferred("add_child", area2DCollision);
 		}
 
 		public Area2D GetChild()
@@ -75,6 +74,7 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 				if (!(child is Area2D r)) continue;
 				return r;
 			}
+
 			return new Area2D();
 		}
 	}
