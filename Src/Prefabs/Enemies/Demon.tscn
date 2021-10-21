@@ -28,7 +28,6 @@ Spawn = ExtResource( 14 )
 SpeedBullet = 2000
 SpeedMovement = 1000
 Radius = ExtResource( 8 )
-ScaleOfAreaDetect = 1.1
 
 [node name="Demon" instance=ExtResource( 1 )]
 

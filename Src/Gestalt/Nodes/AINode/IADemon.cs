@@ -67,7 +67,6 @@ namespace Gestalt.Nodes.AINode
 				resourceTwo.Spawn,
 				resourceTwo.Radius,
 				resourceTwo.Bullet,
-				resourceTwo.ScaleOfAreaDetect,
 				resourceTwo.CountNodes,
 				resourceTwo.SpeedBullet,
 				resourceTwo.Degrees,

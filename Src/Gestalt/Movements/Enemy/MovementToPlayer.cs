@@ -4,6 +4,7 @@ namespace Gestalt.Movements.Enemy
 {
 	public class MovementToPlayer : MovementBase
 	{
+		private Area2D areaDetect;
 		private Vector2 positionPlayer;
 
 		public MovementToPlayer(KinematicBody2D entity, float speed) : base(entity, speed)
