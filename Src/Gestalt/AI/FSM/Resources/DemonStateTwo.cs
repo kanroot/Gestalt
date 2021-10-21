@@ -7,5 +7,6 @@ namespace Gestalt.AI.FSM.Resources
 	public class DemonStateTwo : DemonState
 	{
 		[Export()] public PackedScene Radius;
+		[Export()] public float ScaleOfAreaDetect;
 	}
 }
