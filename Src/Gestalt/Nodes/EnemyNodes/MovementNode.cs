@@ -21,6 +21,12 @@ namespace Gestalt.Nodes.EnemyNodes
 			entity = GetNode<KinematicBody2D>(entityPath);
 		}
 
+		public override void _Process(float delta)
+		{
+			if (CanMove == false) return;
+			movementPattern.DoMovement(delta);
+		}
+
 		public void SetPattern(MovementBase pattern)
 		{
 			movementPattern = pattern;
@@ -43,14 +49,10 @@ namespace Gestalt.Nodes.EnemyNodes
 			}
 		}
 
-		public override void _Process(float delta)
-		{
-			if (CanMove == false) return;
-			movementPattern.DoMovement(delta);
-		}
+		//comportamiento para el estado dos,
+		//si le doy los metodos a al movimientoTo plauyer no encuentra el metodo a.GrowAreaDetect, al no ser de tipo objeto de godot
+		//con el connect
 
-
-		//comportamiento para el estado dos
 		private void GetAreaDetect()
 		{
 			detectArea2D = GetRadiusDetect();

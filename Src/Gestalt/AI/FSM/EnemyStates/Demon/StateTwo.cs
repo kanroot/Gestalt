@@ -22,7 +22,6 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 			PackedScene spawn,
 			PackedScene radius,
 			PackedScene bullet,
-			float scaleOfDetectArea,
 			int countNodes,
 			int speedBullet,
 			int degrees,
@@ -37,12 +36,12 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 
 		public override void OnEnter()
 		{
-			AddRadius();
+			AddAreaDetect();
 			ShootNode.SetPattern(shootCircleEnemy);
 			shootCircleEnemy.CreateSpawn();
 			MovementNode.SetPattern(MovementToPlayer, "StateTwo");
 			shootCircleEnemy.CanRotate = true;
-			MovementNode.CanMove = true;
+			MovementNode.CanMove = false;
 			ShootNode.TimerToShoot.Autostart = true;
 		}
 
@@ -55,7 +54,7 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 			shootCircleEnemy.KillNodes();
 		}
 
-		private void AddRadius()
+		private void AddAreaDetect()
 		{
 			area2DCollision = (Area2D)radius.Instance();
 			collisionShape2D = area2DCollision.GetChild<CollisionShape2D>(0);
