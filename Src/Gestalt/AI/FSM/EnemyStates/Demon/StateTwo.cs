@@ -11,9 +11,11 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 		public readonly MovementToPlayer MovementToPlayer;
 		private readonly ShootCircleEnemy shootCircleEnemy;
 		private readonly PackedScene radius;
-		public Timer TimerToGrow;
-		public Area2D Area2DCollision;
-		public CollisionShape2D CollisionShape2D;
+		public CollisionShape2D EntityShape;
+		private Timer timerToGrow;
+		private Area2D area2DCollision;
+		private CollisionShape2D collisionShape2D;
+
 		public StateTwo(
 			ShootNode shootNode,
 			MovementNode movementNode,
@@ -21,6 +23,7 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 			PackedScene spawn,
 			PackedScene radius,
 			PackedScene bullet,
+			float scaleOfDetectArea,
 			int countNodes,
 			int speedBullet,
 			int degrees,
@@ -33,17 +36,6 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 			this.radius = radius;
 		}
 
-		private void AddRadius()
-		{
-			Area2DCollision = (Area2D) radius.Instance();
-			CollisionShape2D = Area2DCollision.GetChild<CollisionShape2D>(0);
-			var entityShape = Entity.GetChild<CollisionShape2D>(0);
-			CollisionShape2D.Scale = entityShape.Scale;
-			CollisionShape2D.Shape = entityShape.Shape;
-			TimerToGrow = Area2DCollision.GetChild<Timer>(1);
-			Entity.CallDeferred("add_child",Area2DCollision);
-		}
-		
 		public override void OnEnter()
 		{
 			AddRadius();
@@ -62,6 +54,28 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 			shootCircleEnemy.CanRotate = false;
 			ShootNode.CanShoot = false;
 			shootCircleEnemy.KillNodes();
+		}
+
+		private void AddRadius()
+		{
+			area2DCollision = (Area2D)radius.Instance();
+			collisionShape2D = area2DCollision.GetChild<CollisionShape2D>(0);
+			EntityShape = Entity.GetChild<CollisionShape2D>(0);
+			collisionShape2D.Scale = EntityShape.Scale;
+			collisionShape2D.Shape = EntityShape.Shape;
+			timerToGrow = area2DCollision.GetChild<Timer>(1);
+			Entity.CallDeferred("add_child",area2DCollision);
+		}
+
+		public Area2D GetChild()
+		{
+			var children = Entity.GetChildren();
+			foreach (var child in children)
+			{
+				if (!(child is Area2D r)) continue;
+				return r;
+			}
+			return new Area2D();
 		}
 	}
 }

@@ -22,12 +22,13 @@ radius = 499.858
 script = ExtResource( 10 )
 Bullet = ExtResource( 13 )
 CountNodes = 20
-Degrees = 1
+Degrees = 3
 Direction = -1
 Spawn = ExtResource( 14 )
 SpeedBullet = 2000
-SpeedMovement = 500
+SpeedMovement = 1000
 Radius = ExtResource( 8 )
+ScaleOfDetectArea = 1.2
 
 [node name="Demon" instance=ExtResource( 1 )]
 

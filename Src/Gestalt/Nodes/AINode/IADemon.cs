@@ -8,18 +8,21 @@ namespace Gestalt.Nodes.AINode
 	{
 		[Export] private DemonState resourceOne;
 		[Export] private DemonStateTwo resourceTwo;
-		private CollisionShape2D originalFormRadius;
 
-		//Radius of entity
-		private Area2D radius;
+		//Radius of second state
+		private StateTwo stateTwo;
+		private Area2D detectArea2D;
+		private CollisionShape2D areaDetect;
+		private Timer growingTimer;
 
 		public override void _Ready()
 		{
 			base._Ready();
 			LifeBoss.Connect("SecondThird", this, nameof(EnterStateTwo));
-			LifeBoss.Connect("DeathBoss", this, nameof(Death));
+			//LifeBoss.Connect("FirstThird", this, nameof(EnterStateTwo));
 		}
-
+		
+		//por defecto se entra en el estado uno
 		protected override void EnterStateOne()
 		{
 			if (Counter != 0) return;
@@ -32,7 +35,7 @@ namespace Gestalt.Nodes.AINode
 			if (Counter != 1) return;
 			StateOne.OnExit();
 			StateTwo.OnEnter();
-			GetChild();
+			GetAreaDetect();
 			Counter += 1;
 		}
 
@@ -65,49 +68,47 @@ namespace Gestalt.Nodes.AINode
 				resourceTwo.Spawn,
 				resourceTwo.Radius,
 				resourceTwo.Bullet,
+				resourceTwo.ScaleOfAreaDetect,
 				resourceTwo.CountNodes,
 				resourceTwo.SpeedBullet,
 				resourceTwo.Degrees,
 				resourceTwo.Direction,
 				resourceTwo.SpeedMovement
 			);
+			stateTwo = (StateTwo)StateTwo;
 		}
-		private void GetChild()
+		
+		//segundo estado
+		private void GetAreaDetect()
 		{
-			var children = Entity.GetChildren();
-			foreach (var child in children)
-			{
-				if (!(child is Area2D r)) continue;
-				radius = r;
-				originalFormRadius = r.GetChild<CollisionShape2D>(0);
-			}
+			detectArea2D = stateTwo.GetChild();
+			areaDetect = detectArea2D.GetChild<CollisionShape2D>(0);
+			growingTimer = (Timer) detectArea2D.GetChild(1);
 			AddConnections();
 		}
 
 		private void AddConnections()
 		{
-			var timer = (Timer) radius.GetChild(1);
-			timer.Connect("timeout", this, nameof(GrowAreaDetect));
-			radius.Connect("body_entered", this, nameof(OnBodyEntered));
+			growingTimer.Connect("timeout", this, nameof(GrowAreaDetect));
+			detectArea2D.Connect("body_entered", this, nameof(OnBodyEntered));
 		}
 
 
-		private void OnBodyEntered(KinematicBody2D body)
+		private void OnBodyEntered(KinematicBody2D player)
 		{
-			GD.Print(body);
-			GD.Print("entre");
+			if (!player.IsInGroup("player")) return;
+			stateTwo.MovementToPlayer.UpdatePositionPlayer(player);
 			ResetForm();
 		}
 
 		private void GrowAreaDetect()
 		{
-			var collisionShape = (CollisionShape2D) radius.GetChild(0);
-			collisionShape.Scale = (collisionShape.Scale * 2);
+			areaDetect.Scale *= resourceTwo.ScaleOfAreaDetect;
 		}
 
 		private void ResetForm()
 		{
-			//two.CollisionShape2D.Scale = originalFormRadius.Scale;
+			areaDetect.Scale = stateTwo.EntityShape.Scale;
 		}
 		
 		
