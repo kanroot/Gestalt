@@ -9,12 +9,12 @@ namespace Gestalt.Nodes.EnemyNodes
 	public class MovementNode : Node
 	{
 		private CollisionShape2D areaDetect;
-		private MovementToPlayer movementToPlayer;
 		private Area2D detectArea2D;
 		private KinematicBody2D entity;
 		[Export] private NodePath entityPath;
 		private Timer growingTimer;
 		private MovementBase movementPattern;
+		private MovementToPlayer movementToPlayer;
 		[Export] public bool CanMove { get; set; }
 
 		public override void _Ready()
@@ -42,7 +42,7 @@ namespace Gestalt.Nodes.EnemyNodes
 					break;
 				case "StateTwo":
 					movementPattern = pattern;
-					movementToPlayer = (MovementToPlayer) movementPattern;
+					movementToPlayer = (MovementToPlayer)movementPattern;
 					GetAreaDetect();
 					break;
 				case "StateThree":
@@ -64,7 +64,7 @@ namespace Gestalt.Nodes.EnemyNodes
 			growingTimer = (Timer)detectArea2D.GetChild(1);
 			AddConnections();
 		}
-		
+
 		private Area2D GetRadiusDetect()
 		{
 			var children = entity.GetChildren();
@@ -73,9 +73,10 @@ namespace Gestalt.Nodes.EnemyNodes
 				if (!(child is Area2D r)) continue;
 				return r;
 			}
+
 			return new Area2D();
 		}
-		
+
 		private void AddConnections()
 		{
 			growingTimer.Connect("timeout", this, nameof(GrowAreaDetect));
@@ -87,7 +88,7 @@ namespace Gestalt.Nodes.EnemyNodes
 		{
 			CanMove = movementToPlayer.OnBodyEntered(player);
 		}
-		
+
 
 		private void GrowAreaDetect()
 		{

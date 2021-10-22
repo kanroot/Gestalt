@@ -4,12 +4,13 @@ namespace Gestalt.Movements.Enemy
 {
 	public class MovementToPlayer : MovementBase
 	{
-		public Area2D AreaDetect { get; set; }
 		private Vector2 positionPlayer;
 
 		public MovementToPlayer(KinematicBody2D entity, float speed) : base(entity, speed)
 		{
 		}
+
+		public Area2D AreaDetect { get; set; }
 
 		public override void DoMovement(float delta)
 		{
@@ -22,7 +23,7 @@ namespace Gestalt.Movements.Enemy
 		{
 			positionPlayer = player.GlobalPosition;
 		}
-		
+
 		public bool OnBodyEntered(KinematicBody2D player)
 		{
 			if (!player.IsInGroup("player")) return false;
@@ -30,10 +31,10 @@ namespace Gestalt.Movements.Enemy
 			ResetForm();
 			return true;
 		}
-		
+
 		public void GrowAreaDetect()
 		{
-			AreaDetect.Scale *= (float) 1.5;
+			AreaDetect.Scale *= (float)1.5;
 		}
 
 		public void ResetForm()

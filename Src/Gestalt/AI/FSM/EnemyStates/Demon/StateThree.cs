@@ -9,8 +9,10 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 	{
 		private readonly MovementBounce movementBounce;
 		private readonly ShootCircleEnemy shootCircleEnemy;
-		
-		public StateThree(ShootNode shootNode, MovementNode movementNode, KinematicBody2D entity, PackedScene spawn, PackedScene bullet, int countNodes, int speedBullet, int degrees, int direction, int speedMovement) : base(shootNode, movementNode, entity, spawn, bullet, countNodes, speedBullet, degrees, direction, speedMovement)
+
+		public StateThree(ShootNode shootNode, MovementNode movementNode, KinematicBody2D entity, PackedScene spawn,
+			PackedScene bullet, int countNodes, int speedBullet, int degrees, int direction, int speedMovement) : base(
+			shootNode, movementNode, entity, spawn, bullet, countNodes, speedBullet, degrees, direction, speedMovement)
 		{
 			shootCircleEnemy = new ShootCircleEnemy(spawn, countNodes, bullet, speedBullet, Entity, direction, degrees);
 			movementBounce = new MovementBounce(Entity, speedMovement);
@@ -34,7 +36,5 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 			ShootNode.CanShoot = false;
 			shootCircleEnemy.KillNodes();
 		}
-
-		
 	}
 }

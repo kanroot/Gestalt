@@ -1,6 +1,4 @@
-using Gestalt.Movements.Enemy;
 using Gestalt.Nodes.EnemyNodes;
-using Gestalt.Shoots;
 using Godot;
 
 namespace Gestalt.AI.FSM.EnemyStates.Demon
@@ -20,7 +18,6 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 			int speedMovement
 		) : base(shootNode, movementNode, entity)
 		{
-			
 		}
 
 		public abstract override void OnEnter();
