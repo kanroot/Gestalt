@@ -11,6 +11,7 @@ namespace Gestalt.Nodes.AINode
 		[Export] protected NodePath LifePath;
 		protected StateBase StateOne;
 		protected StateBase StateTwo;
+		protected StateBase StateThree;
 
 		public override void _Ready()
 		{
