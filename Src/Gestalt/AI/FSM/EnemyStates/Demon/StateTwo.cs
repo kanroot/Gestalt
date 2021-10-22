@@ -5,41 +5,29 @@ using Godot;
 
 namespace Gestalt.AI.FSM.EnemyStates.Demon
 {
-	public class StateTwo : StateBase
+	public class StateTwo : StateBaseDemon
 	{
-		public readonly MovementToPlayer MovementToPlayer;
+		private readonly MovementToPlayer movementToPlayer;
 		private readonly PackedScene radius;
 		private readonly ShootCircleEnemy shootCircleEnemy;
 		private Area2D area2DCollision;
 		private CollisionShape2D collisionShape2D;
-		public CollisionShape2D EntityShape;
+		private CollisionShape2D entityShape;
 		private Timer timerToGrow;
-
-		public StateTwo(
-			ShootNode shootNode,
-			MovementNode movementNode,
-			KinematicBody2D entity,
-			PackedScene spawn,
-			PackedScene radius,
-			PackedScene bullet,
-			int countNodes,
-			int speedBullet,
-			int degrees,
-			int direction,
-			int speedMovement)
-			: base(shootNode, movementNode, entity)
+		
+		public StateTwo(ShootNode shootNode, MovementNode movementNode, KinematicBody2D entity, PackedScene spawn, PackedScene radius, PackedScene bullet, int countNodes, int speedBullet, int degrees, int direction, int speedMovement) : base(shootNode, movementNode, entity, spawn, bullet, countNodes, speedBullet, degrees, direction, speedMovement)
 		{
 			shootCircleEnemy = new ShootCircleEnemy(spawn, countNodes, bullet, speedBullet, Entity, direction, degrees);
-			MovementToPlayer = new MovementToPlayer(Entity, speedMovement);
+			movementToPlayer = new MovementToPlayer(Entity, speedMovement);
 			this.radius = radius;
 		}
-
+		
 		public override void OnEnter()
 		{
 			AddAreaDetect();
 			ShootNode.SetPattern(shootCircleEnemy);
 			shootCircleEnemy.CreateSpawn();
-			MovementNode.SetPattern(MovementToPlayer, "StateTwo");
+			MovementNode.SetPattern(movementToPlayer, "StateTwo");
 			shootCircleEnemy.CanRotate = true;
 			MovementNode.CanMove = false;
 			ShootNode.TimerToShoot.Autostart = true;
@@ -58,23 +46,11 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 		{
 			area2DCollision = (Area2D)radius.Instance();
 			collisionShape2D = area2DCollision.GetChild<CollisionShape2D>(0);
-			EntityShape = Entity.GetChild<CollisionShape2D>(0);
-			collisionShape2D.Scale = EntityShape.Scale;
-			collisionShape2D.Shape = EntityShape.Shape;
+			entityShape = Entity.GetChild<CollisionShape2D>(0);
+			collisionShape2D.Scale = entityShape.Scale;
+			collisionShape2D.Shape = entityShape.Shape;
 			timerToGrow = area2DCollision.GetChild<Timer>(1);
 			Entity.CallDeferred("add_child", area2DCollision);
-		}
-
-		public Area2D GetChild()
-		{
-			var children = Entity.GetChildren();
-			foreach (var child in children)
-			{
-				if (!(child is Area2D r)) continue;
-				return r;
-			}
-
-			return new Area2D();
 		}
 	}
 }
