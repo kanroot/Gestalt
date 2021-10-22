@@ -9,6 +9,7 @@ namespace Gestalt.Nodes.EnemyNodes
 	public class MovementNode : Node
 	{
 		private CollisionShape2D areaDetect;
+		private MovementToPlayer movementToPlayer;
 		private Area2D detectArea2D;
 		private KinematicBody2D entity;
 		[Export] private NodePath entityPath;
@@ -41,6 +42,7 @@ namespace Gestalt.Nodes.EnemyNodes
 					break;
 				case "StateTwo":
 					movementPattern = pattern;
+					movementToPlayer = (MovementToPlayer) movementPattern;
 					GetAreaDetect();
 					break;
 				case "StateThree":
@@ -50,18 +52,30 @@ namespace Gestalt.Nodes.EnemyNodes
 		}
 
 		//comportamiento para el estado dos,
-		//si le doy los metodos a al movimientoTo plauyer no encuentra el metodo a.GrowAreaDetect, al no ser de tipo objeto de godot
-		//con el connect
+		//existe un problema con el connect, es imposible usarlo en clases puras de c#
+		//No encuentra las referencia a los metodos movementToPlayer.GrowAreaDetect a pesar de que se emite la señal
+		//realice una especie de puente
 
 		private void GetAreaDetect()
 		{
 			detectArea2D = GetRadiusDetect();
+			movementToPlayer.AreaDetect = detectArea2D;
 			areaDetect = detectArea2D.GetChild<CollisionShape2D>(0);
 			growingTimer = (Timer)detectArea2D.GetChild(1);
 			AddConnections();
 		}
-
-
+		
+		private Area2D GetRadiusDetect()
+		{
+			var children = entity.GetChildren();
+			foreach (var child in children)
+			{
+				if (!(child is Area2D r)) continue;
+				return r;
+			}
+			return new Area2D();
+		}
+		
 		private void AddConnections()
 		{
 			growingTimer.Connect("timeout", this, nameof(GrowAreaDetect));
@@ -71,33 +85,18 @@ namespace Gestalt.Nodes.EnemyNodes
 
 		private void OnBodyEntered(KinematicBody2D player)
 		{
-			if (!player.IsInGroup("player")) return;
-			CanMove = true;
-			var a = (MovementToPlayer)movementPattern;
-			a.UpdatePositionPlayer(player);
-			ResetForm();
+			CanMove = movementToPlayer.OnBodyEntered(player);
 		}
-
-		private Area2D GetRadiusDetect()
-		{
-			var children = entity.GetChildren();
-			foreach (var child in children)
-			{
-				if (!(child is Area2D r)) continue;
-				return r;
-			}
-
-			return new Area2D();
-		}
+		
 
 		private void GrowAreaDetect()
 		{
-			areaDetect.Scale *= (float)1.5;
+			movementToPlayer.GrowAreaDetect();
 		}
 
 		private void ResetForm()
 		{
-			areaDetect.Scale = new Vector2(1, 1);
+			movementToPlayer.ResetForm();
 		}
 	}
 }

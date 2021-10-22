@@ -12,7 +12,6 @@ namespace Gestalt.Movements
 			Entity = entity;
 			Speed = speed;
 		}
-
 		public abstract void DoMovement(float delta);
 	}
 }

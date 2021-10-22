@@ -20,6 +20,7 @@ namespace Gestalt.Nodes.AINode
 			base._Ready();
 			LifeBoss.Connect("SecondThird", this, nameof(EnterStateTwo));
 			//LifeBoss.Connect("FirstThird", this, nameof(EnterStateTwo));
+			LifeBoss.Connect("DeathBoss", this, nameof(Death));
 		}
 
 		//por defecto se entra en el estado uno

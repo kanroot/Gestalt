@@ -31,7 +31,7 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 		public override void OnEnter()
 		{
 			ShootNode.SetPattern(shootCircleEnemy);
-			MovementNode.SetPattern(movementBounce);
+			MovementNode.SetPattern(movementBounce, "StateOne");
 			shootCircleEnemy.CreateSpawn();
 			shootCircleEnemy.CanRotate = true;
 			MovementNode.CanMove = true;
