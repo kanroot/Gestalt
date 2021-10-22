@@ -10,8 +10,8 @@ namespace Gestalt.Nodes.AINode
 		protected LifeBoss LifeBoss;
 		[Export] protected NodePath LifePath;
 		protected StateBase StateOne;
-		protected StateBase StateTwo;
 		protected StateBase StateThree;
+		protected StateBase StateTwo;
 
 		public override void _Ready()
 		{

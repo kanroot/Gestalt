@@ -6,13 +6,9 @@ namespace Gestalt.Nodes.AINode
 {
 	public class IADemon : IABoss
 	{
-		private CollisionShape2D areaDetect;
-		private Area2D detectArea2D;
-		private Timer growingTimer;
-		
 		[Export] private DemonState resourceOne;
-		[Export] private DemonStateTwo resourceTwo;
 		[Export] private DemonStateThree resourceThree;
+		[Export] private DemonStateTwo resourceTwo;
 
 		//Radius of second state
 		private StateTwo stateTwo;
@@ -90,7 +86,7 @@ namespace Gestalt.Nodes.AINode
 				resourceThree.Direction,
 				resourceThree.SpeedMovement
 			);
-			
+
 			stateTwo = (StateTwo)StateTwo;
 		}
 	}

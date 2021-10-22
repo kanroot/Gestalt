@@ -14,14 +14,17 @@ namespace Gestalt.AI.FSM.EnemyStates.Demon
 		private CollisionShape2D collisionShape2D;
 		private CollisionShape2D entityShape;
 		private Timer timerToGrow;
-		
-		public StateTwo(ShootNode shootNode, MovementNode movementNode, KinematicBody2D entity, PackedScene spawn, PackedScene radius, PackedScene bullet, int countNodes, int speedBullet, int degrees, int direction, int speedMovement) : base(shootNode, movementNode, entity, spawn, bullet, countNodes, speedBullet, degrees, direction, speedMovement)
+
+		public StateTwo(ShootNode shootNode, MovementNode movementNode, KinematicBody2D entity, PackedScene spawn,
+			PackedScene radius, PackedScene bullet, int countNodes, int speedBullet, int degrees, int direction,
+			int speedMovement) : base(shootNode, movementNode, entity, spawn, bullet, countNodes, speedBullet, degrees,
+			direction, speedMovement)
 		{
 			shootCircleEnemy = new ShootCircleEnemy(spawn, countNodes, bullet, speedBullet, Entity, direction, degrees);
 			movementToPlayer = new MovementToPlayer(Entity, speedMovement);
 			this.radius = radius;
 		}
-		
+
 		public override void OnEnter()
 		{
 			AddAreaDetect();
