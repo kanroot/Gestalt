@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Src/Gestalt/Bullets/BulletTriangle.cs" type="Script" id=1]
+[ext_resource path="res://Assets/Img/Shoots/ShootTriangle.png" type="Texture" id=2]
+
+[node name="ShootTriangle" type="Area2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 0.02, 0.02 )
+polygon = PoolVector2Array( 0.0504551, -435.786, -502.175, 434.932, 503, 436 )
+
+[node name="QueueFree" type="Timer" parent="."]

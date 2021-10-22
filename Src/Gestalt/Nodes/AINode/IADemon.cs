@@ -9,8 +9,10 @@ namespace Gestalt.Nodes.AINode
 		private CollisionShape2D areaDetect;
 		private Area2D detectArea2D;
 		private Timer growingTimer;
+		
 		[Export] private DemonState resourceOne;
 		[Export] private DemonStateTwo resourceTwo;
+		[Export] private DemonStateThree resourceThree;
 
 		//Radius of second state
 		private StateTwo stateTwo;
@@ -19,7 +21,7 @@ namespace Gestalt.Nodes.AINode
 		{
 			base._Ready();
 			LifeBoss.Connect("SecondThird", this, nameof(EnterStateTwo));
-			//LifeBoss.Connect("FirstThird", this, nameof(EnterStateTwo));
+			LifeBoss.Connect("FirstThird", this, nameof(EnterStateThree));
 			LifeBoss.Connect("DeathBoss", this, nameof(Death));
 		}
 
@@ -43,6 +45,7 @@ namespace Gestalt.Nodes.AINode
 		{
 			if (Counter != 2) return;
 			StateTwo.OnExit();
+			StateThree.OnEnter();
 			Counter += 1;
 		}
 
@@ -74,6 +77,20 @@ namespace Gestalt.Nodes.AINode
 				resourceTwo.Direction,
 				resourceTwo.SpeedMovement
 			);
+
+			StateThree = new StateThree(
+				NodeShoot,
+				NodeMovement,
+				Entity,
+				resourceThree.Spawn,
+				resourceThree.Bullet,
+				resourceThree.CountNodes,
+				resourceThree.SpeedBullet,
+				resourceThree.Degrees,
+				resourceThree.Direction,
+				resourceThree.SpeedMovement
+			);
+			
 			stateTwo = (StateTwo)StateTwo;
 		}
 	}
