@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Src/Prefabs/Enemies/EnemyCircle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Img/Demon/demon_letters _object.svg" type="Texture" id=2]
@@ -14,7 +14,7 @@
 [ext_resource path="res://Src/Gestalt/Text/CanMovementText.cs" type="Script" id=12]
 [ext_resource path="res://Src/Prefabs/Bullets/ShootEnemy.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Src/Prefabs/Spawn/RotatePosition2d.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Src/Prefabs/Bullets/ShootTriangle.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Src/Prefabs/SaveTress/States/DemonThree.tres" type="Resource" id=15]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 499.858
@@ -28,17 +28,6 @@ Direction = -1
 Spawn = ExtResource( 14 )
 SpeedBullet = 200
 SpeedMovement = 1000
-Radius = ExtResource( 8 )
-
-[sub_resource type="Resource" id=3]
-script = ExtResource( 10 )
-Bullet = ExtResource( 15 )
-CountNodes = 3
-Degrees = 1
-Direction = 1
-Spawn = ExtResource( 14 )
-SpeedBullet = 300
-SpeedMovement = 500
 Radius = ExtResource( 8 )
 
 [node name="Demon" instance=ExtResource( 1 )]
@@ -76,8 +65,8 @@ movementNodePath = NodePath("../Movement")
 shootNodePath = NodePath("../Shoot")
 LifePath = NodePath("../Life")
 resourceOne = ExtResource( 11 )
+resourceThree = ExtResource( 15 )
 resourceTwo = SubResource( 2 )
-resourceThree = SubResource( 3 )
 
 [node name="Timer" parent="." index="7"]
 process_mode = 0

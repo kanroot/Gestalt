@@ -46,4 +46,4 @@ scale = Vector2( 0.2, 0.2 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 936.868, 255.434 )
-scale = Vector2( 0.2, 0.2 )
+scale = Vector2( 0.1, 0.1 )
