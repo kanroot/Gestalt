@@ -18,3 +18,5 @@ scale = Vector2( 0.02, 0.02 )
 polygon = PoolVector2Array( 0.0504551, -435.786, -502.175, 434.932, 503, 436 )
 
 [node name="QueueFree" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_Shoot_body_entered"]
