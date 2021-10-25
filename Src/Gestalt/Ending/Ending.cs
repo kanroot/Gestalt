@@ -18,7 +18,7 @@ namespace Gestalt.Ending
 
 		public override void _Ready()
 		{
-			containerText = GetChild<HBoxContainer>(1);
+			containerText = GetChild<HBoxContainer>(2);
 			textEnding = containerText.GetChild<Label>(0);
 			ChoseText();
 			viewport = GetViewport().Size;
