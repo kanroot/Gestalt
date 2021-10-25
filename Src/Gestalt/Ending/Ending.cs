@@ -16,11 +16,11 @@ namespace Gestalt.Ending
 		private int width;
 		private int height;
 		private int count;
-		public int DeathCount { get; set; }
+		[Export()]public int DeathCount { get; set; }
 
 		public override void _Ready()
 		{
-			containerText = GetChild<HBoxContainer>(2);
+			containerText = GetChild<HBoxContainer>(1);
 			textEnding = containerText.GetChild<Label>(0);
 			ChoseText();
 			viewport = GetViewport().Size;
@@ -28,11 +28,11 @@ namespace Gestalt.Ending
 			width = (int)viewport.x;
 			count = 0;
 		}
-
-
+		
 		public override void _Process(float delta)
 		{
 			if (count > DeathCount) return;
+			count += 1;
 			CreateLines();
 
 		}
