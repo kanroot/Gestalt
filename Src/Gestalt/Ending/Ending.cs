@@ -38,6 +38,7 @@ namespace Gestalt.Ending
 			var destiny = new Vector2(width, rnd.Next(0, height));
 			linesFrom.Add(from);
 			linesDestiny.Add(destiny);
+			Update();
 		}
 
 		public override void _Draw()
