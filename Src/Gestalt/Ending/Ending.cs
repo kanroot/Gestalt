@@ -9,12 +9,14 @@ namespace Gestalt.Ending
 		private readonly Random rnd = new Random();
 		private HBoxContainer containerText;
 		private readonly List<string> endingText = new List<string>();
-		private int height;
 		private readonly List<Vector2> linesDestiny = new List<Vector2>();
 		private readonly List<Vector2> linesFrom = new List<Vector2>();
 		private Label textEnding;
 		private Vector2 viewport;
 		private int width;
+		private int height;
+		private int count;
+		public int DeathCount { get; set; }
 
 		public override void _Ready()
 		{
@@ -24,12 +26,15 @@ namespace Gestalt.Ending
 			viewport = GetViewport().Size;
 			height = (int)viewport.y;
 			width = (int)viewport.x;
+			count = 0;
 		}
 
 
 		public override void _Process(float delta)
 		{
+			if (count > DeathCount) return;
 			CreateLines();
+
 		}
 
 		private void CreateLines()
