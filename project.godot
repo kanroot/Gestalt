@@ -21,13 +21,18 @@ ResourceScriptDirectories=[ "res://" ]
 [application]
 
 config/name="Gestalt"
-run/main_scene="res://Src/Prefabs/Scenes/Main.tscn"
+run/main_scene="res://Src/Prefabs/Scenes/Ending.tscn"
 config/icon="res://logo.png"
+
+[debug]
+
+settings/stdout/print_fps=true
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
+window/size/fullscreen=true
 
 [editor_plugins]
 
