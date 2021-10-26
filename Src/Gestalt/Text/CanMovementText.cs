@@ -8,10 +8,12 @@ namespace Gestalt.Text
 		[Export] private int degreesRotate;
 		[Export] private NodePath pathTextRotated;
 		[Export()] private NodePath bodyPath;
+		[Export()] private Boolean CanMoveBody { get; set; }
 		private Sprite textRotated;
 		private Sprite body;
 		private int count;
 		private int secondCount;
+		private double degreesToRadiant;
 
 		public override void _Ready()
 		{
@@ -22,14 +24,23 @@ namespace Gestalt.Text
 		public override void _Process(float delta)
 		{
 			count += degreesRotate; 
-			var degreesToRadiant = Math.PI / 180 * degreesRotate;
+			degreesToRadiant = Math.PI / 180 * degreesRotate;
 			textRotated.Rotate((float)degreesToRadiant);
-			if (count < 360) return;
-			body.Rotate((float)degreesToRadiant);
-			secondCount += 1;
-			if (secondCount < 360) return;
-			count = 0;
-			secondCount = 0;
+			RotateBody(count);
+			
+		}
+
+		private void RotateBody(int degrees)
+		{
+			if (degrees > 180 && CanMoveBody){
+				body.Rotate((float)degreesToRadiant);
+				secondCount++;
+			}
+			if (secondCount >= 360)
+			{
+				count = 0;
+				secondCount = 0;
+			};
 		}
 	}
 }

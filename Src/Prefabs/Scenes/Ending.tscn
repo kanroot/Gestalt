@@ -3,7 +3,7 @@
 [ext_resource path="res://Src/Prefabs/SaveTress/EndingFont/Ending.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Src/Gestalt/Ending/Ending.cs" type="Script" id=2]
 [ext_resource path="res://Assets/Img/Background/dibujo.svg" type="Texture" id=3]
-[ext_resource path="res://Assets/Img/Laught/logo.svg" type="Texture" id=4]
+[ext_resource path="res://logo.png" type="Texture" id=4]
 
 [node name="Ending" type="Control"]
 anchor_right = 1.0
@@ -12,7 +12,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-DeathCount = 99
+DeathCount = 100
 
 [node name="Wallpaper" type="TextureRect" parent="."]
 show_behind_parent = true

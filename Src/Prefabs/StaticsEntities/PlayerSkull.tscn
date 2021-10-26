@@ -19,7 +19,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="PlayerSkull" type="KinematicBody2D" groups=[
+[node name="StaticSkull" type="KinematicBody2D" groups=[
 "player",
 ]]
 
@@ -35,24 +35,9 @@ texture = ExtResource( 2 )
 [node name="LifeLine" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 
-[node name="Movement" type="Node" parent="."]
-
-[node name="Shoot" type="Node" parent="."]
-
-[node name="Life" type="Node" parent="."]
-
-[node name="Timer" type="Timer" parent="."]
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="Position2D" type="Position2D" parent="Node2D"]
-position = Vector2( 550, 0 )
-__meta__ = {
-"_gizmo_extents_": 100.0
-}
-
 [node name="TextRotation" type="Node" parent="."]
 script = ExtResource( 10 )
+CanMoveBody = true
 degreesRotate = 1
 pathTextRotated = NodePath("../Text")
 bodyPath = NodePath("../Body")
