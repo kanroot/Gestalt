@@ -46,7 +46,6 @@ speed = 500.0
 [node name="Shoot" type="Node" parent="."]
 script = ExtResource( 9 )
 SpeedBullet = 10.0
-CanShoot = true
 TimerPath = NodePath("../Timer")
 bulletPath = NodePath("../Node2D/Position2D")
 BulletScene = ExtResource( 10 )
