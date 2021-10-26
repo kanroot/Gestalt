@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1920"
+   height="1080"
+   viewBox="0 0 508.00002 285.74999"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="demon_letters _object.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#000000"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     width="1080px"
+     inkscape:zoom="0.22761294"
+     inkscape:cx="1676.091"
+     inkscape:cy="975.33998"
+     inkscape:window-width="1920"
+     inkscape:window-height="1024"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1032" />
+  <defs
+     id="defs2">
+    <rect
+       x="237.20037"
+       y="137.10385"
+       width="1704.8604"
+       height="526.33991"
+       id="rect4366" />
+    <rect
+       x="-38.517806"
+       y="556.03528"
+       width="538.28554"
+       height="388.11568"
+       id="rect4713" />
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       id="text4711"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.5799px;line-height:1.25;font-family:Inconsolata;-inkscape-font-specification:Inconsolata;white-space:pre;fill:#f9f9f9;fill-opacity:1;stroke:none"
+       transform="matrix(-0.88330197,-0.36067551,0.36067551,-0.88330197,149.65787,347.4239)"
+       x="85.31028"
+       y="242.46146" />
+    <g
+       id="g9954">
+      <g
+         id="g275"
+         transform="translate(20.310103,-129.13282)">
+        <g
+           id="g1032"
+           transform="matrix(0.26458361,0,0,0.26458333,273.87942,-147.26858)"
+           inkscape:export-filename="/home/kan/RiderProjects/Gestalt/logo.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96">
+          <path
+             inkscape:connector-curvature="0"
+             style="font-size:12px;fill:none;fill-opacity:0.9961;fill-rule:evenodd;stroke:none;stroke-width:2.87088"
+             d="m 210.1734,1604.8275 c 0,201.829 -163.7812,365.3583 -365.9883,365.3583 -202.08085,0 -365.86216,-163.5293 -365.86216,-365.3583 0,-201.703 163.78131,-365.2323 365.86216,-365.2323 202.2071,0 365.9883,163.5293 365.9883,365.2323 z m -24.1893,-0.5039 c 0,187.9705 -152.9006,345.1969 -341.6272,345.1969 -188.85238,0 -341.97071,-157.2264 -341.97071,-345.1969 0,-188.0966 152.94655,-340.5392 341.79891,-340.5392 188.7266,0 341.799,152.4426 341.799,340.5392 z"
+             id="path663-9"
+             sodipodi:nodetypes="ssssssssss" />
+          <text
+             xml:space="preserve"
+             id="text897"
+             style="font-style:normal;font-weight:normal;font-size:90.3982px;line-height:0;font-family:sans-serif;letter-spacing:-3.99258606px;white-space:pre;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             transform="matrix(-0.52965605,0.92199675,-0.91739119,-0.53231507,1240.5992,2591.8912)"
+             inkscape:export-filename="/home/kan/Documentos/Laugh/Assets/Img/skull/SkullLetters.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96"><textPath
+               xlink:href="#path663-9"
+               id="textPath4533"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90.3982px;font-family:'Love Letter Typewriter';-inkscape-font-specification:'Love Letter Typewriter, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none">A man can be himself only so long as he is alone</textPath></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
