@@ -68,3 +68,4 @@ __meta__ = {
 script = ExtResource( 11 )
 degreesRotate = 1
 pathTextRotated = NodePath("../Text")
+bodyPath = NodePath("../Body")
