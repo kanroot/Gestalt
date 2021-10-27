@@ -6,11 +6,11 @@ namespace Gestalt.Ending
 {
 	public class Ending : Control
 	{
-		private Button buttonMain;
 		private readonly List<string> endingText = new List<string>();
 		private readonly List<Vector2> linesDestiny = new List<Vector2>();
 		private readonly List<Vector2> linesFrom = new List<Vector2>();
 		private readonly Random rnd = new Random();
+		private Button buttonMain;
 		private HBoxContainer containerText;
 		private int count;
 		private TextureRect gestalt;
@@ -47,13 +47,14 @@ namespace Gestalt.Ending
 			GD.Print("wuea" +
 			         "");
 		}
+
 		private void ScreenSize()
 		{
 			viewport = GetViewport().Size;
 			height = (int)viewport.y;
 			width = (int)viewport.x;
 		}
-		
+
 		private void ChoseImageOrText()
 		{
 			if (DeathCount < 100)
@@ -90,7 +91,7 @@ namespace Gestalt.Ending
 		{
 			for (var i = 0; i < linesFrom.Count; i++) DrawLine(linesFrom[i], linesDestiny[i], new Color(1, 1, 1));
 		}
-		
+
 		private void SetText()
 		{
 			endingText.Add("END GAME ?");
