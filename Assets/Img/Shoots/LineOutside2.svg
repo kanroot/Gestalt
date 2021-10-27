@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1920px"
+   height="1080px"
+   viewBox="0 0 1920 1080"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="LineOutside2.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:export-filename="/home/kan/RiderProjects/gestalt/Assets/Img/Shoots/LineOutside2.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview884"
+     pagecolor="#000000"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.5"
+     inkscape:cx="845"
+     inkscape:cy="503"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3524"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <defs
+     id="defs879" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g2338"
+       transform="translate(-0.004551,-435.75293)"
+       inkscape:export-filename="/home/kan/RiderProjects/gestalt/Assets/Img/Shoots/ShootTriangle.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       id="g3524">
+      <circle
+         style="fill:#ffffff;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path1030-5-2"
+         cx="1463.1367"
+         cy="975.75293"
+         r="100"
+         inkscape:export-filename="/home/kan/RiderProjects/gestalt/Assets/Img/Shoots/ShootTriangle.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <circle
+         style="fill:#ffffff;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path1030-5"
+         cx="456.86325"
+         cy="975.75293"
+         r="100"
+         inkscape:export-filename="/home/kan/RiderProjects/gestalt/Assets/Img/Shoots/ShootTriangle.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <circle
+         style="fill:#ffffff;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path1030"
+         cx="960"
+         cy="540"
+         r="100"
+         transform="translate(-0.004551,-435.75293)"
+         inkscape:export-filename="/home/kan/RiderProjects/gestalt/Assets/Img/Shoots/ShootTriangle.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         style="fill:#000000;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none"
+         inkscape:label="Triangle"
+         d="M 456.55149,975.99285 H 1463.4452 L 959.99828,103.99727 Z"
+         id="path908"
+         inkscape:export-filename="/home/kan/RiderProjects/gestalt/Assets/Img/Shoots/ShootTriangle.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+    </g>
+  </g>
+</svg>

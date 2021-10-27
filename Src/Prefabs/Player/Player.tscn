@@ -66,4 +66,5 @@ __meta__ = {
 
 [node name="TextRotation" type="Node" parent="."]
 script = ExtResource( 11 )
+DegreesRotate = 1
 pathTextRotated = NodePath("../Text")
