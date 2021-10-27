@@ -74,5 +74,4 @@ wait_time = 0.2
 
 [node name="TextRotation" parent="." index="8"]
 script = ExtResource( 12 )
-degreesRotate = 1
 pathTextRotated = NodePath("../Text")
