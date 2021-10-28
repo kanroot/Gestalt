@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=2]
 
+[ext_resource path="res://Src/Gestalt/Text/CanMoveBody.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Img/Skull/SkullLetters.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Img/Skull/skull.svg" type="Texture" id=3]
 [ext_resource path="res://Assets/Img/Laught/LineOutsideSegements1.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Img/Laught/LineOutsideSegements2.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Img/Laught/LineOutsideSegements0.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Img/Laught/LineOutsideSegements3.png" type="Texture" id=9]
-[ext_resource path="res://Src/Gestalt/Text/CanMovementText.cs" type="Script" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 517.544
@@ -19,7 +19,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="PlayerSkull" type="KinematicBody2D" groups=[
+[node name="StaticSkull" type="KinematicBody2D" groups=[
 "player",
 ]]
 
@@ -35,24 +35,9 @@ texture = ExtResource( 2 )
 [node name="LifeLine" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 
-[node name="Movement" type="Node" parent="."]
-
-[node name="Shoot" type="Node" parent="."]
-
-[node name="Life" type="Node" parent="."]
-
-[node name="Timer" type="Timer" parent="."]
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="Position2D" type="Position2D" parent="Node2D"]
-position = Vector2( 550, 0 )
-__meta__ = {
-"_gizmo_extents_": 100.0
-}
-
 [node name="TextRotation" type="Node" parent="."]
-script = ExtResource( 10 )
-degreesRotate = 1
+script = ExtResource( 1 )
+DegreesRotate = 1
 pathTextRotated = NodePath("../Text")
 bodyPath = NodePath("../Body")
+entityPath = NodePath("..")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Img/Laught/LaughtMan_letters.svg" type="Texture" id=1]
+[ext_resource path="res://Src/Prefabs/StaticsEntities/PlayerSkull.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Img/Laught/LaughtMan4.svg" type="Texture" id=3]
+
+[node name="PlayerStatic" instance=ExtResource( 2 )]
+
+[node name="Body" parent="." index="1"]
+texture = ExtResource( 3 )
+
+[node name="Text" parent="." index="2"]
+texture = ExtResource( 1 )
