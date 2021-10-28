@@ -12,4 +12,4 @@ Degrees = 5
 Direction = 1
 Spawn = ExtResource( 3 )
 SpeedBullet = 500
-SpeedMovement = 250
+SpeedMovement = 200

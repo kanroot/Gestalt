@@ -21,7 +21,7 @@ ResourceScriptDirectories=[ "res://" ]
 [application]
 
 config/name="Gestalt"
-run/main_scene="res://Src/Prefabs/Scenes/Wallpaper/PatternWallpaper.tscn"
+run/main_scene="res://Src/Prefabs/Scenes/Ending/Ending.tscn"
 config/icon="res://logo.png"
 
 [debug]

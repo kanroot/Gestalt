@@ -13,7 +13,7 @@ namespace Gestalt.Ending
 		private Button buttonMain;
 		private HBoxContainer containerText;
 		private int count;
-		private TextureRect gestalt;
+		private HBoxContainer gestalt;
 		private int height;
 		private Label textEnding;
 		private Vector2 viewport;
@@ -25,13 +25,13 @@ namespace Gestalt.Ending
 			GetChild();
 			ScreenSize();
 			ChoseImageOrText();
-			count = 0;
+			count = 1;
 		}
 
 		private void GetChild()
 		{
 			containerText = GetChild<HBoxContainer>(1);
-			gestalt = GetChild<TextureRect>(2);
+			gestalt = GetChild<HBoxContainer>(2);
 			buttonMain = GetChild<Button>(3);
 			textEnding = containerText.GetChild<Label>(0);
 			AddConnections();
@@ -79,7 +79,7 @@ namespace Gestalt.Ending
 
 		private void CreateLines()
 		{
-			count += 1;
+			count ++;
 			var from = new Vector2(0, rnd.Next(0, height));
 			var destiny = new Vector2(width, rnd.Next(0, height));
 			linesFrom.Add(from);
