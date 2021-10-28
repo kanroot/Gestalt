@@ -56,6 +56,7 @@ entityPath = NodePath("..")
 Health = 10000.0
 MaxHealth = 10000.0
 packedSceneRadius = ExtResource( 8 )
+nameBoss = "Arthur father of will"
 lifeBar = ExtResource( 7 )
 
 [node name="IA" parent="." index="6"]
