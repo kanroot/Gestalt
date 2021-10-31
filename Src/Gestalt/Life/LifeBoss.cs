@@ -1,4 +1,3 @@
-using System;
 using Godot;
 
 namespace Gestalt.Life
@@ -6,10 +5,10 @@ namespace Gestalt.Life
 	public class LifeBoss : LifeBase
 	{
 		private CanvasLayer barCanvas;
-		private VBoxContainer vBoxContainer;
 		private TextureProgress barLife;
-		[Export] private String nameBoss;
 		[Export] private PackedScene lifeBar;
+		[Export] private string nameBoss;
+		private VBoxContainer vBoxContainer;
 
 		public override void _Ready()
 		{
@@ -23,8 +22,8 @@ namespace Gestalt.Life
 		private void GetChild()
 		{
 			vBoxContainer = barCanvas.GetChild<VBoxContainer>(0);
-			var text = vBoxContainer.GetChild<Label>(0);
-			barLife = vBoxContainer.GetChild<TextureProgress>(1);
+			barLife = vBoxContainer.GetChild<TextureProgress>(0);
+			var text = vBoxContainer.GetChild<Label>(1);
 			text.Text = nameBoss;
 			text.Align = Label.AlignEnum.Center;
 			vBoxContainer.Alignment = BoxContainer.AlignMode.Center;
