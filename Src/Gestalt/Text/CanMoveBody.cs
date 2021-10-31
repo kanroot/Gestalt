@@ -6,6 +6,7 @@ namespace Gestalt.Text
 	{
 		private Sprite body;
 		[Export] private NodePath bodyPath;
+		[Export] private bool canPopUp;
 		private int count;
 		private KinematicBody2D entity;
 		[Export] private NodePath entityPath;
@@ -16,6 +17,7 @@ namespace Gestalt.Text
 			base._Ready();
 			entity = GetNode<KinematicBody2D>(entityPath);
 			body = GetNode<Sprite>(bodyPath);
+			if (!canPopUp) return;
 			entity.Scale = new Vector2((float)0.1, (float)0.1);
 		}
 
@@ -48,7 +50,7 @@ namespace Gestalt.Text
 		{
 			if (entity.Scale < new Vector2(1, 1)) entity.Scale *= (float)1.05;
 
-			if (entity.Scale > new Vector2(1, 1)) entity.Scale = new Vector2(1, 1);
+			if (entity.Scale > new Vector2((float)0.88, (float)0.88)) entity.Scale = new Vector2((float)0.88, (float)0.88);
 		}
 	}
 }
