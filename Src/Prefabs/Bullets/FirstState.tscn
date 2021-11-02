@@ -7,9 +7,11 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 650.964
 
-[node name="ShootEnemy" instance=ExtResource( 1 )]
+[node name="ShootEnemy" groups=[
+"shootEnemy",
+] instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-Damage = 100.0
+Damage = 1.0
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 0.501924, 0.501924 )

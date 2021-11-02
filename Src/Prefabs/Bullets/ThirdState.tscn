@@ -4,6 +4,7 @@
 [ext_resource path="res://Assets/Img/Shoots/ex.svg" type="Texture" id=2]
 
 [node name="ThirdState" instance=ExtResource( 1 )]
+Damage = 2.0
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 0.0269161, 0.0269161 )

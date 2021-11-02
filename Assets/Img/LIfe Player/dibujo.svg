@@ -9,6 +9,9 @@
    id="svg5"
    sodipodi:docname="dibujo.svg"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   inkscape:export-filename="/home/kan/RiderProjects/gestalt/Assets/Img/LIfe Player/under.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,12 +27,12 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="0.50234044"
-     inkscape:cx="718.63615"
-     inkscape:cy="944.57854"
-     inkscape:window-width="1920"
-     inkscape:window-height="1080"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:cx="743.51967"
+     inkscape:cy="437.95001"
+     inkscape:window-width="1894"
+     inkscape:window-height="491"
+     inkscape:window-x="12"
+     inkscape:window-y="547"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -39,38 +42,24 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g3343"
-       style="stroke-width:15;stroke-miterlimit:4;stroke-dasharray:none;fill:#ffffff;stroke:#ffffff"
-       transform="translate(178.5186,-59.177434)">
+       id="g1085"
+       transform="rotate(180,1010,539.5)"
+       style="fill:#4d4d4d;stroke:#666666">
       <path
-         style="fill:#ffffff;stroke:#ffffff;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 286.9784,669.53764 451.69591,504.82012"
-         id="path2386" />
+         style="fill:#4d4d4d;stroke:#666666;stroke-width:2"
+         inkscape:label="Triangle"
+         d="M 910.00002,496.19871 H 1010 l -49.99998,86.60257 z"
+         id="path922" />
       <path
-         style="fill:#ffffff;stroke:#ffffff;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 451.69591,504.82012 616.41343,669.53763"
-         id="path2386-4" />
+         style="fill:#4d4d4d;stroke:#666666;stroke-width:2"
+         inkscape:label="Triangle"
+         d="m 1010,496.19871 h 100 l -50,86.60257 z"
+         id="path922-8" />
       <path
-         style="fill:#ffffff;stroke:#ffffff;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 616.41343,669.53763 781.13094,504.82011"
-         id="path2386-6" />
-      <path
-         style="fill:#ffffff;stroke:#ffffff;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 781.13094,504.82011 945.84846,669.53762"
-         id="path2386-4-8" />
-      <path
-         style="fill:#ffffff;stroke:#ffffff;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 946.54936,669.53765 1111.2669,504.82013"
-         id="path2386-92" />
-      <path
-         style="fill:#ffffff;stroke:#ffffff;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 1111.2669,504.82013 164.7175,164.71751"
-         id="path2386-4-6" />
-      <path
-         style="fill:#ffffff;stroke:#ffffff;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 285.02453,691.33806 H 1274.0305"
-         id="path2386-7"
-         sodipodi:nodetypes="cc" />
+         style="fill:#4d4d4d;stroke:#666666;stroke-width:2"
+         inkscape:label="Triangle"
+         d="m 1110,496.19871 h 100 l -50,86.60257 z"
+         id="path922-4" />
     </g>
   </g>
 </svg>

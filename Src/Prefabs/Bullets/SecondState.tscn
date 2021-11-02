@@ -6,9 +6,11 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 650.964
 
-[node name="ShootGlicht" type="Area2D"]
+[node name="ShootGlicht" type="Area2D" groups=[
+"shootEnemy",
+]]
 script = ExtResource( 2 )
-Damage = 100.0
+Damage = 1.0
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -1.875, 0.125 )

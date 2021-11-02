@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Src/Prefabs/Bullets/ShootPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Img/Laught/LineOutsideSegements3.png" type="Texture" id=2]
@@ -9,7 +9,10 @@
 [ext_resource path="res://Assets/Img/Laught/LineOutsideSegements0.png" type="Texture" id=7]
 [ext_resource path="res://Src/Gestalt/Nodes/PlayerNodes/MovementPlayer.cs" type="Script" id=8]
 [ext_resource path="res://Src/Gestalt/Shoots/CanShootPj.cs" type="Script" id=9]
+[ext_resource path="res://Src/Gestalt/Nodes/PlayerNodes/LifePlayer.cs" type="Script" id=10]
 [ext_resource path="res://Src/Gestalt/Text/CanMovementText.cs" type="Script" id=11]
+[ext_resource path="res://Src/Prefabs/DetectShoots/AreaDetect.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Src/Prefabs/Life/LifePLayer.tscn" type="PackedScene" id=14]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 517.544
@@ -53,6 +56,12 @@ BulletScene = ExtResource( 1 )
 rotatePath = NodePath("../Node2D")
 
 [node name="Life" type="Node" parent="."]
+script = ExtResource( 10 )
+entityPath = NodePath("..")
+Health = 3.0
+MaxHealth = 3.0
+packedSceneRadius = ExtResource( 12 )
+lifePlayer = ExtResource( 14 )
 
 [node name="Timer" type="Timer" parent="."]
 
