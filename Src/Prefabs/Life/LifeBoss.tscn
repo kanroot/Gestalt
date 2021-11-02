@@ -20,7 +20,7 @@ __meta__ = {
 [node name="TextureProgress" type="TextureProgress" parent="VBoxContainer"]
 margin_right = 645.0
 margin_bottom = 32.0
-value = 100.0
+value = 5.0
 texture_under = ExtResource( 2 )
 texture_over = ExtResource( 1 )
 texture_progress = ExtResource( 3 )
