@@ -2,14 +2,14 @@
 
 [ext_resource path="res://Src/Gestalt/AI/FSM/Resources/DemonStateTwo.cs" type="Script" id=1]
 [ext_resource path="res://Src/Prefabs/DetectShoots/AreaDetect.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Src/Prefabs/Bullets/ShootEnemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Src/Prefabs/Bullets/ThirdState.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Src/Prefabs/Spawn/RotatePosition2d.tscn" type="PackedScene" id=4]
 
 [resource]
 script = ExtResource( 1 )
 Bullet = ExtResource( 3 )
 CountNodes = 12
-Degrees = 4
+Degrees = 9
 Direction = -1
 Spawn = ExtResource( 4 )
 SpeedBullet = 600

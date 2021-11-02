@@ -6,21 +6,21 @@ namespace Gestalt.Scenes
 	{
 		private VBoxContainer buttons;
 		private Button exit;
-		[Export] private PackedScene levelOne;
 		private Button play;
+		[Export] private PackedScene transition;
 
 		public override void _Ready()
 		{
 			buttons = GetChild<VBoxContainer>(1);
 			play = buttons.GetChild<Button>(0);
 			exit = buttons.GetChild<Button>(1);
-			play.Connect("pressed", this, nameof(ChangeToLevelOne));
+			play.Connect("pressed", this, nameof(ChangeToTransition));
 			exit.Connect("pressed", this, nameof(CloseGame));
 		}
 
-		private void ChangeToLevelOne()
+		private void ChangeToTransition()
 		{
-			GetTree().ChangeScene(levelOne.ResourcePath);
+			GetTree().ChangeScene(transition.ResourcePath);
 		}
 
 		private void CloseGame()

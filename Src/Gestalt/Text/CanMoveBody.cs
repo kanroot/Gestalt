@@ -4,13 +4,14 @@ namespace Gestalt.Text
 {
 	public class CanMoveBody : CanMovementText
 	{
-		private Sprite body;
+		protected Sprite body;
 		[Export] private NodePath bodyPath;
 		[Export] private bool canPopUp;
-		private int count;
+		protected int count;
 		private KinematicBody2D entity;
 		[Export] private NodePath entityPath;
-		private int secondCount;
+		protected int secondCount;
+
 
 		public override void _Ready()
 		{
@@ -29,28 +30,26 @@ namespace Gestalt.Text
 			PopUp();
 		}
 
-		private void RotateBody(int degrees)
+		protected virtual void RotateBody(int degrees)
 		{
 			if (degrees > 180)
 			{
-				body.Rotate(DegreesToRadiant);
+				body.Rotate(DegreesToRadiant * -1);
 				secondCount++;
 			}
 
-			if (secondCount >= 360)
-			{
-				count = 0;
-				secondCount = 0;
-			}
-
-			;
+			if (secondCount <= 360) return;
+			count = 0;
+			secondCount = 0;
 		}
 
 		private void PopUp()
 		{
+			if (canPopUp == false) return;
 			if (entity.Scale < new Vector2(1, 1)) entity.Scale *= (float)1.05;
 
-			if (entity.Scale > new Vector2((float)0.88, (float)0.88)) entity.Scale = new Vector2((float)0.88, (float)0.88);
+			if (entity.Scale > new Vector2((float)0.88, (float)0.88))
+				entity.Scale = new Vector2((float)0.88, (float)0.88);
 		}
 	}
 }
