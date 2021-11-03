@@ -12,6 +12,7 @@ namespace Gestalt.Nodes.AINode
 		protected StateBase StateOne;
 		protected StateBase StateThree;
 		protected StateBase StateTwo;
+		[Export] private PackedScene winScene;
 
 		public override void _Ready()
 		{
@@ -24,6 +25,7 @@ namespace Gestalt.Nodes.AINode
 		protected void Death()
 		{
 			Entity.QueueFree();
+			GetTree().ChangeScene(winScene.ResourcePath);
 		}
 	}
 }

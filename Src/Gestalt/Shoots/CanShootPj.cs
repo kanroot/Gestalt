@@ -7,8 +7,8 @@ namespace Gestalt.Shoots
 	{
 		[Export] private NodePath bulletPath;
 		[Export] protected PackedScene BulletScene;
-		private bool mouserOverPlayer;
 		private Sprite bulletSprite;
+		private bool mouserOverPlayer;
 		private Node2D rotate;
 		[Export] private NodePath rotatePath;
 
@@ -38,7 +38,7 @@ namespace Gestalt.Shoots
 		protected override void CreateBullet()
 		{
 			if (!CanShoot) return;
-			var bulletInstance = (BasicBulletPlayer) BulletScene.Instance();
+			var bulletInstance = (BasicBulletPlayer)BulletScene.Instance();
 			bulletInstance.Position = BulletOrigin.GlobalPosition;
 			bulletInstance.SpeedBullet = SpeedBullet;
 			bulletSprite = bulletInstance.GetChild<Sprite>(0);

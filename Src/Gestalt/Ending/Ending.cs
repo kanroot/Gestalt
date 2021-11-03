@@ -15,10 +15,12 @@ namespace Gestalt.Ending
 		private int count;
 		private HBoxContainer gestalt;
 		private int height;
+		[Export] private PackedScene sceneMain;
 		private Label textEnding;
 		private Vector2 viewport;
 		private int width;
 		[Export] public int DeathCount { get; set; }
+
 
 		public override void _Ready()
 		{
@@ -39,13 +41,12 @@ namespace Gestalt.Ending
 
 		private void AddConnections()
 		{
-			buttonMain.Connect("pressed", this, nameof(Textprueba));
+			buttonMain.Connect("pressed", this, nameof(GoToMain));
 		}
 
-		private void Textprueba()
+		private void GoToMain()
 		{
-			GD.Print("wuea" +
-			         "");
+			GetTree().ChangeScene(sceneMain.ResourcePath);
 		}
 
 		private void ScreenSize()
@@ -79,7 +80,7 @@ namespace Gestalt.Ending
 
 		private void CreateLines()
 		{
-			count ++;
+			count++;
 			var from = new Vector2(0, rnd.Next(0, height));
 			var destiny = new Vector2(width, rnd.Next(0, height));
 			linesFrom.Add(from);

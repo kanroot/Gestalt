@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1920"
+   height="1080"
+   viewBox="0 0 1920 1080"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="dibujo (copia 1).svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   inkscape:export-filename="/home/kan/RiderProjects/gestalt/Assets/Img/LIfe Player/over.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.71041666"
+     inkscape:cx="926.92083"
+     inkscape:cy="731.96482"
+     inkscape:window-width="1894"
+     inkscape:window-height="491"
+     inkscape:window-x="12"
+     inkscape:window-y="547"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g1085"
+       transform="rotate(180,1010,540)"
+       style="fill:none;stroke:#ffffff">
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:2"
+         inkscape:label="Triangle"
+         d="M 910.00002,496.19871 H 1010 l -49.99998,86.60257 z"
+         id="path922" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:2"
+         inkscape:label="Triangle"
+         d="m 1010,496.19871 h 100 l -50,86.60257 z"
+         id="path922-8" />
+      <path
+         style="fill:none;stroke:#ffffff;stroke-width:2"
+         inkscape:label="Triangle"
+         d="m 1110,496.19871 h 100 l -50,86.60257 z"
+         id="path922-4" />
+    </g>
+  </g>
+</svg>

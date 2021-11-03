@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://Src/Gestalt/AI/FSM/Resources/DemonState.cs" type="Script" id=1]
-[ext_resource path="res://Src/Prefabs/Bullets/ShootEnemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Src/Prefabs/Bullets/FirstState.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Src/Prefabs/Spawn/RotatePosition2d.tscn" type="PackedScene" id=3]
 
 [resource]
@@ -12,4 +12,4 @@ Degrees = 5
 Direction = 1
 Spawn = ExtResource( 3 )
 SpeedBullet = 500
-SpeedMovement = 200
+SpeedMovement = 150

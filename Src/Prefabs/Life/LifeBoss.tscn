@@ -9,36 +9,33 @@
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
 margin_left = -322.5
-margin_top = -90.0
 margin_right = 322.5
-margin_bottom = -20.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 645.0
-margin_bottom = 34.0
-custom_fonts/font = ExtResource( 4 )
-align = 1
-valign = 1
-autowrap = true
+margin_bottom = 70.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureProgress" type="TextureProgress" parent="VBoxContainer"]
-margin_top = 38.0
 margin_right = 645.0
-margin_bottom = 70.0
-value = 100.0
+margin_bottom = 32.0
+value = 5.0
 texture_under = ExtResource( 2 )
 texture_over = ExtResource( 1 )
 texture_progress = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 36.0
+margin_right = 645.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 4 )
+align = 1
+valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

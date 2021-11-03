@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Src/Prefabs/Bullets/FirstState.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Img/Shoots/ex.svg" type="Texture" id=2]
+
+[node name="ThirdState" instance=ExtResource( 1 )]
+Damage = 2.0
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 0.0269161, 0.0269161 )
+texture = ExtResource( 2 )

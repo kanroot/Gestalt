@@ -40,4 +40,5 @@ script = ExtResource( 1 )
 DegreesRotate = 1
 pathTextRotated = NodePath("../Text")
 bodyPath = NodePath("../Body")
+canPopUp = true
 entityPath = NodePath("..")
