@@ -58,12 +58,13 @@ rotatePath = NodePath("../Node2D")
 [node name="Life" type="Node" parent="."]
 script = ExtResource( 10 )
 entityPath = NodePath("..")
-Health = 3.0
-MaxHealth = 3.0
+Health = 40.0
+MaxHealth = 40.0
 packedSceneRadius = ExtResource( 12 )
 lifePlayer = ExtResource( 14 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 
 [node name="Node2D" type="Node2D" parent="."]
 

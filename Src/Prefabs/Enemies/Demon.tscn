@@ -23,12 +23,12 @@ radius = 499.858
 [sub_resource type="Resource" id=2]
 script = ExtResource( 10 )
 Bullet = ExtResource( 13 )
-CountNodes = 20
-Degrees = 3
+CountNodes = 17
+Degrees = 2
 Direction = -1
 Spawn = ExtResource( 14 )
 SpeedBullet = 200
-SpeedMovement = 1000
+SpeedMovement = 500
 Radius = ExtResource( 8 )
 
 [node name="Demon" instance=ExtResource( 1 )]
@@ -73,7 +73,7 @@ resourceTwo = SubResource( 2 )
 
 [node name="Timer" parent="." index="7"]
 process_mode = 0
-wait_time = 0.2
+wait_time = 0.3
 
 [node name="TextRotation" parent="." index="8"]
 script = ExtResource( 12 )

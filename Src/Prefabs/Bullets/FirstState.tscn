@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Src/Prefabs/Bullets/Shoot.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Img/Shoots/bullet-2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Img/Shoots/under.png" type="Texture" id=2]
 [ext_resource path="res://Src/Gestalt/Bullets/BasicBulletEnemy.cs" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -14,7 +14,7 @@ script = ExtResource( 3 )
 Damage = 1.0
 
 [node name="Sprite" parent="." index="0"]
-scale = Vector2( 0.501924, 0.501924 )
+scale = Vector2( 0.0483994, 0.0483994 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="1"]

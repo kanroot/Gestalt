@@ -7,9 +7,9 @@
 [resource]
 script = ExtResource( 1 )
 Bullet = ExtResource( 2 )
-CountNodes = 10
+CountNodes = 15
 Degrees = 5
 Direction = 1
 Spawn = ExtResource( 3 )
 SpeedBullet = 500
-SpeedMovement = 200
+SpeedMovement = 150
